@@ -66,12 +66,12 @@
     
 //    [self.slideToUnlockView.contentView center];
     
-//    self.shimmeringView.contentView = self.what???;
+    self.shimmeringView.contentView = self.slideToHideImage;
     
-//    self.shimmeringView.shimmering = YES;
-//    [self.shimmeringView  setShimmeringOpacity:0.3];
-//    [self.shimmeringView  setShimmeringAnimationOpacity:1];
-//    [self.shimmeringView  setShimmeringSpeed:100];
+    self.shimmeringView.shimmering = YES;
+    [self.shimmeringView  setShimmeringOpacity:0.3];
+    [self.shimmeringView  setShimmeringAnimationOpacity:1];
+    [self.shimmeringView  setShimmeringSpeed:100];
 }
 
 - (void)updateTime {
