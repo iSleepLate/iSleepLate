@@ -1,0 +1,444 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8C75BC7C1A8922410001927C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C75BC7B1A8922410001927C /* main.m */; };
+		8C75BC7F1A8922410001927C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C75BC7E1A8922410001927C /* AppDelegate.m */; };
+		8C75BC821A8922410001927C /* iSleepLate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8C75BC801A8922410001927C /* iSleepLate.xcdatamodeld */; };
+		8C75BC851A8922410001927C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C75BC841A8922410001927C /* ViewController.m */; };
+		8C75BC881A8922410001927C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C75BC861A8922410001927C /* Main.storyboard */; };
+		8C75BC8A1A8922410001927C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C75BC891A8922410001927C /* Images.xcassets */; };
+		8C75BC8D1A8922410001927C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C75BC8B1A8922410001927C /* LaunchScreen.xib */; };
+		8C75BC991A8922410001927C /* iSleepLateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C75BC981A8922410001927C /* iSleepLateTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8C75BC931A8922410001927C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8C75BC6E1A8922400001927C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8C75BC751A8922400001927C;
+			remoteInfo = iSleepLate;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8C75BC761A8922400001927C /* iSleepLate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSleepLate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C75BC7A1A8922410001927C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C75BC7B1A8922410001927C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8C75BC7D1A8922410001927C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8C75BC7E1A8922410001927C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8C75BC811A8922410001927C /* iSleepLate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iSleepLate.xcdatamodel; sourceTree = "<group>"; };
+		8C75BC831A8922410001927C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		8C75BC841A8922410001927C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8C75BC871A8922410001927C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8C75BC891A8922410001927C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8C75BC8C1A8922410001927C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		8C75BC921A8922410001927C /* iSleepLateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iSleepLateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C75BC971A8922410001927C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C75BC981A8922410001927C /* iSleepLateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iSleepLateTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8C75BC731A8922400001927C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C75BC8F1A8922410001927C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8C75BC6D1A8922400001927C = {
+			isa = PBXGroup;
+			children = (
+				8C75BC781A8922400001927C /* iSleepLate */,
+				8C75BC951A8922410001927C /* iSleepLateTests */,
+				8C75BC771A8922400001927C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8C75BC771A8922400001927C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8C75BC761A8922400001927C /* iSleepLate.app */,
+				8C75BC921A8922410001927C /* iSleepLateTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8C75BC781A8922400001927C /* iSleepLate */ = {
+			isa = PBXGroup;
+			children = (
+				8C75BC7D1A8922410001927C /* AppDelegate.h */,
+				8C75BC7E1A8922410001927C /* AppDelegate.m */,
+				8C75BC831A8922410001927C /* ViewController.h */,
+				8C75BC841A8922410001927C /* ViewController.m */,
+				8C75BC861A8922410001927C /* Main.storyboard */,
+				8C75BC891A8922410001927C /* Images.xcassets */,
+				8C75BC8B1A8922410001927C /* LaunchScreen.xib */,
+				8C75BC801A8922410001927C /* iSleepLate.xcdatamodeld */,
+				8C75BC791A8922410001927C /* Supporting Files */,
+			);
+			path = iSleepLate;
+			sourceTree = "<group>";
+		};
+		8C75BC791A8922410001927C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8C75BC7A1A8922410001927C /* Info.plist */,
+				8C75BC7B1A8922410001927C /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8C75BC951A8922410001927C /* iSleepLateTests */ = {
+			isa = PBXGroup;
+			children = (
+				8C75BC981A8922410001927C /* iSleepLateTests.m */,
+				8C75BC961A8922410001927C /* Supporting Files */,
+			);
+			path = iSleepLateTests;
+			sourceTree = "<group>";
+		};
+		8C75BC961A8922410001927C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8C75BC971A8922410001927C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8C75BC751A8922400001927C /* iSleepLate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8C75BC9C1A8922410001927C /* Build configuration list for PBXNativeTarget "iSleepLate" */;
+			buildPhases = (
+				8C75BC721A8922400001927C /* Sources */,
+				8C75BC731A8922400001927C /* Frameworks */,
+				8C75BC741A8922400001927C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iSleepLate;
+			productName = iSleepLate;
+			productReference = 8C75BC761A8922400001927C /* iSleepLate.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8C75BC911A8922410001927C /* iSleepLateTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8C75BC9F1A8922410001927C /* Build configuration list for PBXNativeTarget "iSleepLateTests" */;
+			buildPhases = (
+				8C75BC8E1A8922410001927C /* Sources */,
+				8C75BC8F1A8922410001927C /* Frameworks */,
+				8C75BC901A8922410001927C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8C75BC941A8922410001927C /* PBXTargetDependency */,
+			);
+			name = iSleepLateTests;
+			productName = iSleepLateTests;
+			productReference = 8C75BC921A8922410001927C /* iSleepLateTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8C75BC6E1A8922400001927C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = iSleepLate;
+				TargetAttributes = {
+					8C75BC751A8922400001927C = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					8C75BC911A8922410001927C = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 8C75BC751A8922400001927C;
+					};
+				};
+			};
+			buildConfigurationList = 8C75BC711A8922400001927C /* Build configuration list for PBXProject "iSleepLate" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8C75BC6D1A8922400001927C;
+			productRefGroup = 8C75BC771A8922400001927C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8C75BC751A8922400001927C /* iSleepLate */,
+				8C75BC911A8922410001927C /* iSleepLateTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8C75BC741A8922400001927C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C75BC881A8922410001927C /* Main.storyboard in Resources */,
+				8C75BC8D1A8922410001927C /* LaunchScreen.xib in Resources */,
+				8C75BC8A1A8922410001927C /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C75BC901A8922410001927C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8C75BC721A8922400001927C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C75BC7F1A8922410001927C /* AppDelegate.m in Sources */,
+				8C75BC7C1A8922410001927C /* main.m in Sources */,
+				8C75BC851A8922410001927C /* ViewController.m in Sources */,
+				8C75BC821A8922410001927C /* iSleepLate.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C75BC8E1A8922410001927C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C75BC991A8922410001927C /* iSleepLateTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8C75BC941A8922410001927C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8C75BC751A8922400001927C /* iSleepLate */;
+			targetProxy = 8C75BC931A8922410001927C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8C75BC861A8922410001927C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8C75BC871A8922410001927C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8C75BC8B1A8922410001927C /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8C75BC8C1A8922410001927C /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8C75BC9A1A8922410001927C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8C75BC9B1A8922410001927C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8C75BC9D1A8922410001927C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = iSleepLate/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8C75BC9E1A8922410001927C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = iSleepLate/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		8C75BCA01A8922410001927C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = iSleepLateTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iSleepLate.app/iSleepLate";
+			};
+			name = Debug;
+		};
+		8C75BCA11A8922410001927C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = iSleepLateTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iSleepLate.app/iSleepLate";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8C75BC711A8922400001927C /* Build configuration list for PBXProject "iSleepLate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C75BC9A1A8922410001927C /* Debug */,
+				8C75BC9B1A8922410001927C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8C75BC9C1A8922410001927C /* Build configuration list for PBXNativeTarget "iSleepLate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C75BC9D1A8922410001927C /* Debug */,
+				8C75BC9E1A8922410001927C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8C75BC9F1A8922410001927C /* Build configuration list for PBXNativeTarget "iSleepLateTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C75BCA01A8922410001927C /* Debug */,
+				8C75BCA11A8922410001927C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8C75BC801A8922410001927C /* iSleepLate.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8C75BC811A8922410001927C /* iSleepLate.xcdatamodel */,
+			);
+			currentVersion = 8C75BC811A8922410001927C /* iSleepLate.xcdatamodel */;
+			path = iSleepLate.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 8C75BC6E1A8922400001927C /* Project object */;
+}
