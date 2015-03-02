@@ -15,6 +15,7 @@
 		8C75BC8A1A8922410001927C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C75BC891A8922410001927C /* Images.xcassets */; };
 		8C75BC8D1A8922410001927C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C75BC8B1A8922410001927C /* LaunchScreen.xib */; };
 		8C75BC991A8922410001927C /* iSleepLateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C75BC981A8922410001927C /* iSleepLateTests.m */; };
+		8CEB4AD61AA3EE7E00E97E4A /* AlarmPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB4AD51AA3EE7E00E97E4A /* AlarmPageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,8 @@
 		8C75BC921A8922410001927C /* iSleepLateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iSleepLateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C75BC971A8922410001927C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C75BC981A8922410001927C /* iSleepLateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iSleepLateTests.m; sourceTree = "<group>"; };
+		8CEB4AD41AA3EE7E00E97E4A /* AlarmPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlarmPageViewController.h; path = "View Controller/AlarmPageViewController.h"; sourceTree = "<group>"; };
+		8CEB4AD51AA3EE7E00E97E4A /* AlarmPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlarmPageViewController.m; path = "View Controller/AlarmPageViewController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +90,8 @@
 				8C75BC7E1A8922410001927C /* AppDelegate.m */,
 				8C75BC831A8922410001927C /* ViewController.h */,
 				8C75BC841A8922410001927C /* ViewController.m */,
+				8CEB4AD41AA3EE7E00E97E4A /* AlarmPageViewController.h */,
+				8CEB4AD51AA3EE7E00E97E4A /* AlarmPageViewController.m */,
 				8C75BC861A8922410001927C /* Main.storyboard */,
 				8C75BC891A8922410001927C /* Images.xcassets */,
 				8C75BC8B1A8922410001927C /* LaunchScreen.xib */,
@@ -222,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CEB4AD61AA3EE7E00E97E4A /* AlarmPageViewController.m in Sources */,
 				8C75BC7F1A8922410001927C /* AppDelegate.m in Sources */,
 				8C75BC7C1A8922410001927C /* main.m in Sources */,
 				8C75BC851A8922410001927C /* ViewController.m in Sources */,
@@ -416,6 +422,7 @@
 				8C75BC9E1A8922410001927C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8C75BC9F1A8922410001927C /* Build configuration list for PBXNativeTarget "iSleepLateTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +431,7 @@
 				8C75BCA11A8922410001927C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
