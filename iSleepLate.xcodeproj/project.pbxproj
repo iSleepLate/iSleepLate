@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C16EE2F1ABE30EC00150EBF /* SelectDestinationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C16EE2E1ABE30EC00150EBF /* SelectDestinationViewController.m */; };
+		8C16EE311ABE319E00150EBF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C16EE301ABE319E00150EBF /* MapKit.framework */; };
 		8C75BC7C1A8922410001927C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C75BC7B1A8922410001927C /* main.m */; };
 		8C75BC7F1A8922410001927C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C75BC7E1A8922410001927C /* AppDelegate.m */; };
 		8C75BC821A8922410001927C /* iSleepLate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8C75BC801A8922410001927C /* iSleepLate.xcdatamodeld */; };
-		8C75BC851A8922410001927C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C75BC841A8922410001927C /* ViewController.m */; };
 		8C75BC881A8922410001927C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C75BC861A8922410001927C /* Main.storyboard */; };
 		8C75BC8A1A8922410001927C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C75BC891A8922410001927C /* Images.xcassets */; };
 		8C75BC8D1A8922410001927C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C75BC8B1A8922410001927C /* LaunchScreen.xib */; };
 		8C75BC991A8922410001927C /* iSleepLateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C75BC981A8922410001927C /* iSleepLateTests.m */; };
-		8CEB4AD61AA3EE7E00E97E4A /* AlarmPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB4AD51AA3EE7E00E97E4A /* AlarmPageViewController.m */; };
+		8CFC0D621ABF09660049C36F /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CFC0D611ABF09660049C36F /* AddressBookUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,22 +30,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8C16EE2D1ABE30EC00150EBF /* SelectDestinationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelectDestinationViewController.h; path = "View Controller/SelectDestinationViewController.h"; sourceTree = "<group>"; };
+		8C16EE2E1ABE30EC00150EBF /* SelectDestinationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SelectDestinationViewController.m; path = "View Controller/SelectDestinationViewController.m"; sourceTree = "<group>"; };
+		8C16EE301ABE319E00150EBF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		8C75BC761A8922400001927C /* iSleepLate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSleepLate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C75BC7A1A8922410001927C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C75BC7B1A8922410001927C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8C75BC7D1A8922410001927C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8C75BC7E1A8922410001927C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		8C75BC811A8922410001927C /* iSleepLate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iSleepLate.xcdatamodel; sourceTree = "<group>"; };
-		8C75BC831A8922410001927C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		8C75BC841A8922410001927C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		8C75BC871A8922410001927C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8C75BC891A8922410001927C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8C75BC8C1A8922410001927C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		8C75BC921A8922410001927C /* iSleepLateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iSleepLateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C75BC971A8922410001927C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C75BC981A8922410001927C /* iSleepLateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iSleepLateTests.m; sourceTree = "<group>"; };
-		8CEB4AD41AA3EE7E00E97E4A /* AlarmPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlarmPageViewController.h; path = "View Controller/AlarmPageViewController.h"; sourceTree = "<group>"; };
-		8CEB4AD51AA3EE7E00E97E4A /* AlarmPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlarmPageViewController.m; path = "View Controller/AlarmPageViewController.m"; sourceTree = "<group>"; };
+		8CFC0D611ABF09660049C36F /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +53,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CFC0D621ABF09660049C36F /* AddressBookUI.framework in Frameworks */,
+				8C16EE311ABE319E00150EBF /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +71,8 @@
 		8C75BC6D1A8922400001927C = {
 			isa = PBXGroup;
 			children = (
+				8CFC0D611ABF09660049C36F /* AddressBookUI.framework */,
+				8C16EE301ABE319E00150EBF /* MapKit.framework */,
 				8C75BC781A8922400001927C /* iSleepLate */,
 				8C75BC951A8922410001927C /* iSleepLateTests */,
 				8C75BC771A8922400001927C /* Products */,
@@ -88,10 +93,8 @@
 			children = (
 				8C75BC7D1A8922410001927C /* AppDelegate.h */,
 				8C75BC7E1A8922410001927C /* AppDelegate.m */,
-				8C75BC831A8922410001927C /* ViewController.h */,
-				8C75BC841A8922410001927C /* ViewController.m */,
-				8CEB4AD41AA3EE7E00E97E4A /* AlarmPageViewController.h */,
-				8CEB4AD51AA3EE7E00E97E4A /* AlarmPageViewController.m */,
+				8C16EE2D1ABE30EC00150EBF /* SelectDestinationViewController.h */,
+				8C16EE2E1ABE30EC00150EBF /* SelectDestinationViewController.m */,
 				8C75BC861A8922410001927C /* Main.storyboard */,
 				8C75BC891A8922410001927C /* Images.xcassets */,
 				8C75BC8B1A8922410001927C /* LaunchScreen.xib */,
@@ -227,11 +230,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CEB4AD61AA3EE7E00E97E4A /* AlarmPageViewController.m in Sources */,
 				8C75BC7F1A8922410001927C /* AppDelegate.m in Sources */,
 				8C75BC7C1A8922410001927C /* main.m in Sources */,
-				8C75BC851A8922410001927C /* ViewController.m in Sources */,
 				8C75BC821A8922410001927C /* iSleepLate.xcdatamodeld in Sources */,
+				8C16EE2F1ABE30EC00150EBF /* SelectDestinationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +356,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iSleepLate/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -364,6 +367,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iSleepLate/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
