@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8C16EE2F1ABE30EC00150EBF /* SelectDestinationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C16EE2E1ABE30EC00150EBF /* SelectDestinationViewController.m */; };
 		8C16EE311ABE319E00150EBF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C16EE301ABE319E00150EBF /* MapKit.framework */; };
+		8C2000121AC73D9500A8A5FC /* AppBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2000111AC73D9500A8A5FC /* AppBackgroundView.m */; };
+		8C2000151AC7970800A8A5FC /* AlarmSummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2000141AC7970800A8A5FC /* AlarmSummaryViewController.m */; };
 		8C75BC7C1A8922410001927C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C75BC7B1A8922410001927C /* main.m */; };
 		8C75BC7F1A8922410001927C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C75BC7E1A8922410001927C /* AppDelegate.m */; };
 		8C75BC821A8922410001927C /* iSleepLate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8C75BC801A8922410001927C /* iSleepLate.xcdatamodeld */; };
@@ -33,6 +35,10 @@
 		8C16EE2D1ABE30EC00150EBF /* SelectDestinationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelectDestinationViewController.h; path = "View Controller/SelectDestinationViewController.h"; sourceTree = "<group>"; };
 		8C16EE2E1ABE30EC00150EBF /* SelectDestinationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SelectDestinationViewController.m; path = "View Controller/SelectDestinationViewController.m"; sourceTree = "<group>"; };
 		8C16EE301ABE319E00150EBF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		8C2000101AC73D9500A8A5FC /* AppBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppBackgroundView.h; path = View/AppBackgroundView.h; sourceTree = "<group>"; };
+		8C2000111AC73D9500A8A5FC /* AppBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppBackgroundView.m; path = View/AppBackgroundView.m; sourceTree = "<group>"; };
+		8C2000131AC7970800A8A5FC /* AlarmSummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlarmSummaryViewController.h; path = "View Controller/AlarmSummaryViewController.h"; sourceTree = "<group>"; };
+		8C2000141AC7970800A8A5FC /* AlarmSummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlarmSummaryViewController.m; path = "View Controller/AlarmSummaryViewController.m"; sourceTree = "<group>"; };
 		8C75BC761A8922400001927C /* iSleepLate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSleepLate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C75BC7A1A8922410001927C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C75BC7B1A8922410001927C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -91,10 +97,14 @@
 		8C75BC781A8922400001927C /* iSleepLate */ = {
 			isa = PBXGroup;
 			children = (
+				8C2000101AC73D9500A8A5FC /* AppBackgroundView.h */,
+				8C2000111AC73D9500A8A5FC /* AppBackgroundView.m */,
 				8C75BC7D1A8922410001927C /* AppDelegate.h */,
 				8C75BC7E1A8922410001927C /* AppDelegate.m */,
 				8C16EE2D1ABE30EC00150EBF /* SelectDestinationViewController.h */,
 				8C16EE2E1ABE30EC00150EBF /* SelectDestinationViewController.m */,
+				8C2000131AC7970800A8A5FC /* AlarmSummaryViewController.h */,
+				8C2000141AC7970800A8A5FC /* AlarmSummaryViewController.m */,
 				8C75BC861A8922410001927C /* Main.storyboard */,
 				8C75BC891A8922410001927C /* Images.xcassets */,
 				8C75BC8B1A8922410001927C /* LaunchScreen.xib */,
@@ -231,7 +241,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C75BC7F1A8922410001927C /* AppDelegate.m in Sources */,
+				8C2000121AC73D9500A8A5FC /* AppBackgroundView.m in Sources */,
 				8C75BC7C1A8922410001927C /* main.m in Sources */,
+				8C2000151AC7970800A8A5FC /* AlarmSummaryViewController.m in Sources */,
 				8C75BC821A8922410001927C /* iSleepLate.xcdatamodeld in Sources */,
 				8C16EE2F1ABE30EC00150EBF /* SelectDestinationViewController.m in Sources */,
 			);

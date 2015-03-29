@@ -16,7 +16,22 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    // White Status Bar
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    // Customize NavigationBar Appearance
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setShadowImage:[UIImage imageNamed:@"NavigationShadowImage"]];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor],
+                                                           NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Medium" size:15.0]}];
+    
+    // Customize TextField
+    [[UITextField appearance] setTextColor:[UIColor whiteColor]];
+    [[UITextField appearance] setTintColor:[UIColor whiteColor]];
+//    [[UITextField appearance] setAttributedPlaceholder:[[NSAttributedString alloc] initWithString:nil
+//                                                                                       attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}]];
+    
     return YES;
 }
 
