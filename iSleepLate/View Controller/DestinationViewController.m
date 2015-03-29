@@ -6,39 +6,40 @@
 //  Copyright (c) 2015 iSleepLate. All rights reserved.
 //
 
-#import "SelectDestinationViewController.h"
+#import "DestinationViewController.h"
+#import "SmartAlarm.h"
+#import "AlarmSummaryViewController.h"
 
 @import MapKit;
 @import AddressBook;
 
-@interface SelectDestinationViewController () <UITextFieldDelegate>
+@interface DestinationViewController () <UITextFieldDelegate>
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) CLGeocoder *geocoder;
 @property (strong, nonatomic) NSArray *searchResults;
 
 @property (weak, nonatomic) IBOutlet UITextField *addressField;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end
 
-@implementation SelectDestinationViewController
+@implementation DestinationViewController
 
 #pragma mark - Lifecycle
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        self.geocoder = [[CLGeocoder alloc] init];
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showAlarmSummary"]) {
+        AlarmSummaryViewController *alarmSummaryVC = segue.destinationViewController;
+        alarmSummaryVC.alarm = self.alarm;
     }
-    
-    return self;
 }
 
 #pragma mark - IBActions
 
 - (IBAction)saveDestination:(id)sender
 {
+    [self performSegueWithIdentifier:@"showAlarmSummary" sender:self];
     [self geocodeAddressString:self.addressField.text];
 }
 
@@ -47,9 +48,12 @@
 
 - (void)geocodeAddressString:(NSString *)addressString
 {
+    [self.activityIndicator startAnimating];
+    
     self.geocoder = [[CLGeocoder alloc] init];
     [self.geocoder geocodeAddressString:addressString
                       completionHandler:^(NSArray *placemarks, NSError *error) {
+                          [self.activityIndicator stopAnimating];
                           if (error) {
                               NSLog(@"Geocode Error: %@", error.localizedDescription);
                           } else if (placemarks.count == 0) {
@@ -58,8 +62,8 @@
                               NSLog(@"Too many results returned");
                           } else {
                               MKPlacemark *placemark = [[MKPlacemark alloc] initWithPlacemark:placemarks[0]];
-                              MKMapItem *destination = [[MKMapItem alloc] initWithPlacemark:placemark];
-                              [self calculateETAToDestination:destination];
+                              self.alarm.destination = [[MKMapItem alloc] initWithPlacemark:placemark];
+//                              [self calculateETAToDestination:destination];
                           }
                       }];
 }

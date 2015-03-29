@@ -29,8 +29,6 @@
     // Customize TextField
     [[UITextField appearance] setTextColor:[UIColor whiteColor]];
     [[UITextField appearance] setTintColor:[UIColor whiteColor]];
-//    [[UITextField appearance] setAttributedPlaceholder:[[NSAttributedString alloc] initWithString:nil
-//                                                                                       attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}]];
     
     return YES;
 }

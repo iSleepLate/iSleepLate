@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SelectDestinationViewController : UIViewController
+@class SmartAlarm;
+
+@interface DestinationViewController : UIViewController
+
+@property (strong, nonatomic) SmartAlarm *alarm;
 
 @end
