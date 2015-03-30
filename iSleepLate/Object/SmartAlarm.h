@@ -14,6 +14,6 @@
 
 @property (strong, nonatomic) NSDate *dateOfArrival;
 @property (strong, nonatomic) MKMapItem *destination;
-@property NSRange preparationTime;
+@property (nonatomic) NSRange preparationTime;
 
 @end

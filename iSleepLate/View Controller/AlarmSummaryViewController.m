@@ -46,6 +46,9 @@
                     context:NULL];
     
     self.arrivalLabel.text = [self stringFromDateOfArrival];
+    if (self.alarm.destination) {
+        [self calculateETAToDestination:self.alarm.destination];
+    }
     self.prepTimeLabel.text = [self stringFromPrepartionTime];
 }
 

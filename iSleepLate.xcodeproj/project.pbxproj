@@ -14,6 +14,10 @@
 		8C2000181AC797BD00A8A5FC /* SmartAlarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2000171AC797BD00A8A5FC /* SmartAlarm.m */; };
 		8C20001B1AC84F5000A8A5FC /* ArrivalTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C20001A1AC84F5000A8A5FC /* ArrivalTimeViewController.m */; };
 		8C2000231AC8639400A8A5FC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2000221AC8639400A8A5FC /* QuartzCore.framework */; };
+		8C6058671AC8B63C00E3FCA2 /* PreparationTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C6058661AC8B63C00E3FCA2 /* PreparationTimeViewController.m */; };
+		8C60586A1AC8B77D00E3FCA2 /* RangeSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C6058691AC8B77D00E3FCA2 /* RangeSlider.m */; };
+		8C60586D1AC8D79100E3FCA2 /* RangeSliderKnobLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C60586C1AC8D79100E3FCA2 /* RangeSliderKnobLayer.m */; };
+		8C6058701AC8DBAB00E3FCA2 /* RangeSliderTrackLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C60586F1AC8DBAB00E3FCA2 /* RangeSliderTrackLayer.m */; };
 		8C75BC7C1A8922410001927C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C75BC7B1A8922410001927C /* main.m */; };
 		8C75BC7F1A8922410001927C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C75BC7E1A8922410001927C /* AppDelegate.m */; };
 		8C75BC821A8922410001927C /* iSleepLate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8C75BC801A8922410001927C /* iSleepLate.xcdatamodeld */; };
@@ -47,6 +51,14 @@
 		8C2000191AC84F5000A8A5FC /* ArrivalTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArrivalTimeViewController.h; path = "View Controller/ArrivalTimeViewController.h"; sourceTree = "<group>"; };
 		8C20001A1AC84F5000A8A5FC /* ArrivalTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ArrivalTimeViewController.m; path = "View Controller/ArrivalTimeViewController.m"; sourceTree = "<group>"; };
 		8C2000221AC8639400A8A5FC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		8C6058651AC8B63C00E3FCA2 /* PreparationTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PreparationTimeViewController.h; path = "View Controller/PreparationTimeViewController.h"; sourceTree = "<group>"; };
+		8C6058661AC8B63C00E3FCA2 /* PreparationTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PreparationTimeViewController.m; path = "View Controller/PreparationTimeViewController.m"; sourceTree = "<group>"; };
+		8C6058681AC8B77D00E3FCA2 /* RangeSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RangeSlider.h; path = View/RangeSlider.h; sourceTree = "<group>"; };
+		8C6058691AC8B77D00E3FCA2 /* RangeSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RangeSlider.m; path = View/RangeSlider.m; sourceTree = "<group>"; };
+		8C60586B1AC8D79100E3FCA2 /* RangeSliderKnobLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RangeSliderKnobLayer.h; path = View/RangeSliderKnobLayer.h; sourceTree = "<group>"; };
+		8C60586C1AC8D79100E3FCA2 /* RangeSliderKnobLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RangeSliderKnobLayer.m; path = View/RangeSliderKnobLayer.m; sourceTree = "<group>"; };
+		8C60586E1AC8DBAB00E3FCA2 /* RangeSliderTrackLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RangeSliderTrackLayer.h; path = View/RangeSliderTrackLayer.h; sourceTree = "<group>"; };
+		8C60586F1AC8DBAB00E3FCA2 /* RangeSliderTrackLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RangeSliderTrackLayer.m; path = View/RangeSliderTrackLayer.m; sourceTree = "<group>"; };
 		8C75BC761A8922400001927C /* iSleepLate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSleepLate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C75BC7A1A8922410001927C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C75BC7B1A8922410001927C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -90,6 +102,8 @@
 				8C20001A1AC84F5000A8A5FC /* ArrivalTimeViewController.m */,
 				8C16EE2D1ABE30EC00150EBF /* DestinationViewController.h */,
 				8C16EE2E1ABE30EC00150EBF /* DestinationViewController.m */,
+				8C6058651AC8B63C00E3FCA2 /* PreparationTimeViewController.h */,
+				8C6058661AC8B63C00E3FCA2 /* PreparationTimeViewController.m */,
 				8C2000131AC7970800A8A5FC /* AlarmSummaryViewController.h */,
 				8C2000141AC7970800A8A5FC /* AlarmSummaryViewController.m */,
 			);
@@ -110,6 +124,12 @@
 			children = (
 				8C2000101AC73D9500A8A5FC /* AppBackgroundView.h */,
 				8C2000111AC73D9500A8A5FC /* AppBackgroundView.m */,
+				8C6058681AC8B77D00E3FCA2 /* RangeSlider.h */,
+				8C6058691AC8B77D00E3FCA2 /* RangeSlider.m */,
+				8C60586B1AC8D79100E3FCA2 /* RangeSliderKnobLayer.h */,
+				8C60586C1AC8D79100E3FCA2 /* RangeSliderKnobLayer.m */,
+				8C60586E1AC8DBAB00E3FCA2 /* RangeSliderTrackLayer.h */,
+				8C60586F1AC8DBAB00E3FCA2 /* RangeSliderTrackLayer.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -278,11 +298,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C6058701AC8DBAB00E3FCA2 /* RangeSliderTrackLayer.m in Sources */,
+				8C60586A1AC8B77D00E3FCA2 /* RangeSlider.m in Sources */,
+				8C6058671AC8B63C00E3FCA2 /* PreparationTimeViewController.m in Sources */,
 				8C20001B1AC84F5000A8A5FC /* ArrivalTimeViewController.m in Sources */,
 				8C75BC7F1A8922410001927C /* AppDelegate.m in Sources */,
 				8C2000121AC73D9500A8A5FC /* AppBackgroundView.m in Sources */,
 				8C75BC7C1A8922410001927C /* main.m in Sources */,
 				8C2000151AC7970800A8A5FC /* AlarmSummaryViewController.m in Sources */,
+				8C60586D1AC8D79100E3FCA2 /* RangeSliderKnobLayer.m in Sources */,
 				8C2000181AC797BD00A8A5FC /* SmartAlarm.m in Sources */,
 				8C75BC821A8922410001927C /* iSleepLate.xcdatamodeld in Sources */,
 				8C16EE2F1ABE30EC00150EBF /* DestinationViewController.m in Sources */,

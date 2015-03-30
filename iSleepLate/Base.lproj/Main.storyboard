@@ -47,7 +47,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="saveDestination:" destination="4Ev-b2-o9b" eventType="touchUpInside" id="4eU-hZ-AMx"/>
+                                    <segue destination="oCx-ZG-sTp" kind="show" id="IX0-Hl-bAf"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex. 1 Infinite Loop, Cupertino, CA 95014" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="CGR-1Q-n4w">
@@ -113,7 +113,6 @@
                     <connections>
                         <outlet property="activityIndicator" destination="aAx-cY-7tN" id="K2K-Xh-pb0"/>
                         <outlet property="addressField" destination="CGR-1Q-n4w" id="Bc2-Jk-14Y"/>
-                        <segue destination="3rO-b9-h5y" kind="show" identifier="showAlarmSummary" id="7sh-Y3-zuO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l5b-Ah-DH7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -202,7 +201,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="82t-L0-WRy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1061" y="163"/>
+            <point key="canvasLocation" x="1061" y="173"/>
         </scene>
         <!--Alarm Summary View Controller-->
         <scene sceneID="tF0-UY-Cbk">
@@ -358,7 +357,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PpL-2f-Lsp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2524" y="173"/>
+            <point key="canvasLocation" x="3294" y="173"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cqN-cX-iLP">
@@ -369,12 +368,114 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="vGN-iy-AsQ" kind="relationship" relationship="rootViewController" id="LKL-fd-c2B"/>
+                        <segue destination="vGN-iy-AsQ" kind="relationship" relationship="rootViewController" id="MwD-sN-ZTw"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zyr-B3-eMR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="315" y="173"/>
+        </scene>
+        <!--PREPARATION TIME-->
+        <scene sceneID="WOZ-yl-d8c">
+            <objects>
+                <viewController id="oCx-ZG-sTp" customClass="PreparationTimeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tIH-Km-Svd"/>
+                        <viewControllerLayoutGuide type="bottom" id="Rl9-bs-v8a"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yn6-f8-gVu" customClass="AppBackgroundView">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rtw-JB-jdH" customClass="RangeSlider">
+                                <rect key="frame" x="16" y="184" width="568" height="26"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="Q0b-Ib-esI"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How long does it take to get ready?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLs-XX-epl">
+                                <rect key="frame" x="16" y="94" width="568" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="n7c-ey-EMB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Min:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iIu-0X-IVi">
+                                <rect key="frame" x="16" y="235" width="150" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="A93-C7-YFU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WaE-iy-bfg">
+                                <rect key="frame" x="434" y="235" width="150" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="rZy-MR-tmZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6R-EJ-RiF">
+                                <rect key="frame" x="16" y="518" width="568" height="50"/>
+                                <color key="backgroundColor" red="0.035294117649999998" green="0.26274509800000001" blue="0.39607843139999999" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Y39-ch-Mou"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="c5f-EJ-lES"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="c5f-EJ-lES"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <segue destination="3rO-b9-h5y" kind="show" id="uia-ku-hP6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.035294117649999998" green="0.26274509800000001" blue="0.39607843139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="g6R-EJ-RiF" firstAttribute="trailing" secondItem="yn6-f8-gVu" secondAttribute="trailingMargin" id="6Lp-2K-Kk4"/>
+                            <constraint firstItem="XLs-XX-epl" firstAttribute="top" secondItem="tIH-Km-Svd" secondAttribute="bottom" constant="30" id="FWx-DO-GYa"/>
+                            <constraint firstItem="Rtw-JB-jdH" firstAttribute="trailing" secondItem="yn6-f8-gVu" secondAttribute="trailingMargin" id="J1U-4i-5Ji"/>
+                            <constraint firstItem="XLs-XX-epl" firstAttribute="trailing" secondItem="yn6-f8-gVu" secondAttribute="trailingMargin" id="N0v-GM-Ftd"/>
+                            <constraint firstItem="Rl9-bs-v8a" firstAttribute="top" secondItem="g6R-EJ-RiF" secondAttribute="bottom" constant="32" id="NCD-DU-q1s"/>
+                            <constraint firstItem="XLs-XX-epl" firstAttribute="leading" secondItem="yn6-f8-gVu" secondAttribute="leadingMargin" id="VMI-lh-YTj"/>
+                            <constraint firstItem="Rtw-JB-jdH" firstAttribute="top" secondItem="tIH-Km-Svd" secondAttribute="bottom" constant="120" id="aF6-gT-ad9"/>
+                            <constraint firstAttribute="centerY" secondItem="Rtw-JB-jdH" secondAttribute="centerY" id="dOI-Ce-0ab"/>
+                            <constraint firstItem="iIu-0X-IVi" firstAttribute="top" secondItem="Rtw-JB-jdH" secondAttribute="bottom" constant="25" id="emp-Ye-NPr"/>
+                            <constraint firstItem="iIu-0X-IVi" firstAttribute="leading" secondItem="yn6-f8-gVu" secondAttribute="leadingMargin" id="gTE-tv-Pla"/>
+                            <constraint firstItem="WaE-iy-bfg" firstAttribute="top" secondItem="Rtw-JB-jdH" secondAttribute="bottom" constant="25" id="m9w-xa-2Sg"/>
+                            <constraint firstItem="WaE-iy-bfg" firstAttribute="trailing" secondItem="yn6-f8-gVu" secondAttribute="trailingMargin" id="qMP-vI-jca"/>
+                            <constraint firstItem="g6R-EJ-RiF" firstAttribute="leading" secondItem="yn6-f8-gVu" secondAttribute="leadingMargin" id="s9k-C3-Ghm"/>
+                            <constraint firstItem="Rtw-JB-jdH" firstAttribute="leading" secondItem="yn6-f8-gVu" secondAttribute="leadingMargin" id="zep-Ax-Wz8"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="dOI-Ce-0ab"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="PREPARATION TIME" id="gy1-Rq-O0U"/>
+                    <connections>
+                        <outlet property="maxLabel" destination="WaE-iy-bfg" id="uLG-DX-8KY"/>
+                        <outlet property="minLabel" destination="iIu-0X-IVi" id="LAP-VW-Szs"/>
+                        <outlet property="rangeSlider" destination="Rtw-JB-jdH" id="DJt-3p-uQP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vKw-DF-Gv2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2529" y="173"/>
         </scene>
     </scenes>
     <resources>

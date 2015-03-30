@@ -8,7 +8,7 @@
 
 #import "DestinationViewController.h"
 #import "SmartAlarm.h"
-#import "AlarmSummaryViewController.h"
+#import "PreparationTimeViewController.h"
 
 @import MapKit;
 @import AddressBook;
@@ -29,20 +29,10 @@
 #pragma mark - Lifecycle
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"showAlarmSummary"]) {
-        AlarmSummaryViewController *alarmSummaryVC = segue.destinationViewController;
-        alarmSummaryVC.alarm = self.alarm;
-    }
-}
-
-#pragma mark - IBActions
-
-- (IBAction)saveDestination:(id)sender
-{
-    [self performSegueWithIdentifier:@"showAlarmSummary" sender:self];
     [self geocodeAddressString:self.addressField.text];
+    PreparationTimeViewController *prepTimeVC = segue.destinationViewController;
+    prepTimeVC.alarm = self.alarm;
 }
-
 
 #pragma mark - Private Methods
 
