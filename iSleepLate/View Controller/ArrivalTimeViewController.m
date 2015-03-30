@@ -9,6 +9,7 @@
 #import "ArrivalTimeViewController.h"
 #import "DestinationViewController.h"
 #import "SmartAlarm.h"
+#import "AppDelegate.h"
 
 @interface ArrivalTimeViewController () <UIPickerViewDelegate, UIPickerViewDataSource>
 
@@ -19,6 +20,17 @@
 @implementation ArrivalTimeViewController
 
 #pragma mark - Lifecycle
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+        self.alarm = [appDelegate alarm];
+    }
+    
+    return self;
+}
 
 - (void)viewDidLoad
 {
@@ -38,10 +50,9 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    SmartAlarm *alarm = [[SmartAlarm alloc] init];
-    alarm.dateOfArrival = [self dateFromPicker:self.timePicker];
+    self.alarm.dateOfArrival = [self dateFromPicker:self.timePicker];
     DestinationViewController *destinationVC = segue.destinationViewController;
-    destinationVC.alarm = alarm;
+    destinationVC.alarm = self.alarm;
 }
 
 #pragma mark - Private Methods

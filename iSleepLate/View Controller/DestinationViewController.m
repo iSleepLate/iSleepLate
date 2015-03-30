@@ -29,9 +29,15 @@
 #pragma mark - Lifecycle
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    [self geocodeAddressString:self.addressField.text];
     PreparationTimeViewController *prepTimeVC = segue.destinationViewController;
     prepTimeVC.alarm = self.alarm;
+}
+
+#pragma mark - IBActions
+
+- (IBAction)segueButtonPressed:(id)sender
+{
+    [self geocodeAddressString:self.addressField.text];
 }
 
 #pragma mark - Private Methods
@@ -53,7 +59,7 @@
                           } else {
                               MKPlacemark *placemark = [[MKPlacemark alloc] initWithPlacemark:placemarks[0]];
                               self.alarm.destination = [[MKMapItem alloc] initWithPlacemark:placemark];
-//                              [self calculateETAToDestination:destination];
+                              [self performSegueWithIdentifier:@"showPrepTime" sender:self];
                           }
                       }];
 }

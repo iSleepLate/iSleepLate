@@ -12,8 +12,12 @@
 
 @interface SmartAlarm : NSObject
 
+// user defined variables
 @property (strong, nonatomic) NSDate *dateOfArrival;
 @property (strong, nonatomic) MKMapItem *destination;
 @property (nonatomic) NSRange preparationTime;
+
+// calculated variables
+@property (nonatomic) NSTimeInterval expectedTravelTime;
 
 @end

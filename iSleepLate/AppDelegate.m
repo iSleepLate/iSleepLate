@@ -7,8 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import "SmartAlarm.h"
 
 @interface AppDelegate ()
+
+@property (strong, nonatomic) SmartAlarm *alarm;
 
 @end
 
@@ -31,6 +34,15 @@
     [[UITextField appearance] setTintColor:[UIColor whiteColor]];
     
     return YES;
+}
+
+- (SmartAlarm *)alarm
+{
+    if (!_alarm) {
+        _alarm = [[SmartAlarm alloc] init];
+    }
+    
+    return _alarm;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

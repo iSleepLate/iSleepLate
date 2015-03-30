@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class SmartAlarm;
+
 @interface ArrivalTimeViewController : UIViewController
+
+@property (weak, nonatomic) SmartAlarm *alarm;
 
 @end

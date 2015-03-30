@@ -47,7 +47,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="oCx-ZG-sTp" kind="show" id="IX0-Hl-bAf"/>
+                                    <action selector="segueButtonPressed:" destination="4Ev-b2-o9b" eventType="touchUpInside" id="Tr8-xQ-KBr"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex. 1 Infinite Loop, Cupertino, CA 95014" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="CGR-1Q-n4w">
@@ -113,6 +113,7 @@
                     <connections>
                         <outlet property="activityIndicator" destination="aAx-cY-7tN" id="K2K-Xh-pb0"/>
                         <outlet property="addressField" destination="CGR-1Q-n4w" id="Bc2-Jk-14Y"/>
+                        <segue destination="oCx-ZG-sTp" kind="show" identifier="showPrepTime" id="lyg-EL-ZYA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l5b-Ah-DH7" userLabel="First Responder" sceneMemberID="firstResponder"/>

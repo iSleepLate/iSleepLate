@@ -12,6 +12,6 @@
 
 @interface AlarmSummaryViewController : UIViewController
 
-@property (strong, nonatomic) SmartAlarm *alarm;
+@property (weak, nonatomic) SmartAlarm *alarm;
 
 @end

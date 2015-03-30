@@ -27,12 +27,6 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         self.title = @"Alarm Summary";
-        
-        NSRange prepTime;
-        prepTime.location = 10; // Min: 10min
-        prepTime.length = 30;   // Max: 40min
-        
-        self.alarm.preparationTime = prepTime;
     }
     
     return self;
@@ -40,14 +34,15 @@
 
 - (void)viewDidLoad
 {
-    [self.alarm addObserver:self
-                 forKeyPath:@"destination"
-                    options:NSKeyValueObservingOptionNew
-                    context:NULL];
-    
     self.arrivalLabel.text = [self stringFromDateOfArrival];
-    if (self.alarm.destination) {
-        [self calculateETAToDestination:self.alarm.destination];
+    if (self.alarm.expectedTravelTime) {
+        self.destinationLabel.text = [self prettyStringFromMapItem:self.alarm.destination];
+        self.ETALabel.text = [self prettyStringFromTravelTime:self.alarm.expectedTravelTime];
+    } else {
+        [self.alarm addObserver:self
+                     forKeyPath:@"expectedTravelTime"
+                        options:NSKeyValueObservingOptionNew
+                        context:NULL];
     }
     self.prepTimeLabel.text = [self stringFromPrepartionTime];
 }
@@ -57,9 +52,8 @@
                         change:(NSDictionary *)change
                        context:(void *)context
 {
-    if ([keyPath isEqualToString:@"destination"]) {
-        [self calculateETAToDestination:self.alarm.destination];
-    }
+    self.destinationLabel.text = [self prettyStringFromMapItem:self.alarm.destination];
+    self.ETALabel.text = [self prettyStringFromTravelTime:self.alarm.expectedTravelTime];
 }
 
 - (NSString *)stringFromDateOfArrival
@@ -77,35 +71,35 @@
     return [NSString stringWithFormat:@"Min: %d, Max: %d", min, max];
 }
 
-- (void)calculateETAToDestination:(MKMapItem *)destination
-{
-    MKDirectionsRequest *directionsRequest = [[MKDirectionsRequest alloc] init];
-    directionsRequest.source = [MKMapItem mapItemForCurrentLocation];
-    directionsRequest.destination = destination;
-    directionsRequest.transportType = MKDirectionsTransportTypeAutomobile;
-    directionsRequest.requestsAlternateRoutes = YES;
-    directionsRequest.arrivalDate = self.alarm.dateOfArrival;
-    
-    MKDirections *directions = [[MKDirections alloc] initWithRequest:directionsRequest];
-    [directions calculateETAWithCompletionHandler:^(MKETAResponse *response, NSError *error) {
-        if (error) {
-            NSLog(@"Directions Error: %@", error.localizedDescription);
-        } else {
-            self.destinationLabel.text = [self prettyStringFromMapItem:destination];
-            self.ETALabel.text = [self prettyStringFromETAResponse:response];
-        }
-    }];
-}
+//- (void)calculateETAToDestination:(MKMapItem *)destination
+//{
+//    MKDirectionsRequest *directionsRequest = [[MKDirectionsRequest alloc] init];
+//    directionsRequest.source = [MKMapItem mapItemForCurrentLocation];
+//    directionsRequest.destination = destination;
+//    directionsRequest.transportType = MKDirectionsTransportTypeAutomobile;
+//    directionsRequest.requestsAlternateRoutes = YES;
+//    directionsRequest.arrivalDate = self.alarm.dateOfArrival;
+//    
+//    MKDirections *directions = [[MKDirections alloc] initWithRequest:directionsRequest];
+//    [directions calculateETAWithCompletionHandler:^(MKETAResponse *response, NSError *error) {
+//        if (error) {
+//            NSLog(@"Directions Error: %@", error.localizedDescription);
+//        } else {
+//            self.destinationLabel.text = [self prettyStringFromMapItem:destination];
+//            self.ETALabel.text = [self prettyStringFromETAResponse:response];
+//        }
+//    }];
+//}
 
-- (NSString *)prettyStringFromETAResponse:(MKETAResponse *)response
+- (NSString *)prettyStringFromTravelTime:(NSTimeInterval)travelTime
 {
-    int seconds = response.expectedTravelTime;
+    int seconds = (int)travelTime;
     int hours = seconds / 3600;
     seconds -= (hours * 3600);
     int minutes = seconds / 60;
     seconds -= minutes * 60;
     
-    return [NSString stringWithFormat:@"%dH %dM %dS.", hours, minutes, seconds];
+    return [NSString stringWithFormat:@"%dh %dm %ds", hours, minutes, seconds];
 }
 
 - (NSString *)prettyStringFromMapItem:(MKMapItem *)mapItem
