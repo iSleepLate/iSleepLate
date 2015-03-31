@@ -33,8 +33,16 @@
     }
 }
 
-#pragma mark - MApKit
+#pragma mark - MapKit
 
+
+// Notice that this method calls calculateDirections() NOT
+// calculateETA(), which Apple says is a quicker estimate.
+// According to the tests I ran, it seems calculateETA() does
+// not take into consideration the arrivalTime of the directionsRequest.
+// Ex. Berkeley -> Apple HQ at 5:30PM
+//     calculateDirections(): ~2hr
+//     calculateETA():        ~1hr
 - (void)calculateETAToDestination:(MKMapItem *)destination
 {
     MKDirectionsRequest *directionsRequest = [[MKDirectionsRequest alloc] init];
@@ -43,13 +51,15 @@
     directionsRequest.transportType = MKDirectionsTransportTypeAutomobile;
     directionsRequest.requestsAlternateRoutes = YES;
     directionsRequest.arrivalDate = self.dateOfArrival;
-    
+
     MKDirections *directions = [[MKDirections alloc] initWithRequest:directionsRequest];
-    [directions calculateETAWithCompletionHandler:^(MKETAResponse *response, NSError *error) {
+    [directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, NSError *error) {
         if (error) {
             NSLog(@"Directions Error: %@", error.localizedDescription);
         } else {
-            self.expectedTravelTime = response.expectedTravelTime;
+            for (MKRoute *route in response.routes) {
+                self.expectedTravelTime += route.expectedTravelTime;
+            }
         }
     }];
 }

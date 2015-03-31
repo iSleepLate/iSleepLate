@@ -9,9 +9,10 @@
 #import "AppDelegate.h"
 #import "SmartAlarm.h"
 
-@interface AppDelegate ()
+@interface AppDelegate () <CLLocationManagerDelegate>
 
 @property (strong, nonatomic) SmartAlarm *alarm;
+@property (strong, nonatomic) CLLocationManager *locationManager;
 
 @end
 
@@ -33,6 +34,8 @@
     [[UITextField appearance] setTextColor:[UIColor whiteColor]];
     [[UITextField appearance] setTintColor:[UIColor whiteColor]];
     
+    [self startMonitoringUserLocation];
+    
     return YES;
 }
 
@@ -43,6 +46,41 @@
     }
     
     return _alarm;
+}
+
+- (void)startMonitoringUserLocation
+{
+    NSLog(@"Begin Monitoring Location...");
+    if (!self.locationManager) {
+        self.locationManager = [[CLLocationManager alloc] init];
+    }
+    
+    // neccessary iOS 8+
+    // make sure to modify Info.plist: NSLocationWhenInUseUsageDescription
+    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        [self.locationManager requestWhenInUseAuthorization];
+    }
+    self.locationManager.delegate = self;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
+    self.locationManager.pausesLocationUpdatesAutomatically = YES;
+    self.locationManager.activityType = CLActivityTypeOther;
+    
+    // Set a movement threshold for new events.
+    self.locationManager.distanceFilter = 500; // meters
+    
+    [self.locationManager startUpdatingLocation];
+}
+
+- (void)stopMonitoringUserLocation
+{
+    NSLog(@"Stop Monitoring Location.");
+    [self.locationManager stopUpdatingLocation];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    self.currentLocation = [locations lastObject];
+    NSLog(@"Current Location: %@", self.currentLocation.description);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

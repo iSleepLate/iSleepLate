@@ -8,15 +8,20 @@
 
 #import "AlarmSummaryViewController.h"
 #import "SmartAlarm.h"
+#import "AppDelegate.h"
 
 @import AddressBook;
 
 @interface AlarmSummaryViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *arrivalLabel;
+@property (weak, nonatomic) IBOutlet UILabel *currentLocationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *destinationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *ETALabel;
 @property (weak, nonatomic) IBOutlet UILabel *prepTimeLabel;
+
+@property (strong, nonatomic) CLGeocoder *geocoder;
+@property (strong, nonatomic) CLLocation *currentLocation;
 
 @end
 
@@ -27,6 +32,8 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         self.title = @"Alarm Summary";
+        AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+        self.currentLocation = appDelegate.currentLocation;
     }
     
     return self;
@@ -45,6 +52,8 @@
                         context:NULL];
     }
     self.prepTimeLabel.text = [self stringFromPrepartionTime];
+    
+    [self reverseGeocodeCurrentLocation];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
@@ -54,6 +63,25 @@
 {
     self.destinationLabel.text = [self prettyStringFromMapItem:self.alarm.destination];
     self.ETALabel.text = [self prettyStringFromTravelTime:self.alarm.expectedTravelTime];
+}
+
+- (void)reverseGeocodeCurrentLocation
+{
+    self.geocoder = [[CLGeocoder alloc] init];
+    [self.geocoder reverseGeocodeLocation:self.currentLocation
+                        completionHandler:^(NSArray *placemarks, NSError *error) {
+                            if (error) {
+                                NSLog(@"Reverse Geocode Error: %@", error.localizedDescription);
+                            } else if (placemarks.count == 0) {
+                                NSLog(@"Invalid request");
+                            } else if (placemarks.count > 1) {
+                                NSLog(@"Too many results returned");
+                            } else {
+                                MKPlacemark *placemark = [[MKPlacemark alloc] initWithPlacemark:placemarks[0]];
+                                MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
+                                self.currentLocationLabel.text = [self prettyStringFromMapItem:mapItem];
+                            }
+                        }];
 }
 
 - (NSString *)stringFromDateOfArrival
