@@ -7,6 +7,15 @@
 //
 
 #import "SmartAlarm.h"
+#import "AppDelegate.h"
+
+@import AddressBook;
+
+@interface SmartAlarm ()
+
+@property (strong, nonatomic) UILocalNotification *localNotification;
+
+@end
 
 @implementation SmartAlarm
 
@@ -18,6 +27,12 @@
                forKeyPath:@"destination"
                   options:NSKeyValueObservingOptionNew
                   context:NULL];
+        
+        AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+        [appDelegate addObserver:self
+                      forKeyPath:@"currentLocation"
+                         options:NSKeyValueObservingOptionNew
+                         context:NULL];
     }
     
     return self;
@@ -30,7 +45,58 @@
 {
     if ([keyPath isEqualToString:@"destination"] && self.destination) {
         [self calculateETAToDestination:self.destination];
+    } else if ([keyPath isEqualToString:@"currentLocation"]) {
+        AppDelegate *appDelegate = object;
+        [self reverseGeocodeLocation:appDelegate.currentLocation];
     }
+}
+
+#pragma mark - Printing Out Alarm Info
+
+- (void)printAlarmInfo
+{
+    [self printDateOfArrival];
+    [self printPrepartionTime];
+    [self printMapItem:self.currentLocation];
+    [self printMapItem:self.destination];
+    [self printTravelTime:self.expectedTravelTime];
+}
+
+- (void)printDateOfArrival
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateStyle:NSDateFormatterShortStyle];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    NSLog(@"Arrival Date: %@",[formatter stringFromDate:self.dateOfArrival]);
+}
+
+- (void)printPrepartionTime
+{
+    NSUInteger min = self.preparationTime.location;
+    NSUInteger max = min + self.preparationTime.length;
+    NSLog(@"Min: %u, Max: %u", min, max);
+}
+
+- (void)printTravelTime:(NSTimeInterval)travelTime
+{
+    int seconds = (int)travelTime;
+    int hours = seconds / 3600;
+    seconds -= (hours * 3600);
+    int minutes = seconds / 60;
+    seconds -= minutes * 60;
+    
+    NSLog(@"%dh %dm %ds", hours, minutes, seconds);
+}
+
+- (void)printMapItem:(MKMapItem *)mapItem
+{
+    NSDictionary *addressDictionary = mapItem.placemark.addressDictionary;
+    NSString *street = addressDictionary[(__bridge NSString *) kABPersonAddressStreetKey];
+    NSString *city = addressDictionary[(__bridge NSString *) kABPersonAddressCityKey];
+    NSString *state = addressDictionary[(__bridge NSString *) kABPersonAddressStateKey];
+    NSString *zip = addressDictionary[(__bridge NSString *) kABPersonAddressZIPKey];
+    
+    NSLog(@"%@, %@, %@ %@", street, city, state, zip);
 }
 
 #pragma mark - MapKit
@@ -46,7 +112,7 @@
 - (void)calculateETAToDestination:(MKMapItem *)destination
 {
     MKDirectionsRequest *directionsRequest = [[MKDirectionsRequest alloc] init];
-    directionsRequest.source = [MKMapItem mapItemForCurrentLocation];
+    directionsRequest.source = self.currentLocation;
     directionsRequest.destination = destination;
     directionsRequest.transportType = MKDirectionsTransportTypeAutomobile;
     directionsRequest.requestsAlternateRoutes = YES;
@@ -57,11 +123,60 @@
         if (error) {
             NSLog(@"Directions Error: %@", error.localizedDescription);
         } else {
+            self.expectedTravelTime = 0;
             for (MKRoute *route in response.routes) {
                 self.expectedTravelTime += route.expectedTravelTime;
             }
         }
     }];
+}
+
+- (void)reverseGeocodeLocation:(CLLocation *)location
+{
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder reverseGeocodeLocation:location
+                    completionHandler:^(NSArray *placemarks, NSError *error) {
+                        if (error) {
+                            NSLog(@"Reverse Geocode Error: %@", error.localizedDescription);
+                        } else if (placemarks.count == 0) {
+                            NSLog(@"Invalid request");
+                        } else if (placemarks.count > 1) {
+                            NSLog(@"Too many results returned");
+                        } else {
+                            MKPlacemark *placemark = [[MKPlacemark alloc] initWithPlacemark:placemarks[0]];
+                            self.currentLocation = [[MKMapItem alloc] initWithPlacemark:placemark];
+                        }
+                    }];
+}
+
+#pragma mark - Notifications
+
+- (void)scheduleLocalNotification
+{
+    NSTimeInterval maxPrepTime = 60 * (self.preparationTime.location + self.preparationTime.length); // minutes
+    NSDate *fireDate = [self.dateOfArrival dateByAddingTimeInterval: -(self.expectedTravelTime + maxPrepTime)];
+    
+    self.localNotification = [[UILocalNotification alloc] init];
+    self.localNotification.fireDate = fireDate;
+    self.localNotification.timeZone = [NSTimeZone defaultTimeZone];
+    self.localNotification.alertBody = @"Wake Up!";
+    self.localNotification.soundName = UILocalNotificationDefaultSoundName;
+    
+    [[UIApplication sharedApplication] scheduleLocalNotification:self.localNotification];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateStyle:NSDateFormatterShortStyle];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    NSLog(@"Local Notification set for %@", [formatter stringFromDate:fireDate]);
+}
+
+- (void)cancelScheduledLocalNotification
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateStyle:NSDateFormatterShortStyle];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    [[UIApplication sharedApplication] cancelLocalNotification:self.localNotification];
+    NSLog(@"Local Notification for %@ cancelled", [formatter stringFromDate:self.localNotification.fireDate]);
 }
 
 @end
