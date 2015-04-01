@@ -14,7 +14,6 @@
 		8C20001B1AC84F5000A8A5FC /* ArrivalTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C20001A1AC84F5000A8A5FC /* ArrivalTimeViewController.m */; };
 		8C2000231AC8639400A8A5FC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2000221AC8639400A8A5FC /* QuartzCore.framework */; };
 		8C58C2001ACA58C7001737AE /* Austin.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 8C58C1FF1ACA58C7001737AE /* Austin.gpx */; };
-		8C58C2021ACA5AB3001737AE /* Berkeley, CA.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 8C58C2011ACA5AB3001737AE /* Berkeley, CA.gpx */; };
 		8C6058671AC8B63C00E3FCA2 /* PreparationTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C6058661AC8B63C00E3FCA2 /* PreparationTimeViewController.m */; };
 		8C60586A1AC8B77D00E3FCA2 /* RangeSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C6058691AC8B77D00E3FCA2 /* RangeSlider.m */; };
 		8C60586D1AC8D79100E3FCA2 /* RangeSliderKnobLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C60586C1AC8D79100E3FCA2 /* RangeSliderKnobLayer.m */; };
@@ -28,6 +27,7 @@
 		8C75BC991A8922410001927C /* iSleepLateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C75BC981A8922410001927C /* iSleepLateTests.m */; };
 		8C8DA52C1ACB36F600268321 /* SetAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C8DA52B1ACB36F600268321 /* SetAlarmViewController.m */; };
 		8C8DA52F1ACB3A1300268321 /* PCTSmartAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C8DA52E1ACB3A1300268321 /* PCTSmartAlarmViewController.m */; };
+		8CF1E0261ACC96CF0054323A /* GeocodeResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF1E0251ACC96CF0054323A /* GeocodeResultsViewController.m */; };
 		8CFC0D621ABF09660049C36F /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CFC0D611ABF09660049C36F /* AddressBookUI.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +53,6 @@
 		8C20001A1AC84F5000A8A5FC /* ArrivalTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ArrivalTimeViewController.m; path = "View Controller/ArrivalTimeViewController.m"; sourceTree = "<group>"; };
 		8C2000221AC8639400A8A5FC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		8C58C1FF1ACA58C7001737AE /* Austin.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Austin.gpx; sourceTree = "<group>"; };
-		8C58C2011ACA5AB3001737AE /* Berkeley, CA.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Berkeley, CA.gpx"; sourceTree = "<group>"; };
 		8C6058651AC8B63C00E3FCA2 /* PreparationTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PreparationTimeViewController.h; path = "View Controller/PreparationTimeViewController.h"; sourceTree = "<group>"; };
 		8C6058661AC8B63C00E3FCA2 /* PreparationTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PreparationTimeViewController.m; path = "View Controller/PreparationTimeViewController.m"; sourceTree = "<group>"; };
 		8C6058681AC8B77D00E3FCA2 /* RangeSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RangeSlider.h; path = View/RangeSlider.h; sourceTree = "<group>"; };
@@ -78,6 +77,8 @@
 		8C8DA52B1ACB36F600268321 /* SetAlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetAlarmViewController.m; path = "View Controller/SetAlarmViewController.m"; sourceTree = "<group>"; };
 		8C8DA52D1ACB3A1300268321 /* PCTSmartAlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCTSmartAlarmViewController.h; path = "View Controller/PCTSmartAlarmViewController.h"; sourceTree = "<group>"; };
 		8C8DA52E1ACB3A1300268321 /* PCTSmartAlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCTSmartAlarmViewController.m; path = "View Controller/PCTSmartAlarmViewController.m"; sourceTree = "<group>"; };
+		8CF1E0241ACC96CF0054323A /* GeocodeResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeocodeResultsViewController.h; path = "View Controller/GeocodeResultsViewController.h"; sourceTree = "<group>"; };
+		8CF1E0251ACC96CF0054323A /* GeocodeResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeocodeResultsViewController.m; path = "View Controller/GeocodeResultsViewController.m"; sourceTree = "<group>"; };
 		8CFC0D611ABF09660049C36F /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -115,6 +116,8 @@
 				8C8DA52B1ACB36F600268321 /* SetAlarmViewController.m */,
 				8C8DA52D1ACB3A1300268321 /* PCTSmartAlarmViewController.h */,
 				8C8DA52E1ACB3A1300268321 /* PCTSmartAlarmViewController.m */,
+				8CF1E0241ACC96CF0054323A /* GeocodeResultsViewController.h */,
+				8CF1E0251ACC96CF0054323A /* GeocodeResultsViewController.m */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -146,7 +149,6 @@
 		8C75BC6D1A8922400001927C = {
 			isa = PBXGroup;
 			children = (
-				8C58C2011ACA5AB3001737AE /* Berkeley, CA.gpx */,
 				8C58C1FF1ACA58C7001737AE /* Austin.gpx */,
 				8C2000221AC8639400A8A5FC /* QuartzCore.framework */,
 				8CFC0D611ABF09660049C36F /* AddressBookUI.framework */,
@@ -291,7 +293,6 @@
 			files = (
 				8C75BC881A8922410001927C /* Main.storyboard in Resources */,
 				8C75BC8D1A8922410001927C /* LaunchScreen.xib in Resources */,
-				8C58C2021ACA5AB3001737AE /* Berkeley, CA.gpx in Resources */,
 				8C75BC8A1A8922410001927C /* Images.xcassets in Resources */,
 				8C58C2001ACA58C7001737AE /* Austin.gpx in Resources */,
 			);
@@ -324,6 +325,7 @@
 				8C2000181AC797BD00A8A5FC /* SmartAlarm.m in Sources */,
 				8C75BC821A8922410001927C /* iSleepLate.xcdatamodeld in Sources */,
 				8C16EE2F1ABE30EC00150EBF /* DestinationViewController.m in Sources */,
+				8CF1E0261ACC96CF0054323A /* GeocodeResultsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
