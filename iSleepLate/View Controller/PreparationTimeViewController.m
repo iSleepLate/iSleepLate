@@ -7,7 +7,6 @@
 //
 
 #import "PreparationTimeViewController.h"
-#import "AlarmSummaryViewController.h"
 #import "RangeSlider.h"
 #import "SmartAlarm.h"
 
@@ -39,8 +38,6 @@
     NSUInteger min = self.rangeSlider.lowerValue;
     NSUInteger range = self.rangeSlider.upperValue - min;
     self.alarm.preparationTime = NSMakeRange(min, range);
-    AlarmSummaryViewController *alarmSummaryVC = segue.destinationViewController;
-    alarmSummaryVC.alarm = self.alarm;
 }
 
 - (void)updateLabels
