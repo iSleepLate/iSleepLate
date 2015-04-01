@@ -10,3 +10,8 @@
 6. Save it wherever you want. (I choose ~/Developer/).
 7. The project should load, next just click the play button in the upper right corner of the window.
 8. Viola!
+
+### App Colors
+* Blue: RGB(9, 67, 101), HEX: #094365
+* Red: RGB(234, 100, 90), HEX: #EA645A
+
