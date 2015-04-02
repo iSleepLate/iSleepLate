@@ -8,12 +8,14 @@
 
 #import "ArrivalTimeViewController.h"
 #import "DestinationViewController.h"
+#import "SWRevealViewController.h"
 #import "SmartAlarm.h"
 #import "AppDelegate.h"
 
 @interface ArrivalTimeViewController () <UIPickerViewDelegate, UIPickerViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UIPickerView *timePicker;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *sideMenuButton;
 
 @end
 
@@ -35,6 +37,14 @@
 - (void)viewDidLoad
 {
     [self scrollToCurrentTime];
+    
+    SWRevealViewController *revealViewController = self.revealViewController;
+    if (revealViewController)
+    {
+        [self.sideMenuButton setTarget: self.revealViewController];
+        [self.sideMenuButton setAction: @selector(revealToggle:)];
+        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
