@@ -23,6 +23,7 @@
 
 - (void)printAlarmInfo;
 - (void)scheduleLocalNotification;
+- (void)presentLocalNotification;
 - (void)cancelScheduledLocalNotification;
 
 @end

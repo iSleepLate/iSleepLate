@@ -151,23 +151,38 @@
 
 #pragma mark - Notifications
 
-- (void)scheduleLocalNotification
+- (UILocalNotification *)prepareLocalNotification
 {
     NSTimeInterval maxPrepTime = 60 * (self.preparationTime.location + self.preparationTime.length); // minutes
     NSDate *fireDate = [self.dateOfArrival dateByAddingTimeInterval: -(self.expectedTravelTime + maxPrepTime)];
     
-    self.localNotification = [[UILocalNotification alloc] init];
-    self.localNotification.fireDate = fireDate;
-    self.localNotification.timeZone = [NSTimeZone defaultTimeZone];
-    self.localNotification.alertBody = @"Wake Up!";
-    self.localNotification.soundName = UILocalNotificationDefaultSoundName;
+    UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+    localNotification.fireDate = fireDate;
+    localNotification.timeZone = [NSTimeZone defaultTimeZone];
+    localNotification.alertBody = @"Wake Up!";
+    localNotification.soundName = UILocalNotificationDefaultSoundName;
     
+    return localNotification;
+}
+
+- (void)scheduleLocalNotification
+{
+    self.localNotification = [self prepareLocalNotification];
     [[UIApplication sharedApplication] scheduleLocalNotification:self.localNotification];
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateStyle:NSDateFormatterShortStyle];
     [formatter setTimeStyle:NSDateFormatterShortStyle];
-    NSLog(@"Local Notification set for %@", [formatter stringFromDate:fireDate]);
+    NSLog(@"Local Notification set for %@", [formatter stringFromDate:self.localNotification.fireDate]);
+}
+
+
+// Used mostly for testing purposes at the moment.
+// Presents the notifcation immediatly regardless of fireDate
+- (void)presentLocalNotification
+{
+    self.localNotification = [self prepareLocalNotification];
+    [[UIApplication sharedApplication] presentLocalNotificationNow:self.localNotification];
 }
 
 - (void)cancelScheduledLocalNotification

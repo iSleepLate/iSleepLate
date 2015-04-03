@@ -20,7 +20,8 @@
 - (IBAction)setAlarmButtonClicked:(UIButton *)sender
 {
     if ([sender.titleLabel.text isEqualToString:@"Set Alarm"]) {
-        [self.alarm scheduleLocalNotification];
+        [self.alarm presentLocalNotification];
+//        [self.alarm scheduleLocalNotification];
         [sender setTitle:@"Cancel" forState:UIControlStateNormal];
         sender.backgroundColor = [UIColor colorWithRed:234/255.0 green:100/255.0 blue:90/255.0 alpha:1.0];
     } else {
