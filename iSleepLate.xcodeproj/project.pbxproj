@@ -28,6 +28,9 @@
 		8C8DA52C1ACB36F600268321 /* SetAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C8DA52B1ACB36F600268321 /* SetAlarmViewController.m */; };
 		8C8DA52F1ACB3A1300268321 /* PCTSmartAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C8DA52E1ACB3A1300268321 /* PCTSmartAlarmViewController.m */; };
 		8CF1E0261ACC96CF0054323A /* GeocodeResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF1E0251ACC96CF0054323A /* GeocodeResultsViewController.m */; };
+		8CCFE68C1ACDCC790057693A /* SideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCFE68B1ACDCC790057693A /* SideMenuViewController.m */; };
+		8CCFE6931ACDF94D0057693A /* MenuOptionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCFE6911ACDF94D0057693A /* MenuOptionTableViewCell.m */; };
+		8CCFE6961ACDFEAC0057693A /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCFE6941ACDFEAC0057693A /* SWRevealViewController.m */; };
 		8CFC0D621ABF09660049C36F /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CFC0D611ABF09660049C36F /* AddressBookUI.framework */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +82,12 @@
 		8C8DA52E1ACB3A1300268321 /* PCTSmartAlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCTSmartAlarmViewController.m; path = "View Controller/PCTSmartAlarmViewController.m"; sourceTree = "<group>"; };
 		8CF1E0241ACC96CF0054323A /* GeocodeResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeocodeResultsViewController.h; path = "View Controller/GeocodeResultsViewController.h"; sourceTree = "<group>"; };
 		8CF1E0251ACC96CF0054323A /* GeocodeResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeocodeResultsViewController.m; path = "View Controller/GeocodeResultsViewController.m"; sourceTree = "<group>"; };
+		8CCFE68A1ACDCC790057693A /* SideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SideMenuViewController.h; path = "View Controller/SideMenuViewController.h"; sourceTree = "<group>"; };
+		8CCFE68B1ACDCC790057693A /* SideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SideMenuViewController.m; path = "View Controller/SideMenuViewController.m"; sourceTree = "<group>"; };
+		8CCFE6911ACDF94D0057693A /* MenuOptionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuOptionTableViewCell.m; path = View/TableViewCell/MenuOptionTableViewCell.m; sourceTree = "<group>"; };
+		8CCFE6921ACDF94D0057693A /* MenuOptionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuOptionTableViewCell.h; path = View/TableViewCell/MenuOptionTableViewCell.h; sourceTree = "<group>"; };
+		8CCFE6941ACDFEAC0057693A /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = "View Controller/SWRevealViewController/SWRevealViewController.m"; sourceTree = "<group>"; };
+		8CCFE6951ACDFEAC0057693A /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = "View Controller/SWRevealViewController/SWRevealViewController.h"; sourceTree = "<group>"; };
 		8CFC0D611ABF09660049C36F /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -103,6 +112,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C0DD8F11ACDA3DA00885931 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8CCFE6951ACDFEAC0057693A /* SWRevealViewController.h */,
+				8CCFE6941ACDFEAC0057693A /* SWRevealViewController.m */,
+			);
+			name = SWRevealViewController;
+			sourceTree = "<group>";
+		};
 		8C6058621AC8807400E3FCA2 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +136,11 @@
 				8C8DA52E1ACB3A1300268321 /* PCTSmartAlarmViewController.m */,
 				8CF1E0241ACC96CF0054323A /* GeocodeResultsViewController.h */,
 				8CF1E0251ACC96CF0054323A /* GeocodeResultsViewController.m */,
+				8C2000131AC7970800A8A5FC /* AlarmSummaryViewController.h */,
+				8C2000141AC7970800A8A5FC /* AlarmSummaryViewController.m */,
+				8CCFE68A1ACDCC790057693A /* SideMenuViewController.h */,
+				8CCFE68B1ACDCC790057693A /* SideMenuViewController.m */,
+				8C0DD8F11ACDA3DA00885931 /* SWRevealViewController */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -134,6 +157,7 @@
 		8C6058641AC8808600E3FCA2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8CCFE68D1ACDF8ED0057693A /* TableViewCell */,
 				8C2000101AC73D9500A8A5FC /* AppBackgroundView.h */,
 				8C2000111AC73D9500A8A5FC /* AppBackgroundView.m */,
 				8C6058681AC8B77D00E3FCA2 /* RangeSlider.h */,
@@ -209,6 +233,15 @@
 				8C75BC971A8922410001927C /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8CCFE68D1ACDF8ED0057693A /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				8CCFE6921ACDF94D0057693A /* MenuOptionTableViewCell.h */,
+				8CCFE6911ACDF94D0057693A /* MenuOptionTableViewCell.m */,
+			);
+			name = TableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,15 +348,18 @@
 				8C6058701AC8DBAB00E3FCA2 /* RangeSliderTrackLayer.m in Sources */,
 				8C60586A1AC8B77D00E3FCA2 /* RangeSlider.m in Sources */,
 				8C8DA52C1ACB36F600268321 /* SetAlarmViewController.m in Sources */,
+				8CCFE6961ACDFEAC0057693A /* SWRevealViewController.m in Sources */,
 				8C6058671AC8B63C00E3FCA2 /* PreparationTimeViewController.m in Sources */,
 				8C8DA52F1ACB3A1300268321 /* PCTSmartAlarmViewController.m in Sources */,
 				8C20001B1AC84F5000A8A5FC /* ArrivalTimeViewController.m in Sources */,
+				8CCFE6931ACDF94D0057693A /* MenuOptionTableViewCell.m in Sources */,
 				8C75BC7F1A8922410001927C /* AppDelegate.m in Sources */,
 				8C2000121AC73D9500A8A5FC /* AppBackgroundView.m in Sources */,
 				8C75BC7C1A8922410001927C /* main.m in Sources */,
 				8C60586D1AC8D79100E3FCA2 /* RangeSliderKnobLayer.m in Sources */,
 				8C2000181AC797BD00A8A5FC /* SmartAlarm.m in Sources */,
 				8C75BC821A8922410001927C /* iSleepLate.xcdatamodeld in Sources */,
+				8CCFE68C1ACDCC790057693A /* SideMenuViewController.m in Sources */,
 				8C16EE2F1ABE30EC00150EBF /* DestinationViewController.m in Sources */,
 				8CF1E0261ACC96CF0054323A /* GeocodeResultsViewController.m in Sources */,
 			);
