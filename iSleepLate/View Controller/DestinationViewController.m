@@ -7,17 +7,19 @@
 //
 
 #import "DestinationViewController.h"
-#import "SmartAlarm.h"
+#import "GeocodeResultsViewController.h"
 #import "PreparationTimeViewController.h"
+#import "SmartAlarm.h"
 
 @import MapKit;
 @import AddressBook;
 
-@interface DestinationViewController () <UITextFieldDelegate>
+@interface DestinationViewController () <UITextFieldDelegate, GeocodeResultsDelegate>
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) CLGeocoder *geocoder;
 @property (strong, nonatomic) NSArray *searchResults;
+@property (strong, nonatomic) NSArray *placemarks;
 
 @property (weak, nonatomic) IBOutlet UITextField *addressField;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
@@ -29,8 +31,14 @@
 #pragma mark - Lifecycle
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    PreparationTimeViewController *prepTimeVC = segue.destinationViewController;
-    prepTimeVC.alarm = self.alarm;
+    if ([segue.identifier isEqualToString:@"showGeocodeResults"]) {
+        GeocodeResultsViewController *geocodeResultsVC = segue.destinationViewController;
+        geocodeResultsVC.delegate = self;
+        geocodeResultsVC.geocodeResults = self.placemarks;
+    } else if ([segue.identifier isEqualToString:@"showPrepTime"]) {
+        PreparationTimeViewController *prepTimeVC = segue.destinationViewController;
+        prepTimeVC.alarm = self.alarm;
+    }
 }
 
 #pragma mark - IBActions
@@ -52,79 +60,10 @@
                           [self.activityIndicator stopAnimating];
                           if (error) {
                               NSLog(@"Geocode Error: %@", error.localizedDescription);
-                          } else if (placemarks.count == 0) {
-                              NSLog(@"Invalid request");
-                          } else if (placemarks.count > 1) {
-                              NSLog(@"Too many results returned");
-                          } else {
-                              MKPlacemark *placemark = [[MKPlacemark alloc] initWithPlacemark:placemarks[0]];
-                              self.alarm.destination = [[MKMapItem alloc] initWithPlacemark:placemark];
-                              [self performSegueWithIdentifier:@"showPrepTime" sender:self];
                           }
+                          self.placemarks = placemarks;
+                          [self performSegueWithIdentifier:@"showGeocodeResults" sender:self];
                       }];
-}
-
-- (void)calculateETAToDestination:(MKMapItem *)destination
-{
-    MKDirectionsRequest *directionsRequest = [[MKDirectionsRequest alloc] init];
-    directionsRequest.source = [MKMapItem mapItemForCurrentLocation];
-    directionsRequest.destination = destination;
-    directionsRequest.transportType = MKDirectionsTransportTypeAutomobile;
-    directionsRequest.requestsAlternateRoutes = NO;
-    
-    MKDirections *directions = [[MKDirections alloc] initWithRequest:directionsRequest];
-    [directions calculateETAWithCompletionHandler:^(MKETAResponse *response, NSError *error) {
-        if (error) {
-            NSLog(@"Directions Error: %@", error.localizedDescription);
-        } else {
-            NSLog(@"%@", [self prettyStringFromETAResponse:response]);
-        }
-    }];
-}
-
-- (NSString *)prettyStringFromETAResponse:(MKETAResponse *)response
-{
-    NSString *source = [self prettyStringFromMapItem:response.source];
-    NSString *destination = [self prettyStringFromMapItem:response.destination];
-    int seconds = response.expectedTravelTime;
-    int hours = seconds / 3600;
-    seconds -= (hours * 3600);
-    int minutes = seconds / 60;
-    seconds -= minutes * 60;
-    
-    return [NSString stringWithFormat:@"Travel time from %@ to %@ is %dH %dM %dS.", source, destination, hours, minutes, seconds];
-}
-
-- (NSString *)prettyStringFromMapItem:(MKMapItem *)mapItem
-{
-    __block NSDictionary *addressDictionary = mapItem.placemark.addressDictionary;
-    if (!addressDictionary) {
-        [self.geocoder reverseGeocodeLocation:mapItem.placemark.location
-                            completionHandler:^(NSArray *placemarks, NSError *error) {
-                                if (error) {
-                                    NSLog(@"Reverse Geolocation Error: %@", error.localizedDescription);
-                                } else if (placemarks.count > 0) {
-                                    CLPlacemark *placemark = placemarks[0];
-                                    addressDictionary = placemark.addressDictionary;
-                                    
-//                                    NSString *street = addressDictionary[(__bridge NSString *) kABPersonAddressStreetKey];
-//                                    NSString *city = addressDictionary[(__bridge NSString *) kABPersonAddressCityKey];
-//                                    NSString *state = addressDictionary[(__bridge NSString *) kABPersonAddressStateKey];
-//                                    NSString *zip = addressDictionary[(__bridge NSString *) kABPersonAddressZIPKey];
-//                                    
-//                                    return [NSString stringWithFormat:@"%@, %@, %@ %@", street, city, state, zip];
-                                }
-                            }];
-    } else {
-        NSString *street = addressDictionary[(__bridge NSString *) kABPersonAddressStreetKey];
-        NSString *city = addressDictionary[(__bridge NSString *) kABPersonAddressCityKey];
-        NSString *state = addressDictionary[(__bridge NSString *) kABPersonAddressStateKey];
-        NSString *zip = addressDictionary[(__bridge NSString *) kABPersonAddressZIPKey];
-        
-        return [NSString stringWithFormat:@"%@, %@, %@ %@", street, city, state, zip];
-    }
-    
-    return nil;
 }
 
 #pragma mark - UITextFieldDelegate
@@ -135,7 +74,21 @@
     // hide the keyboard
     [textField resignFirstResponder];
     
+    [self geocodeAddressString:self.addressField.text];
+    
     return YES;
+}
+
+#pragma mark - GeocodeResultsDelegate
+
+- (void)userDidPickerPlacemark:(CLPlacemark *)placemark
+{
+    MKPlacemark *destinationPlacemark = [[MKPlacemark alloc] initWithPlacemark:placemark];
+    self.alarm.destination = [[MKMapItem alloc] initWithPlacemark:destinationPlacemark];
+    [self.presentedViewController dismissViewControllerAnimated:NO completion:^{
+        sleep(0.25);
+        [self performSegueWithIdentifier:@"showPrepTime" sender:self];
+    }];
 }
 
 @end
