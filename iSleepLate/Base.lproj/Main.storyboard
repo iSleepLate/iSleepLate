@@ -285,7 +285,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="setAlarmButtonClicked:" destination="uDo-TP-Vwg" eventType="touchUpInside" id="CKK-TR-HOE"/>
+                                    <segue destination="SBE-L0-NIh" kind="show" id="hWb-zG-jH1"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plug phone into charger" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqQ-4l-poK">
@@ -318,6 +318,103 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Qs-48-BSz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3271" y="173"/>
+        </scene>
+        <!--Alert View Controller-->
+        <scene sceneID="pWQ-uU-GYc">
+            <objects>
+                <viewController id="SBE-L0-NIh" customClass="AlertViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kYp-9e-WPl"/>
+                        <viewControllerLayoutGuide type="bottom" id="nIM-a3-s70"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lDv-7J-ICN" customClass="AppBackgroundView">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="saw-bh-thv">
+                                <rect key="frame" x="0.0" y="300" width="600" height="300"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="73R-LB-kh9">
+                                <rect key="frame" x="16" y="518" width="568" height="50"/>
+                                <color key="backgroundColor" red="0.91764705879999997" green="0.3921568627" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="HXR-2X-Ir1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <state key="normal" title="Silence">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="userLiftedSilenceButton:" destination="SBE-L0-NIh" eventType="touchUpOutside" id="Mlf-nI-xcV"/>
+                                    <action selector="userLiftedSilenceButton:" destination="SBE-L0-NIh" eventType="touchUpInside" id="P2b-dM-lpS"/>
+                                    <action selector="userPressedSilenceButton:" destination="SBE-L0-NIh" eventType="touchDown" id="lDX-wn-1tG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ro9-h8-5Bh">
+                                <rect key="frame" x="16" y="460" width="568" height="50"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="xej-0H-wB8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <state key="normal" title="10 More Minutes">
+                                    <color key="titleColor" red="0.045992504810000001" green="0.19893592600000001" blue="0.32164978979999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="userLiftedSilenceButton:" destination="SBE-L0-NIh" eventType="touchUpInside" id="Pkh-jI-Upg"/>
+                                    <action selector="userLiftedSilenceButton:" destination="SBE-L0-NIh" eventType="touchUpOutside" id="ZgY-EY-pYs"/>
+                                    <action selector="userPressedSilenceButton:" destination="SBE-L0-NIh" eventType="touchDown" id="hOO-kS-JG8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l9C-rJ-ebz">
+                                <rect key="frame" x="16" y="402" width="568" height="50"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="OIU-60-dy1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <state key="normal" title="5 More Minutes">
+                                    <color key="titleColor" red="0.045992504810000001" green="0.19893592600000001" blue="0.32164978979999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="userLiftedSilenceButton:" destination="SBE-L0-NIh" eventType="touchUpOutside" id="b1H-VM-Tni"/>
+                                    <action selector="userLiftedSilenceButton:" destination="SBE-L0-NIh" eventType="touchUpInside" id="nBA-HV-fYu"/>
+                                    <action selector="userPressedSilenceButton:" destination="SBE-L0-NIh" eventType="touchDown" id="7yg-aL-nVX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.045992504810000001" green="0.19893592600000001" blue="0.32164978979999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="73R-LB-kh9" firstAttribute="top" secondItem="ro9-h8-5Bh" secondAttribute="bottom" constant="8" id="48h-1G-Uug"/>
+                            <constraint firstItem="saw-bh-thv" firstAttribute="leading" secondItem="lDv-7J-ICN" secondAttribute="leadingMargin" constant="-16" id="59O-xh-B0H"/>
+                            <constraint firstItem="l9C-rJ-ebz" firstAttribute="trailing" secondItem="lDv-7J-ICN" secondAttribute="trailingMargin" id="DXD-n6-gnq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="saw-bh-thv" secondAttribute="trailing" constant="-16" id="E9t-8f-Lcd"/>
+                            <constraint firstItem="nIM-a3-s70" firstAttribute="top" secondItem="saw-bh-thv" secondAttribute="bottom" id="Ei4-Xb-tnq"/>
+                            <constraint firstItem="73R-LB-kh9" firstAttribute="leading" secondItem="lDv-7J-ICN" secondAttribute="leadingMargin" id="Fl4-zc-3kt"/>
+                            <constraint firstItem="ro9-h8-5Bh" firstAttribute="leading" secondItem="lDv-7J-ICN" secondAttribute="leadingMargin" id="HbR-nl-BD9"/>
+                            <constraint firstItem="l9C-rJ-ebz" firstAttribute="leading" secondItem="lDv-7J-ICN" secondAttribute="leadingMargin" id="QA8-3c-WUE"/>
+                            <constraint firstItem="ro9-h8-5Bh" firstAttribute="trailing" secondItem="lDv-7J-ICN" secondAttribute="trailingMargin" id="Ts4-dk-xBg"/>
+                            <constraint firstItem="73R-LB-kh9" firstAttribute="trailing" secondItem="lDv-7J-ICN" secondAttribute="trailingMargin" id="V2Q-Fe-gJf"/>
+                            <constraint firstItem="ro9-h8-5Bh" firstAttribute="top" secondItem="l9C-rJ-ebz" secondAttribute="bottom" constant="8" id="Wc5-YA-OKC"/>
+                            <constraint firstItem="saw-bh-thv" firstAttribute="top" secondItem="kYp-9e-WPl" secondAttribute="bottom" constant="236" id="brS-s3-Bc9"/>
+                            <constraint firstItem="nIM-a3-s70" firstAttribute="top" secondItem="73R-LB-kh9" secondAttribute="bottom" constant="32" id="l00-7U-XKa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="growingViewMarginTop" destination="brS-s3-Bc9" id="I6H-zl-101"/>
+                        <outlet property="loadingView" destination="saw-bh-thv" id="QXG-wk-dOS"/>
+                        <outlet property="silenceButton" destination="73R-LB-kh9" id="9ha-Xr-cQo"/>
+                        <outlet property="snoozeButton1" destination="l9C-rJ-ebz" id="gk7-Tn-UIG"/>
+                        <outlet property="snoozeButton2" destination="ro9-h8-5Bh" id="hYn-LU-WpA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7qb-eB-VnH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4005" y="173"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="Fig-EP-fJ5">
@@ -745,6 +842,6 @@
         <image name="SettingsIcon" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="DEx-Oy-zu2"/>
+        <segue reference="QxV-Kc-Hx8"/>
     </inferredMetricsTieBreakers>
 </document>

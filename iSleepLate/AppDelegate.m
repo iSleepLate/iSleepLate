@@ -96,7 +96,9 @@
 // Caled only when the app is frontmost and active
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
-    NSLog(@"Recieved Note: %@", notification.alertBody);
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"AppDidRecieveLocalNotifcation"
+                                                        object:self
+                                                      userInfo:@{@"FiredNotification": notification}];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
