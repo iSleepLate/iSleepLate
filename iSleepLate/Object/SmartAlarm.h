@@ -19,5 +19,10 @@
 
 // calculated variables
 @property (nonatomic) NSTimeInterval expectedTravelTime;
+@property (nonatomic) MKMapItem *currentLocation;
+
+- (void)printAlarmInfo;
+- (void)scheduleLocalNotification;
+- (void)cancelScheduledLocalNotification;
 
 @end

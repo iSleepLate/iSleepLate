@@ -1,16 +1,15 @@
 //
-//  AlarmSummaryViewController.h
+//  PCTSmartAlarmViewController.h
 //  iSleepLate
 //
-//  Created by David Neubauer on 3/28/15.
+//  Created by David Neubauer on 3/31/15.
 //  Copyright (c) 2015 iSleepLate. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+#import "SmartAlarm.h"
 
-@class SmartAlarm;
-
-@interface AlarmSummaryViewController : UIViewController
+@interface PCTSmartAlarmViewController : UIViewController
 
 @property (weak, nonatomic) SmartAlarm *alarm;
 
