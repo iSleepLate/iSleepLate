@@ -46,9 +46,9 @@
     NSString *street = addressDictionary[(__bridge NSString *) kABPersonAddressStreetKey];
     NSString *city = addressDictionary[(__bridge NSString *) kABPersonAddressCityKey];
     NSString *state = addressDictionary[(__bridge NSString *) kABPersonAddressStateKey];
-    NSString *zip = addressDictionary[(__bridge NSString *) kABPersonAddressZIPKey];
+//    NSString *zip = addressDictionary[(__bridge NSString *) kABPersonAddressZIPKey];
     
-    return [NSString stringWithFormat:@"%@, %@, %@ %@", street, city, state, zip];
+    return [NSString stringWithFormat:@"%@\n%@, %@", street, city, state];
 }
 
 /*******************************************************************/
@@ -93,12 +93,19 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
     }
+    CLPlacemark *placemark = self.geocodeResults[indexPath.row];
+    NSDictionary *addressDictionary = placemark.addressDictionary;
+    NSString *street = addressDictionary[(__bridge NSString *) kABPersonAddressStreetKey];
+    NSString *city = addressDictionary[(__bridge NSString *) kABPersonAddressCityKey];
+    NSString *state = addressDictionary[(__bridge NSString *) kABPersonAddressStateKey];
     
-    cell.textLabel.text = [self stringFromPlacemark:self.geocodeResults[indexPath.row]];
+    cell.textLabel.text = street;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@, %@", city, state];
     cell.textLabel.backgroundColor = [UIColor whiteColor];
     cell.textLabel.textColor = [UIColor colorWithRed:9/255.0 green:67/255.0 blue:101/255.0 alpha:1.0];
+    cell.detailTextLabel.textColor = [UIColor colorWithRed:9/255.0 green:67/255.0 blue:101/255.0 alpha:1.0];
     cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:15.0];
     cell.textLabel.numberOfLines = 0;
     

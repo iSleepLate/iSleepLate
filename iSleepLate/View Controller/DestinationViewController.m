@@ -19,7 +19,7 @@
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) CLGeocoder *geocoder;
 @property (strong, nonatomic) NSArray *searchResults;
-@property (strong, nonatomic) NSArray *placemarks;
+@property (strong, nonatomic) NSMutableArray *placemarks;
 
 @property (weak, nonatomic) IBOutlet UITextField *addressField;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
@@ -29,6 +29,16 @@
 @implementation DestinationViewController
 
 #pragma mark - Lifecycle
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        _placemarks = [NSMutableArray array];
+    }
+    
+    return self;
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showGeocodeResults"]) {
@@ -45,25 +55,35 @@
 
 - (IBAction)segueButtonPressed:(id)sender
 {
-    [self geocodeAddressString:self.addressField.text];
+    [self.activityIndicator startAnimating];
+    [self.placemarks removeAllObjects];
+    [self performLocalSearchOfDestination:self.addressField.text];
 }
 
 #pragma mark - Private Methods
 
-- (void)geocodeAddressString:(NSString *)addressString
+- (void)performLocalSearchOfDestination:(NSString *)destination
 {
-    [self.activityIndicator startAnimating];
+    MKCoordinateRegion region;
+    region.center = self.alarm.currentLocation.placemark.coordinate;
+    region.span = MKCoordinateSpanMake(1.0, 1.0); // in degrees, not km
     
-    self.geocoder = [[CLGeocoder alloc] init];
-    [self.geocoder geocodeAddressString:addressString
-                      completionHandler:^(NSArray *placemarks, NSError *error) {
-                          [self.activityIndicator stopAnimating];
-                          if (error) {
-                              NSLog(@"Geocode Error: %@", error.localizedDescription);
-                          }
-                          self.placemarks = placemarks;
-                          [self performSegueWithIdentifier:@"showGeocodeResults" sender:self];
-                      }];
+    MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc] init];
+    request.naturalLanguageQuery = destination;
+    request.region = region;
+    
+    MKLocalSearch *search = [[MKLocalSearch alloc] initWithRequest:request];
+    [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
+        [self.activityIndicator stopAnimating];
+        if (error) {
+            NSLog(@"Local Search Error: %@", error.localizedDescription);
+        } else {
+            for (MKMapItem *mapItem in response.mapItems) {
+                [self.placemarks addObject:mapItem.placemark];
+            }
+            [self performSegueWithIdentifier:@"showGeocodeResults" sender:self];
+        }
+    }];
 }
 
 #pragma mark - UITextFieldDelegate
@@ -74,7 +94,7 @@
     // hide the keyboard
     [textField resignFirstResponder];
     
-    [self geocodeAddressString:self.addressField.text];
+    [self performLocalSearchOfDestination:self.addressField.text];
     
     return YES;
 }
