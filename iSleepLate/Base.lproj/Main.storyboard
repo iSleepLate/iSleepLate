@@ -285,7 +285,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="SBE-L0-NIh" kind="show" id="hWb-zG-jH1"/>
+                                    <segue destination="SBE-L0-NIh" kind="showDetail" id="hWb-zG-jH1"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plug phone into charger" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqQ-4l-poK">
@@ -332,7 +332,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="saw-bh-thv">
-                                <rect key="frame" x="0.0" y="300" width="600" height="300"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="73R-LB-kh9">
@@ -400,13 +400,13 @@
                             <constraint firstItem="ro9-h8-5Bh" firstAttribute="trailing" secondItem="lDv-7J-ICN" secondAttribute="trailingMargin" id="Ts4-dk-xBg"/>
                             <constraint firstItem="73R-LB-kh9" firstAttribute="trailing" secondItem="lDv-7J-ICN" secondAttribute="trailingMargin" id="V2Q-Fe-gJf"/>
                             <constraint firstItem="ro9-h8-5Bh" firstAttribute="top" secondItem="l9C-rJ-ebz" secondAttribute="bottom" constant="8" id="Wc5-YA-OKC"/>
-                            <constraint firstItem="saw-bh-thv" firstAttribute="top" secondItem="kYp-9e-WPl" secondAttribute="bottom" constant="236" id="brS-s3-Bc9"/>
+                            <constraint firstItem="saw-bh-thv" firstAttribute="top" secondItem="kYp-9e-WPl" secondAttribute="bottom" id="brS-s3-Bc9"/>
                             <constraint firstItem="nIM-a3-s70" firstAttribute="top" secondItem="73R-LB-kh9" secondAttribute="bottom" constant="32" id="l00-7U-XKa"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="growingViewMarginTop" destination="brS-s3-Bc9" id="I6H-zl-101"/>
                         <outlet property="loadingView" destination="saw-bh-thv" id="QXG-wk-dOS"/>
+                        <outlet property="loadingViewMarginTop" destination="brS-s3-Bc9" id="HpM-zd-ZXS"/>
                         <outlet property="silenceButton" destination="73R-LB-kh9" id="9ha-Xr-cQo"/>
                         <outlet property="snoozeButton1" destination="l9C-rJ-ebz" id="gk7-Tn-UIG"/>
                         <outlet property="snoozeButton2" destination="ro9-h8-5Bh" id="hYn-LU-WpA"/>

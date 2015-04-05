@@ -14,7 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *snoozeButton1;
 @property (weak, nonatomic) IBOutlet UIButton *snoozeButton2;
 @property (weak, nonatomic) IBOutlet UIView *loadingView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *growingViewMarginTop;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *loadingViewMarginTop;
 
 @end
 
@@ -35,11 +35,20 @@
 
 - (void)viewDidLoad
 {
-//    self.silenceButton.hidden = YES;
+    [super viewDidLoad];
+    
+    self.silenceButton.hidden = YES;
     self.snoozeButton1.hidden = YES;
     self.snoozeButton2.hidden = YES;
     self.loadingView.hidden = YES;
-    self.growingViewMarginTop.constant = CGRectGetHeight(self.view.frame);
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    self.loadingViewMarginTop.constant = CGRectGetHeight(self.view.frame) - 64;
+    [self.loadingView setNeedsUpdateConstraints];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -51,6 +60,17 @@
 
 #pragma mark - Private Methods
 
+- (void)showSnoozeButtons
+{
+    NSDate *leaveTime = [self.alarm.dateOfArrival dateByAddingTimeInterval:-(self.alarm.expectedTravelTime)];
+    NSUInteger prepTime = [leaveTime timeIntervalSinceDate:[NSDate date]];
+    NSUInteger minutes = prepTime / 60;
+    NSLog(@"You have %u minutes to get ready.", minutes);
+    
+    self.snoozeButton1.hidden = minutes < 5;
+    self.snoozeButton2.hidden = minutes < 10;
+}
+
 - (void)resetLoadingView
 {
     [UIView animateWithDuration:0.25
@@ -61,8 +81,10 @@
                      animations:^{
                          self.loadingView.alpha = 0.0;
                      } completion:^(BOOL finished) {
+                         self.snoozeButton1.hidden = NO;
+                         self.snoozeButton2.hidden = NO;
                          self.loadingView.hidden = YES;
-                         self.growingViewMarginTop.constant = CGRectGetHeight(self.view.frame);
+                         self.loadingViewMarginTop.constant = CGRectGetHeight(self.view.frame) - 64;
                          self.loadingView.alpha = 1.0;
                      }];
 }
@@ -72,15 +94,18 @@
 - (void)handleNotification:(NSNotification *)note
 {
     self.silenceButton.hidden = NO;
+    [self showSnoozeButtons];
 }
 
 #pragma mark - Touch Events
 
 - (void)showLoading
 {
+    self.snoozeButton1.hidden = YES;
+    self.snoozeButton2.hidden = YES;
     self.loadingView.hidden = NO;
     
-    self.growingViewMarginTop.constant = 0.0;
+    self.loadingViewMarginTop.constant = 0.0;
     [self.loadingView setNeedsUpdateConstraints];
     
     [UIView animateWithDuration:1.25
@@ -104,7 +129,7 @@
 {
     CALayer *currentLayerInAnimation = [self.loadingView.layer presentationLayer];
     CGFloat marginTop = CGRectGetMinY(currentLayerInAnimation.frame) - 64; // 64 = status bar + navBar
-    self.growingViewMarginTop.constant = marginTop;
+    self.loadingViewMarginTop.constant = marginTop;
     
     [self.loadingView.layer removeAllAnimations];
 }
