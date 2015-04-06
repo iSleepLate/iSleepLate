@@ -18,6 +18,7 @@
 @property (nonatomic) NSRange preparationTime;
 
 // calculated variables
+@property (strong, nonatomic) UILocalNotification *localNotification;
 @property (nonatomic) NSTimeInterval expectedTravelTime;
 @property (nonatomic) MKMapItem *currentLocation;
 
@@ -25,5 +26,8 @@
 - (void)scheduleLocalNotification;
 - (void)presentLocalNotification;
 - (void)cancelScheduledLocalNotification;
+
+// snoozing
+- (void)snoozeForNSTimeInterval:(NSTimeInterval)snoozeTime;
 
 @end

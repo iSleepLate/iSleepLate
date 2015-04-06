@@ -11,12 +11,6 @@
 
 @import AddressBook;
 
-@interface SmartAlarm ()
-
-@property (strong, nonatomic) UILocalNotification *localNotification;
-
-@end
-
 @implementation SmartAlarm
 
 - (instancetype)init
@@ -49,6 +43,21 @@
         AppDelegate *appDelegate = object;
         [self reverseGeocodeLocation:appDelegate.currentLocation];
     }
+}
+
+#pragma mark - Public Methods
+
+- (void)snoozeForNSTimeInterval:(NSTimeInterval)snoozeTime
+{
+    NSDate *oldFireDate = self.localNotification.fireDate;
+    self.localNotification.fireDate = [oldFireDate dateByAddingTimeInterval:snoozeTime];
+    
+    [[UIApplication sharedApplication] scheduleLocalNotification:self.localNotification];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateStyle:NSDateFormatterShortStyle];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    NSLog(@"Local Notification set for %@", [formatter stringFromDate:self.localNotification.fireDate]);
 }
 
 #pragma mark - Printing Out Alarm Info
@@ -128,6 +137,7 @@
                 self.expectedTravelTime += route.expectedTravelTime;
             }
         }
+        NSLog(@"Calculated Travel Time.");
     }];
 }
 
