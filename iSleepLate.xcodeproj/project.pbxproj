@@ -28,6 +28,7 @@
 		8C75BC991A8922410001927C /* iSleepLateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C75BC981A8922410001927C /* iSleepLateTests.m */; };
 		8C8DA52C1ACB36F600268321 /* SetAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C8DA52B1ACB36F600268321 /* SetAlarmViewController.m */; };
 		8C8DA52F1ACB3A1300268321 /* PCTSmartAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C8DA52E1ACB3A1300268321 /* PCTSmartAlarmViewController.m */; };
+		8C94FC1E1AD334DB00CBF3C7 /* Loud-alarm-clock-sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8C94FC1D1AD334DB00CBF3C7 /* Loud-alarm-clock-sound.wav */; };
 		8CCFE68C1ACDCC790057693A /* SideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCFE68B1ACDCC790057693A /* SideMenuViewController.m */; };
 		8CCFE6931ACDF94D0057693A /* MenuOptionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCFE6911ACDF94D0057693A /* MenuOptionTableViewCell.m */; };
 		8CCFE6961ACDFEAC0057693A /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCFE6941ACDFEAC0057693A /* SWRevealViewController.m */; };
@@ -86,6 +87,7 @@
 		8C8DA52B1ACB36F600268321 /* SetAlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetAlarmViewController.m; path = "View Controller/SetAlarmViewController.m"; sourceTree = "<group>"; };
 		8C8DA52D1ACB3A1300268321 /* PCTSmartAlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCTSmartAlarmViewController.h; path = "View Controller/PCTSmartAlarmViewController.h"; sourceTree = "<group>"; };
 		8C8DA52E1ACB3A1300268321 /* PCTSmartAlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCTSmartAlarmViewController.m; path = "View Controller/PCTSmartAlarmViewController.m"; sourceTree = "<group>"; };
+		8C94FC1D1AD334DB00CBF3C7 /* Loud-alarm-clock-sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Loud-alarm-clock-sound.wav"; sourceTree = "<group>"; };
 		8CCFE68A1ACDCC790057693A /* SideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SideMenuViewController.h; path = "View Controller/SideMenuViewController.h"; sourceTree = "<group>"; };
 		8CCFE68B1ACDCC790057693A /* SideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SideMenuViewController.m; path = "View Controller/SideMenuViewController.m"; sourceTree = "<group>"; };
 		8CCFE6911ACDF94D0057693A /* MenuOptionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuOptionTableViewCell.m; path = View/TableViewCell/MenuOptionTableViewCell.m; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 		8C75BC791A8922410001927C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8C94FC1D1AD334DB00CBF3C7 /* Loud-alarm-clock-sound.wav */,
 				8C75BC7A1A8922410001927C /* Info.plist */,
 				8C75BC7B1A8922410001927C /* main.m */,
 			);
@@ -360,6 +363,7 @@
 			files = (
 				8C75BC881A8922410001927C /* Main.storyboard in Resources */,
 				8C75BC8D1A8922410001927C /* LaunchScreen.xib in Resources */,
+				8C94FC1E1AD334DB00CBF3C7 /* Loud-alarm-clock-sound.wav in Resources */,
 				8C75BC8A1A8922410001927C /* Images.xcassets in Resources */,
 				8C58C2001ACA58C7001737AE /* Austin.gpx in Resources */,
 			);

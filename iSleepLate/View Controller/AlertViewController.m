@@ -8,6 +8,8 @@
 
 #import "AlertViewController.h"
 
+@import AVFoundation;
+
 @interface AlertViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
@@ -19,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *loadingViewMarginTop;
 
 @property (strong, nonatomic) NSTimer *timer;
+@property (strong, nonatomic) AVAudioPlayer *audioPlayer;
 
 @end
 
@@ -33,6 +36,13 @@
                                                  selector:@selector(handleNotification:)
                                                      name:@"AppDidRecieveLocalNotifcation"
                                                    object:nil];
+        NSString *filePath = [[NSBundle mainBundle] resourcePath];
+        NSURL *acutualFilePath= [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@",filePath,@"Loud-alarm-clock-sound.wav"]];
+        
+        NSError *error;
+        
+        _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:acutualFilePath error:&error];
+        _audioPlayer.numberOfLoops = 3; // 11 * 3 = 33 seconds
     }
     
     return self;
@@ -50,6 +60,7 @@
                                                 selector:@selector(updateTime)
                                                 userInfo:nil
                                                  repeats:YES];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -128,6 +139,8 @@
 
 - (void)handleNotification:(NSNotification *)note
 {
+    [self.audioPlayer play];
+    
     self.silenceButton.hidden = NO;
     [self showSnoozeButtons];
 }
@@ -151,6 +164,9 @@
                      animations:^{
                          [self.loadingView layoutIfNeeded];
                      } completion:^(BOOL finished) {
+                         if (finished) {
+                             [self.audioPlayer stop];
+                         }
                          [self resetLoadingView];
                      }];
 }
@@ -173,6 +189,7 @@
 // MAKE SURE SET SECONDS TO ZERO
 - (IBAction)snooze:(id)sender
 {
+    [self.audioPlayer stop];
     if (sender == self.snoozeButton1) {
         [self.alarm snoozeForNSTimeInterval:300];
     } else if (sender == self.snoozeButton2) {
