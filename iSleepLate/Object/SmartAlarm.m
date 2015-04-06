@@ -56,7 +56,7 @@
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateStyle:NSDateFormatterShortStyle];
-    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    [formatter setTimeStyle:NSDateFormatterLongStyle];
     NSLog(@"Local Notification set for %@", [formatter stringFromDate:self.localNotification.fireDate]);
 }
 
@@ -136,8 +136,8 @@
             for (MKRoute *route in response.routes) {
                 self.expectedTravelTime += route.expectedTravelTime;
             }
+            self.expectedTravelTime -= ((int)self.expectedTravelTime) % 60;
         }
-        NSLog(@"Calculated Travel Time.");
     }];
 }
 
@@ -182,7 +182,7 @@
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateStyle:NSDateFormatterShortStyle];
-    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    [formatter setTimeStyle:NSDateFormatterLongStyle];
     NSLog(@"Local Notification set for %@", [formatter stringFromDate:self.localNotification.fireDate]);
 }
 

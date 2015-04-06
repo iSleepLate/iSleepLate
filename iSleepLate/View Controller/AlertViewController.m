@@ -169,6 +169,8 @@
     [self.loadingView.layer removeAllAnimations];
 }
 
+
+// MAKE SURE SET SECONDS TO ZERO
 - (IBAction)snooze:(id)sender
 {
     if (sender == self.snoozeButton1) {
