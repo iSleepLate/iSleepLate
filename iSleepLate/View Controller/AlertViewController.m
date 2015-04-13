@@ -9,6 +9,7 @@
 #import "AlertViewController.h"
 
 @import AVFoundation;
+@import AudioToolbox;
 
 @interface AlertViewController ()
 
@@ -22,6 +23,8 @@
 
 @property (strong, nonatomic) NSTimer *timer;
 @property (strong, nonatomic) AVAudioPlayer *audioPlayer;
+@property (nonatomic) BOOL vibrateIsON;
+@property (nonatomic) NSUInteger numberOfVibrations;
 
 @end
 
@@ -43,6 +46,8 @@
         
         _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:acutualFilePath error:&error];
         _audioPlayer.numberOfLoops = 3; // 11 * 3 = 33 seconds
+        
+        self.numberOfVibrations = 0;
     }
     
     return self;
@@ -135,11 +140,30 @@
                      }];
 }
 
+- (void)startVibrate
+{
+    if (!self.vibrateIsON || self.numberOfVibrations++ >= 33) {
+        return;
+    }
+    
+    [self performSelector:@selector(vibrate) withObject:self afterDelay:0];
+    [self performSelector:@selector(vibrate) withObject:self afterDelay:0.5];
+    
+    [self performSelector:@selector(startVibrate) withObject:self afterDelay:2];
+}
+
+- (void)vibrate
+{
+    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+}
+
 #pragma mark - NSNotifcationCenter
 
 - (void)handleNotification:(NSNotification *)note
 {
     [self.audioPlayer play];
+    self.vibrateIsON = YES;
+    [self startVibrate];
     
     self.silenceButton.hidden = NO;
     [self showSnoozeButtons];
@@ -166,6 +190,7 @@
                      } completion:^(BOOL finished) {
                          if (finished) {
                              [self.audioPlayer stop];
+                             self.vibrateIsON = NO;
                          }
                          [self resetLoadingView];
                      }];
@@ -190,6 +215,8 @@
 - (IBAction)snooze:(id)sender
 {
     [self.audioPlayer stop];
+    self.vibrateIsON = NO;
+    
     if (sender == self.snoozeButton1) {
         [self.alarm snoozeForNSTimeInterval:300];
     } else if (sender == self.snoozeButton2) {

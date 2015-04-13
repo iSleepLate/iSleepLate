@@ -40,8 +40,7 @@
     [_timePicker scrollToCurrentTime];
     
     SWRevealViewController *revealViewController = self.revealViewController;
-    if (revealViewController)
-    {
+    if (revealViewController) {
         [self.sideMenuButton setTarget: self.revealViewController];
         [self.sideMenuButton setAction: @selector(revealToggle:)];
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
