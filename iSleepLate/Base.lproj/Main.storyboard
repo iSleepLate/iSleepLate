@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hmp-Vr-ZFo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hmp-Vr-ZFo">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
@@ -288,13 +288,6 @@
                                     <action selector="setAlarmButtonClicked:" destination="uDo-TP-Vwg" eventType="touchUpInside" id="CKK-TR-HOE"/>
                                 </connections>
                             </button>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Phone" translatesAutoresizingMaskIntoConstraints="NO" id="0JN-c7-ZYS">
-                                <rect key="frame" x="175" y="64" width="250" height="372"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="372" id="fja-yj-utM"/>
-                                    <constraint firstAttribute="width" constant="250" id="uz6-qB-PoW"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plug phone into charger" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqQ-4l-poK">
                                 <rect key="frame" x="16" y="104" width="568" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -305,8 +298,6 @@
                         <color key="backgroundColor" red="0.035294117649999998" green="0.26274509800000001" blue="0.39607843139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="7Kh-VF-taG" firstAttribute="top" secondItem="wF4-oW-ErK" secondAttribute="bottom" constant="32" id="1j1-f8-aLT"/>
-                            <constraint firstAttribute="centerX" secondItem="0JN-c7-ZYS" secondAttribute="centerX" id="266-J1-g8u"/>
-                            <constraint firstItem="0JN-c7-ZYS" firstAttribute="top" secondItem="1P3-cF-Qgu" secondAttribute="bottom" id="Hk2-C1-19V"/>
                             <constraint firstItem="cqQ-4l-poK" firstAttribute="trailing" secondItem="IR2-HB-2ch" secondAttribute="trailingMargin" id="Na4-dw-cgf"/>
                             <constraint firstItem="cqQ-4l-poK" firstAttribute="leading" secondItem="IR2-HB-2ch" secondAttribute="leadingMargin" id="cnw-tf-b6D"/>
                             <constraint firstItem="wF4-oW-ErK" firstAttribute="trailing" secondItem="IR2-HB-2ch" secondAttribute="trailingMargin" id="gqb-hH-2QO"/>
@@ -740,7 +731,6 @@
         <image name="HamburgerIcon" width="28" height="14"/>
         <image name="HistogramIcon" width="21" height="21"/>
         <image name="InfoIcon" width="20" height="20"/>
-        <image name="Phone" width="250" height="372"/>
         <image name="Placemark Icon" width="19" height="30"/>
         <image name="SettingsIcon" width="20" height="20"/>
     </resources>
