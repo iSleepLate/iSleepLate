@@ -33,6 +33,8 @@
 		8CF1E0261ACC96CF0054323A /* GeocodeResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF1E0251ACC96CF0054323A /* GeocodeResultsViewController.m */; };
 		8CFC0D621ABF09660049C36F /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CFC0D611ABF09660049C36F /* AddressBookUI.framework */; };
 		CE2AAAB71AD2E6A0005B9A80 /* UIDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2AAAB61AD2E6A0005B9A80 /* UIDatePickerView.m */; };
+		CE8BE7FE1ADC23500000BD71 /* MCSwipeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8BE7FD1ADC23500000BD71 /* MCSwipeTableViewCell.m */; };
+		CE8BE8021ADC239D0000BD71 /* WakeUpViewDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8BE8011ADC239D0000BD71 /* WakeUpViewDetails.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,10 @@
 		8CFC0D611ABF09660049C36F /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		CE2AAAB51AD2E6A0005B9A80 /* UIDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDatePickerView.h; sourceTree = "<group>"; };
 		CE2AAAB61AD2E6A0005B9A80 /* UIDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIDatePickerView.m; sourceTree = "<group>"; };
+		CE8BE7FC1ADC23500000BD71 /* MCSwipeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCSwipeTableViewCell.h; sourceTree = "<group>"; };
+		CE8BE7FD1ADC23500000BD71 /* MCSwipeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCSwipeTableViewCell.m; sourceTree = "<group>"; };
+		CE8BE8001ADC239D0000BD71 /* WakeUpViewDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WakeUpViewDetails.h; sourceTree = "<group>"; };
+		CE8BE8011ADC239D0000BD71 /* WakeUpViewDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WakeUpViewDetails.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +148,7 @@
 				8CCFE68A1ACDCC790057693A /* SideMenuViewController.h */,
 				8CCFE68B1ACDCC790057693A /* SideMenuViewController.m */,
 				8C0DD8F11ACDA3DA00885931 /* SWRevealViewController */,
+				CE8BE7FF1ADC236E0000BD71 /* MCSwipeTableView */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -151,6 +158,8 @@
 			children = (
 				8C2000161AC797BD00A8A5FC /* SmartAlarm.h */,
 				8C2000171AC797BD00A8A5FC /* SmartAlarm.m */,
+				CE8BE8001ADC239D0000BD71 /* WakeUpViewDetails.h */,
+				CE8BE8011ADC239D0000BD71 /* WakeUpViewDetails.m */,
 			);
 			name = Object;
 			sourceTree = "<group>";
@@ -253,6 +262,15 @@
 				CE2AAAB61AD2E6A0005B9A80 /* UIDatePickerView.m */,
 			);
 			name = "Date Picker";
+			sourceTree = "<group>";
+		};
+		CE8BE7FF1ADC236E0000BD71 /* MCSwipeTableView */ = {
+			isa = PBXGroup;
+			children = (
+				CE8BE7FC1ADC23500000BD71 /* MCSwipeTableViewCell.h */,
+				CE8BE7FD1ADC23500000BD71 /* MCSwipeTableViewCell.m */,
+			);
+			name = MCSwipeTableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,8 +386,10 @@
 				8C75BC7F1A8922410001927C /* AppDelegate.m in Sources */,
 				8C2000121AC73D9500A8A5FC /* AppBackgroundView.m in Sources */,
 				8C75BC7C1A8922410001927C /* main.m in Sources */,
+				CE8BE8021ADC239D0000BD71 /* WakeUpViewDetails.m in Sources */,
 				8C60586D1AC8D79100E3FCA2 /* RangeSliderKnobLayer.m in Sources */,
 				8C2000181AC797BD00A8A5FC /* SmartAlarm.m in Sources */,
+				CE8BE7FE1ADC23500000BD71 /* MCSwipeTableViewCell.m in Sources */,
 				8C75BC821A8922410001927C /* iSleepLate.xcdatamodeld in Sources */,
 				8CCFE68C1ACDCC790057693A /* SideMenuViewController.m in Sources */,
 				8C16EE2F1ABE30EC00150EBF /* DestinationViewController.m in Sources */,
