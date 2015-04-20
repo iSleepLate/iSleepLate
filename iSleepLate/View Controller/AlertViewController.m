@@ -15,6 +15,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *alarmLabel;
+@property (weak, nonatomic) IBOutlet UILabel *loadingLabel;
 @property (weak, nonatomic) IBOutlet UIButton *silenceButton;
 @property (weak, nonatomic) IBOutlet UIButton *snoozeButton1;
 @property (weak, nonatomic) IBOutlet UIButton *snoozeButton2;
@@ -84,6 +85,7 @@
     self.snoozeButton1.hidden = YES;
     self.snoozeButton2.hidden = YES;
     self.loadingView.hidden = YES;
+    self.loadingLabel.hidden = YES;
     
     [self updateAlarmLabel];
 }
@@ -132,9 +134,11 @@
                      animations:^{
                          self.loadingView.alpha = 0.0;
                      } completion:^(BOOL finished) {
-                         self.snoozeButton1.hidden = NO;
-                         self.snoozeButton2.hidden = NO;
+                         [self showSnoozeButtons];
                          self.loadingView.hidden = YES;
+                         self.loadingLabel.hidden = YES;
+                         self.timeLabel.hidden = NO;
+                         self.alarmLabel.hidden = NO;
                          self.loadingViewMarginTop.constant = CGRectGetHeight(self.view.frame) - 64;
                          self.loadingView.alpha = 1.0;
                      }];
@@ -176,6 +180,9 @@
     self.snoozeButton1.hidden = YES;
     self.snoozeButton2.hidden = YES;
     self.loadingView.hidden = NO;
+    self.timeLabel.hidden = YES;
+    self.alarmLabel.hidden = YES;
+    self.loadingLabel.hidden = NO;
     
     self.loadingViewMarginTop.constant = 0.0;
     [self.loadingView setNeedsUpdateConstraints];
