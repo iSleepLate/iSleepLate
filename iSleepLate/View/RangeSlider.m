@@ -91,7 +91,7 @@ static CGFloat const RangeSliderThumbSize = 26.0;
 
 - (void)setLayerFrames
 {
-    self.trackLayer.frame = CGRectInset(self.bounds, 0, self.bounds.size.height / 4.3);
+    self.trackLayer.frame = CGRectMake(self.bounds.origin.x, self.bounds.origin.y, self.bounds.size.width, 8);
     self.trackLayer.cornerRadius = CGRectGetHeight(self.trackLayer.bounds) / 2.0;
     [self.trackLayer setNeedsDisplay];
     
@@ -102,11 +102,12 @@ static CGFloat const RangeSliderThumbSize = 26.0;
     }
     
     CGFloat rightKnobCenter = [self positionForValue:self.upperValue];
-    self.rightKnobLayer.frame = CGRectMake(rightKnobCenter - self.knobWidth / 2, 0, self.knobWidth, self.knobWidth);
+    CGFloat knobY = -(self.knobWidth / 2.0) + self.trackLayer.frame.size.height / 2.0;
+    self.rightKnobLayer.frame = CGRectMake(rightKnobCenter - self.knobWidth / 2, knobY, self.knobWidth, self.knobWidth);
     self.rightKnobLayer.cornerRadius = self.knobWidth / 2.0;
     
     CGFloat leftKnobCenter = [self positionForValue:self.lowerValue];
-    self.leftKnobLayer.frame = CGRectMake(leftKnobCenter - self.knobWidth / 2, 0, self.knobWidth, self.knobWidth);
+    self.leftKnobLayer.frame = CGRectMake(leftKnobCenter - self.knobWidth / 2, knobY, self.knobWidth, self.knobWidth);
     self.leftKnobLayer.cornerRadius = self.knobWidth / 2.0;
     
     [self.rightKnobLayer setNeedsDisplay];
