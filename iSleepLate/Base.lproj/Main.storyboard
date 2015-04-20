@@ -314,6 +314,9 @@
                             <constraint firstItem="cqQ-4l-poK" firstAttribute="top" secondItem="1P3-cF-Qgu" secondAttribute="bottom" constant="30" id="yXN-cN-1hB"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="setAlarmButton" destination="wF4-oW-ErK" id="Gfu-SI-4tQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Qs-48-BSz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

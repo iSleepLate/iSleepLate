@@ -23,7 +23,8 @@
 @property (nonatomic) MKMapItem *currentLocation;
 
 - (void)printAlarmInfo;
-- (void)scheduleLocalNotification;
+- (BOOL)verifyFireDate;
+- (BOOL)scheduleLocalNotification;
 - (void)presentLocalNotification;
 - (void)cancelScheduledLocalNotification;
 

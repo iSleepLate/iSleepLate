@@ -161,6 +161,19 @@
 
 #pragma mark - Notifications
 
+- (BOOL)verifyFireDate
+{
+    NSTimeInterval maxPrepTime = 60 * (self.preparationTime.location + self.preparationTime.length);
+    NSDate *fireDate = [self.dateOfArrival dateByAddingTimeInterval: -(self.expectedTravelTime + maxPrepTime)];
+    
+    // check that fireDate is in the future
+    if ([fireDate compare:[NSDate date]] == NSOrderedAscending) {
+        return NO;
+    }
+    
+    return YES;
+}
+
 - (UILocalNotification *)prepareLocalNotification
 {
     NSTimeInterval maxPrepTime = 60 * (self.preparationTime.location + self.preparationTime.length); // minutes
@@ -175,15 +188,20 @@
     return localNotification;
 }
 
-- (void)scheduleLocalNotification
+- (BOOL)scheduleLocalNotification
 {
     self.localNotification = [self prepareLocalNotification];
+    if (!self.localNotification) {
+        return NO;
+    }
     [[UIApplication sharedApplication] scheduleLocalNotification:self.localNotification];
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateStyle:NSDateFormatterShortStyle];
     [formatter setTimeStyle:NSDateFormatterLongStyle];
     NSLog(@"Local Notification set for %@", [formatter stringFromDate:self.localNotification.fireDate]);
+    
+    return YES;
 }
 
 
