@@ -26,11 +26,11 @@
                          action:@selector(slideValueChanged:)
                forControlEvents:UIControlEventValueChanged];
     self.rangeSlider.minimumValue = 0.0;
-    self.rangeSlider.maximumValue = 90.0;
+    self.rangeSlider.maximumValue = 60.0;
     self.rangeSlider.minRange = 10.0;
     
     self.minLabel.text = @"Min: 0 min";
-    self.maxLabel.text = @"Max: 90 min";
+    self.maxLabel.text = @"Max: 60 min";
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -40,10 +40,22 @@
     self.alarm.preparationTime = NSMakeRange(min, range);
 }
 
+- (NSInteger)roundToNearestFive:(NSInteger)number
+{
+    NSLog(@"Given: %d", number);
+    NSInteger remainder = number % 5;
+    NSInteger round = (remainder > 2.5) ? 5 : 0;
+    NSLog(@"Returning: %d", (number - remainder) + round);
+    return (number - remainder) + round;
+}
+
 - (void)updateLabels
 {
-    self.minLabel.text = [NSString stringWithFormat:@"Min: %d min", (int)self.rangeSlider.lowerValue];
-    self.maxLabel.text = [NSString stringWithFormat:@"Max: %d min", (int)self.rangeSlider.upperValue];
+    NSLog(@"Low: %f, Upper: %f", self.rangeSlider.lowerValue, self.rangeSlider.upperValue);
+    NSInteger min = [self roundToNearestFive:self.rangeSlider.lowerValue];
+    NSInteger max = [self roundToNearestFive:self.rangeSlider.upperValue];
+    self.minLabel.text = [NSString stringWithFormat:@"Min: %d min", min];
+    self.maxLabel.text = [NSString stringWithFormat:@"Max: %d min", max];
 }
 
 - (void)slideValueChanged:(id)control
