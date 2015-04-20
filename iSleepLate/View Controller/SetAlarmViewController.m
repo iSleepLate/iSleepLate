@@ -8,26 +8,42 @@
 
 #import "SetAlarmViewController.h"
 
+@interface SetAlarmViewController ()
+
+@property (weak, nonatomic) IBOutlet UIButton *setAlarmButton;
+
+@end
+
 @implementation SetAlarmViewController
 
-- (void)viewWillAppear:(BOOL)animated
+- (void)viewDidLoad
 {
-    [self.alarm printAlarmInfo];
+    self.setAlarmButton.enabled = NO;
 }
 
-#pragma mark - IBActions
-
-- (IBAction)setAlarmButtonClicked:(UIButton *)sender
+- (void)viewDidAppear:(BOOL)animated
 {
-    if ([sender.titleLabel.text isEqualToString:@"Set Alarm"]) {
-        [self.alarm scheduleLocalNotification];
-        [sender setTitle:@"Cancel" forState:UIControlStateNormal];
-        sender.backgroundColor = [UIColor colorWithRed:234/255.0 green:100/255.0 blue:90/255.0 alpha:1.0];
+    [self.alarm printAlarmInfo];
+    
+    if (![self.alarm verifyFireDate]) {
+        [self showAlertForPastFireDate];
     } else {
-        [self.alarm cancelScheduledLocalNotification];
-        [sender setTitle:@"Set Alarm" forState:UIControlStateNormal];
-        sender.backgroundColor = [UIColor colorWithRed:12/255.0 green:51/255.0 blue:82/255.0 alpha:0.6];
+        self.setAlarmButton.enabled = YES;
     }
+}
+
+- (void)showAlertForPastFireDate
+{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Could Not Schedule Alarm!"
+                                                                             message:@"There is not enough time to get you to your destination at the desired time."
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"Ok"
+                                                     style:UIAlertActionStyleDefault
+                                                   handler:^(UIAlertAction *action) {
+                                                               [self.navigationController popToRootViewControllerAnimated:YES];
+                                                   }];
+    [alertController addAction:action];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 @end

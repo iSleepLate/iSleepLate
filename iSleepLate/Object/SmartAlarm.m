@@ -11,12 +11,6 @@
 
 @import AddressBook;
 
-@interface SmartAlarm ()
-
-@property (strong, nonatomic) UILocalNotification *localNotification;
-
-@end
-
 @implementation SmartAlarm
 
 - (instancetype)init
@@ -49,6 +43,21 @@
         AppDelegate *appDelegate = object;
         [self reverseGeocodeLocation:appDelegate.currentLocation];
     }
+}
+
+#pragma mark - Public Methods
+
+- (void)snoozeForNSTimeInterval:(NSTimeInterval)snoozeTime
+{
+    NSDate *oldFireDate = self.localNotification.fireDate;
+    self.localNotification.fireDate = [oldFireDate dateByAddingTimeInterval:snoozeTime];
+    
+    [[UIApplication sharedApplication] scheduleLocalNotification:self.localNotification];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateStyle:NSDateFormatterShortStyle];
+    [formatter setTimeStyle:NSDateFormatterLongStyle];
+    NSLog(@"Local Notification set for %@", [formatter stringFromDate:self.localNotification.fireDate]);
 }
 
 #pragma mark - Printing Out Alarm Info
@@ -127,6 +136,7 @@
             for (MKRoute *route in response.routes) {
                 self.expectedTravelTime += route.expectedTravelTime;
             }
+            self.expectedTravelTime -= ((int)self.expectedTravelTime) % 60;
         }
     }];
 }
@@ -151,23 +161,56 @@
 
 #pragma mark - Notifications
 
-- (void)scheduleLocalNotification
+- (BOOL)verifyFireDate
+{
+    NSTimeInterval maxPrepTime = 60 * (self.preparationTime.location + self.preparationTime.length);
+    NSDate *fireDate = [self.dateOfArrival dateByAddingTimeInterval: -(self.expectedTravelTime + maxPrepTime)];
+    
+    // check that fireDate is in the future
+    if ([fireDate compare:[NSDate date]] == NSOrderedAscending) {
+        return NO;
+    }
+    
+    return YES;
+}
+
+- (UILocalNotification *)prepareLocalNotification
 {
     NSTimeInterval maxPrepTime = 60 * (self.preparationTime.location + self.preparationTime.length); // minutes
     NSDate *fireDate = [self.dateOfArrival dateByAddingTimeInterval: -(self.expectedTravelTime + maxPrepTime)];
     
-    self.localNotification = [[UILocalNotification alloc] init];
-    self.localNotification.fireDate = fireDate;
-    self.localNotification.timeZone = [NSTimeZone defaultTimeZone];
-    self.localNotification.alertBody = @"Wake Up!";
-    self.localNotification.soundName = UILocalNotificationDefaultSoundName;
+    UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+    localNotification.fireDate = fireDate;
+    localNotification.timeZone = [NSTimeZone defaultTimeZone];
+    localNotification.alertBody = @"Wake Up!";
+    localNotification.soundName = UILocalNotificationDefaultSoundName;
     
+    return localNotification;
+}
+
+- (BOOL)scheduleLocalNotification
+{
+    self.localNotification = [self prepareLocalNotification];
+    if (!self.localNotification) {
+        return NO;
+    }
     [[UIApplication sharedApplication] scheduleLocalNotification:self.localNotification];
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateStyle:NSDateFormatterShortStyle];
-    [formatter setTimeStyle:NSDateFormatterShortStyle];
-    NSLog(@"Local Notification set for %@", [formatter stringFromDate:fireDate]);
+    [formatter setTimeStyle:NSDateFormatterLongStyle];
+    NSLog(@"Local Notification set for %@", [formatter stringFromDate:self.localNotification.fireDate]);
+    
+    return YES;
+}
+
+
+// Used mostly for testing purposes at the moment.
+// Presents the notifcation immediatly regardless of fireDate
+- (void)presentLocalNotification
+{
+    self.localNotification = [self prepareLocalNotification];
+    [[UIApplication sharedApplication] presentLocalNotificationNow:self.localNotification];
 }
 
 - (void)cancelScheduledLocalNotification

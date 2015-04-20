@@ -13,6 +13,7 @@
 		8C2000181AC797BD00A8A5FC /* SmartAlarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2000171AC797BD00A8A5FC /* SmartAlarm.m */; };
 		8C20001B1AC84F5000A8A5FC /* ArrivalTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C20001A1AC84F5000A8A5FC /* ArrivalTimeViewController.m */; };
 		8C2000231AC8639400A8A5FC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2000221AC8639400A8A5FC /* QuartzCore.framework */; };
+		8C5083381ACF343100AE392C /* AlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5083371ACF343100AE392C /* AlertViewController.m */; };
 		8C58C2001ACA58C7001737AE /* Austin.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 8C58C1FF1ACA58C7001737AE /* Austin.gpx */; };
 		8C6058671AC8B63C00E3FCA2 /* PreparationTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C6058661AC8B63C00E3FCA2 /* PreparationTimeViewController.m */; };
 		8C60586A1AC8B77D00E3FCA2 /* RangeSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C6058691AC8B77D00E3FCA2 /* RangeSlider.m */; };
@@ -27,6 +28,7 @@
 		8C75BC991A8922410001927C /* iSleepLateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C75BC981A8922410001927C /* iSleepLateTests.m */; };
 		8C8DA52C1ACB36F600268321 /* SetAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C8DA52B1ACB36F600268321 /* SetAlarmViewController.m */; };
 		8C8DA52F1ACB3A1300268321 /* PCTSmartAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C8DA52E1ACB3A1300268321 /* PCTSmartAlarmViewController.m */; };
+		8C94FC1E1AD334DB00CBF3C7 /* Loud-alarm-clock-sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8C94FC1D1AD334DB00CBF3C7 /* Loud-alarm-clock-sound.wav */; };
 		8CCFE68C1ACDCC790057693A /* SideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCFE68B1ACDCC790057693A /* SideMenuViewController.m */; };
 		8CCFE6931ACDF94D0057693A /* MenuOptionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCFE6911ACDF94D0057693A /* MenuOptionTableViewCell.m */; };
 		8CCFE6961ACDFEAC0057693A /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCFE6941ACDFEAC0057693A /* SWRevealViewController.m */; };
@@ -58,6 +60,8 @@
 		8C2000191AC84F5000A8A5FC /* ArrivalTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArrivalTimeViewController.h; path = "View Controller/ArrivalTimeViewController.h"; sourceTree = "<group>"; };
 		8C20001A1AC84F5000A8A5FC /* ArrivalTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ArrivalTimeViewController.m; path = "View Controller/ArrivalTimeViewController.m"; sourceTree = "<group>"; };
 		8C2000221AC8639400A8A5FC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		8C5083361ACF343100AE392C /* AlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlertViewController.h; path = "View Controller/AlertViewController.h"; sourceTree = "<group>"; };
+		8C5083371ACF343100AE392C /* AlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlertViewController.m; path = "View Controller/AlertViewController.m"; sourceTree = "<group>"; };
 		8C58C1FF1ACA58C7001737AE /* Austin.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Austin.gpx; sourceTree = "<group>"; };
 		8C6058651AC8B63C00E3FCA2 /* PreparationTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PreparationTimeViewController.h; path = "View Controller/PreparationTimeViewController.h"; sourceTree = "<group>"; };
 		8C6058661AC8B63C00E3FCA2 /* PreparationTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PreparationTimeViewController.m; path = "View Controller/PreparationTimeViewController.m"; sourceTree = "<group>"; };
@@ -83,6 +87,7 @@
 		8C8DA52B1ACB36F600268321 /* SetAlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetAlarmViewController.m; path = "View Controller/SetAlarmViewController.m"; sourceTree = "<group>"; };
 		8C8DA52D1ACB3A1300268321 /* PCTSmartAlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCTSmartAlarmViewController.h; path = "View Controller/PCTSmartAlarmViewController.h"; sourceTree = "<group>"; };
 		8C8DA52E1ACB3A1300268321 /* PCTSmartAlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCTSmartAlarmViewController.m; path = "View Controller/PCTSmartAlarmViewController.m"; sourceTree = "<group>"; };
+		8C94FC1D1AD334DB00CBF3C7 /* Loud-alarm-clock-sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Loud-alarm-clock-sound.wav"; sourceTree = "<group>"; };
 		8CCFE68A1ACDCC790057693A /* SideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SideMenuViewController.h; path = "View Controller/SideMenuViewController.h"; sourceTree = "<group>"; };
 		8CCFE68B1ACDCC790057693A /* SideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SideMenuViewController.m; path = "View Controller/SideMenuViewController.m"; sourceTree = "<group>"; };
 		8CCFE6911ACDF94D0057693A /* MenuOptionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuOptionTableViewCell.m; path = View/TableViewCell/MenuOptionTableViewCell.m; sourceTree = "<group>"; };
@@ -141,6 +146,8 @@
 				8C6058661AC8B63C00E3FCA2 /* PreparationTimeViewController.m */,
 				8C8DA52A1ACB36F600268321 /* SetAlarmViewController.h */,
 				8C8DA52B1ACB36F600268321 /* SetAlarmViewController.m */,
+				8C5083361ACF343100AE392C /* AlertViewController.h */,
+				8C5083371ACF343100AE392C /* AlertViewController.m */,
 				8C8DA52D1ACB3A1300268321 /* PCTSmartAlarmViewController.h */,
 				8C8DA52E1ACB3A1300268321 /* PCTSmartAlarmViewController.m */,
 				8CF1E0241ACC96CF0054323A /* GeocodeResultsViewController.h */,
@@ -223,6 +230,7 @@
 		8C75BC791A8922410001927C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8C94FC1D1AD334DB00CBF3C7 /* Loud-alarm-clock-sound.wav */,
 				8C75BC7A1A8922410001927C /* Info.plist */,
 				8C75BC7B1A8922410001927C /* main.m */,
 			);
@@ -322,6 +330,7 @@
 				TargetAttributes = {
 					8C75BC751A8922400001927C = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = J7XJVEMVXQ;
 					};
 					8C75BC911A8922410001927C = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -355,6 +364,7 @@
 			files = (
 				8C75BC881A8922410001927C /* Main.storyboard in Resources */,
 				8C75BC8D1A8922410001927C /* LaunchScreen.xib in Resources */,
+				8C94FC1E1AD334DB00CBF3C7 /* Loud-alarm-clock-sound.wav in Resources */,
 				8C75BC8A1A8922410001927C /* Images.xcassets in Resources */,
 				8C58C2001ACA58C7001737AE /* Austin.gpx in Resources */,
 			);
@@ -387,6 +397,7 @@
 				8C2000121AC73D9500A8A5FC /* AppBackgroundView.m in Sources */,
 				8C75BC7C1A8922410001927C /* main.m in Sources */,
 				CE8BE8021ADC239D0000BD71 /* WakeUpViewDetails.m in Sources */,
+				8C5083381ACF343100AE392C /* AlertViewController.m in Sources */,
 				8C60586D1AC8D79100E3FCA2 /* RangeSliderKnobLayer.m in Sources */,
 				8C2000181AC797BD00A8A5FC /* SmartAlarm.m in Sources */,
 				CE8BE7FE1ADC23500000BD71 /* MCSwipeTableViewCell.m in Sources */,
@@ -515,10 +526,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = iSleepLate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -526,10 +540,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = iSleepLate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

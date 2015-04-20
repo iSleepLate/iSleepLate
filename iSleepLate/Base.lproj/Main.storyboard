@@ -285,7 +285,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="setAlarmButtonClicked:" destination="uDo-TP-Vwg" eventType="touchUpInside" id="CKK-TR-HOE"/>
+                                    <segue destination="SBE-L0-NIh" kind="showDetail" id="hWb-zG-jH1"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plug phone into charger" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqQ-4l-poK">
@@ -314,10 +314,152 @@
                             <constraint firstItem="cqQ-4l-poK" firstAttribute="top" secondItem="1P3-cF-Qgu" secondAttribute="bottom" constant="30" id="yXN-cN-1hB"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="setAlarmButton" destination="wF4-oW-ErK" id="Gfu-SI-4tQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Qs-48-BSz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3271" y="173"/>
+        </scene>
+        <!--Alert View Controller-->
+        <scene sceneID="pWQ-uU-GYc">
+            <objects>
+                <viewController id="SBE-L0-NIh" customClass="AlertViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kYp-9e-WPl"/>
+                        <viewControllerLayoutGuide type="bottom" id="nIM-a3-s70"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lDv-7J-ICN" customClass="AppBackgroundView">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6Y-cp-fNg">
+                                <rect key="frame" x="16" y="50" width="568" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="3K2-aK-8hj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="72"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="saw-bh-thv">
+                                <rect key="frame" x="0.0" y="349" width="600" height="251"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="73R-LB-kh9">
+                                <rect key="frame" x="16" y="518" width="568" height="50"/>
+                                <color key="backgroundColor" red="0.91764705879999997" green="0.3921568627" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="HXR-2X-Ir1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <state key="normal" title="Silence">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="userLiftedSilenceButton:" destination="SBE-L0-NIh" eventType="touchUpOutside" id="Mlf-nI-xcV"/>
+                                    <action selector="userLiftedSilenceButton:" destination="SBE-L0-NIh" eventType="touchUpInside" id="P2b-dM-lpS"/>
+                                    <action selector="userPressedSilenceButton:" destination="SBE-L0-NIh" eventType="touchDown" id="lDX-wn-1tG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ro9-h8-5Bh">
+                                <rect key="frame" x="16" y="460" width="568" height="50"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="xej-0H-wB8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <state key="normal" title="5 More Minutes">
+                                    <color key="titleColor" red="0.045992504810000001" green="0.19893592600000001" blue="0.32164978979999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="snooze:" destination="SBE-L0-NIh" eventType="touchUpInside" id="MtQ-98-cEv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l9C-rJ-ebz">
+                                <rect key="frame" x="16" y="402" width="568" height="50"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="OIU-60-dy1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <state key="normal" title="10 More Minutes">
+                                    <color key="titleColor" red="0.045992504810000001" green="0.19893592600000001" blue="0.32164978979999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="snooze:" destination="SBE-L0-NIh" eventType="touchUpInside" id="oyU-ER-gsc"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alarm 11:11 am" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEJ-Of-GtT">
+                                <rect key="frame" x="16" y="144" width="568" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="VXN-tu-ggQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keep Holding..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUH-9z-Wko">
+                                <rect key="frame" x="16" y="145" width="568" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="126" id="9ZG-Nh-oko"/>
+                                    <constraint firstAttribute="height" constant="21" id="hv5-Tr-uAh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="9ZG-Nh-oko"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.045992504810000001" green="0.19893592600000001" blue="0.32164978979999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="L6Y-cp-fNg" firstAttribute="trailing" secondItem="lDv-7J-ICN" secondAttribute="trailingMargin" id="3E0-Re-a2t"/>
+                            <constraint firstItem="73R-LB-kh9" firstAttribute="top" secondItem="ro9-h8-5Bh" secondAttribute="bottom" constant="8" id="48h-1G-Uug"/>
+                            <constraint firstItem="saw-bh-thv" firstAttribute="leading" secondItem="lDv-7J-ICN" secondAttribute="leadingMargin" constant="-16" id="59O-xh-B0H"/>
+                            <constraint firstItem="l9C-rJ-ebz" firstAttribute="trailing" secondItem="lDv-7J-ICN" secondAttribute="trailingMargin" id="DXD-n6-gnq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="saw-bh-thv" secondAttribute="trailing" constant="-16" id="E9t-8f-Lcd"/>
+                            <constraint firstItem="nIM-a3-s70" firstAttribute="top" secondItem="saw-bh-thv" secondAttribute="bottom" id="Ei4-Xb-tnq"/>
+                            <constraint firstItem="73R-LB-kh9" firstAttribute="leading" secondItem="lDv-7J-ICN" secondAttribute="leadingMargin" id="Fl4-zc-3kt"/>
+                            <constraint firstItem="gUH-9z-Wko" firstAttribute="top" secondItem="kYp-9e-WPl" secondAttribute="bottom" constant="125" id="G3d-xe-1RK"/>
+                            <constraint firstItem="ro9-h8-5Bh" firstAttribute="leading" secondItem="lDv-7J-ICN" secondAttribute="leadingMargin" id="HbR-nl-BD9"/>
+                            <constraint firstItem="gUH-9z-Wko" firstAttribute="leading" secondItem="lDv-7J-ICN" secondAttribute="leadingMargin" id="NwF-gs-lSt"/>
+                            <constraint firstItem="l9C-rJ-ebz" firstAttribute="leading" secondItem="lDv-7J-ICN" secondAttribute="leadingMargin" id="QA8-3c-WUE"/>
+                            <constraint firstAttribute="centerX" secondItem="gUH-9z-Wko" secondAttribute="centerX" id="QTw-tP-fGn"/>
+                            <constraint firstItem="ro9-h8-5Bh" firstAttribute="trailing" secondItem="lDv-7J-ICN" secondAttribute="trailingMargin" id="Ts4-dk-xBg"/>
+                            <constraint firstItem="73R-LB-kh9" firstAttribute="trailing" secondItem="lDv-7J-ICN" secondAttribute="trailingMargin" id="V2Q-Fe-gJf"/>
+                            <constraint firstItem="ro9-h8-5Bh" firstAttribute="top" secondItem="l9C-rJ-ebz" secondAttribute="bottom" constant="8" id="Wc5-YA-OKC"/>
+                            <constraint firstItem="saw-bh-thv" firstAttribute="top" secondItem="kYp-9e-WPl" secondAttribute="bottom" constant="329" id="brS-s3-Bc9"/>
+                            <constraint firstItem="nIM-a3-s70" firstAttribute="top" secondItem="73R-LB-kh9" secondAttribute="bottom" constant="32" id="l00-7U-XKa"/>
+                            <constraint firstItem="yEJ-Of-GtT" firstAttribute="top" secondItem="kYp-9e-WPl" secondAttribute="bottom" constant="124" id="l5b-mv-eJC"/>
+                            <constraint firstItem="gUH-9z-Wko" firstAttribute="trailing" secondItem="lDv-7J-ICN" secondAttribute="trailingMargin" id="m9d-Ne-Vbw"/>
+                            <constraint firstItem="L6Y-cp-fNg" firstAttribute="leading" secondItem="lDv-7J-ICN" secondAttribute="leadingMargin" id="o4H-Jb-oEg"/>
+                            <constraint firstItem="L6Y-cp-fNg" firstAttribute="top" secondItem="kYp-9e-WPl" secondAttribute="bottom" constant="30" id="pR0-YR-17f"/>
+                            <constraint firstItem="yEJ-Of-GtT" firstAttribute="leading" secondItem="lDv-7J-ICN" secondAttribute="leadingMargin" id="t7w-Oe-D1h"/>
+                            <constraint firstItem="yEJ-Of-GtT" firstAttribute="trailing" secondItem="lDv-7J-ICN" secondAttribute="trailingMargin" id="zY5-f3-Bh9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="alarmLabel" destination="yEJ-Of-GtT" id="CFy-zT-eqC"/>
+                        <outlet property="loadingLabel" destination="gUH-9z-Wko" id="qRn-um-Mwz"/>
+                        <outlet property="loadingView" destination="saw-bh-thv" id="QXG-wk-dOS"/>
+                        <outlet property="loadingViewMarginTop" destination="brS-s3-Bc9" id="HpM-zd-ZXS"/>
+                        <outlet property="silenceButton" destination="73R-LB-kh9" id="9ha-Xr-cQo"/>
+                        <outlet property="snoozeButton1" destination="ro9-h8-5Bh" id="ZeV-cJ-f7o"/>
+                        <outlet property="snoozeButton2" destination="l9C-rJ-ebz" id="gbh-wb-qW3"/>
+                        <outlet property="timeLabel" destination="L6Y-cp-fNg" id="dh2-2Q-2re"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7qb-eB-VnH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4005" y="173"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="Fig-EP-fJ5">
