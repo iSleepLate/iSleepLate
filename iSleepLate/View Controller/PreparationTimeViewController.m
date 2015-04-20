@@ -35,23 +35,21 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NSUInteger min = self.rangeSlider.lowerValue;
-    NSUInteger range = self.rangeSlider.upperValue - min;
+    NSInteger min = [self roundToNearestFive:self.rangeSlider.lowerValue];
+    NSInteger max = [self roundToNearestFive:self.rangeSlider.upperValue];
+    NSUInteger range = max - min;
     self.alarm.preparationTime = NSMakeRange(min, range);
 }
 
 - (NSInteger)roundToNearestFive:(NSInteger)number
 {
-    NSLog(@"Given: %d", number);
     NSInteger remainder = number % 5;
     NSInteger round = (remainder > 2.5) ? 5 : 0;
-    NSLog(@"Returning: %d", (number - remainder) + round);
     return (number - remainder) + round;
 }
 
 - (void)updateLabels
 {
-    NSLog(@"Low: %f, Upper: %f", self.rangeSlider.lowerValue, self.rangeSlider.upperValue);
     NSInteger min = [self roundToNearestFive:self.rangeSlider.lowerValue];
     NSInteger max = [self roundToNearestFive:self.rangeSlider.upperValue];
     self.minLabel.text = [NSString stringWithFormat:@"Min: %d min", min];
