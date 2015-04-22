@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "WeatherObject.h"
 
 @import MapKit;
 
@@ -22,6 +23,8 @@
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 @property (strong, nonatomic) CLLocation *currentLocation;
+
+@property (strong, nonatomic) WeatherObject *weather;
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;

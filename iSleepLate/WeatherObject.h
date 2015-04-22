@@ -8,11 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface WakeUpViewDetails : NSObject
+@interface WeatherObject : NSObject
 
 @property (nonatomic, strong) NSString *currentWeatherDescription; // this is the description of the weather
 @property (nonatomic) NSTimeInterval expectedTravelTime;
 
-- (void)getWeatherDataAndTravelTime;
+- (void) updateWeather;
+- (NSString *)getWeatherDescription;
 
 @end

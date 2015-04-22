@@ -7,6 +7,8 @@
 //
 
 #import "AlertViewController.h"
+#import "WakeUpViewController.h"
+#import "AppDelegate.h"
 
 @import AVFoundation;
 @import AudioToolbox;
@@ -35,7 +37,8 @@
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        [self.alarm scheduleLocalNotification];
+//        [self.alarm scheduleLocalNotification];
+        [self.alarm presentLocalNotification];
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(handleNotification:)
                                                      name:@"AppDidRecieveLocalNotifcation"
@@ -67,6 +70,9 @@
                                                 userInfo:nil
                                                  repeats:YES];
     
+    // update the weather object here (owned by the AppDelegate)
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appDelegate.weather updateWeather];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -196,12 +202,32 @@
                          [self.loadingView layoutIfNeeded];
                      } completion:^(BOOL finished) {
                          if (finished) {
-                             [self.audioPlayer stop];
-                             self.vibrateIsON = NO;
+                             [self loadWakeUpView];
                          }
-                         [self resetLoadingView];
+                         else {
+                             [self resetLoadingView];
+                         }
                      }];
 }
+
+- (void) loadWakeUpView {
+    // turn off the alarm
+    [self.audioPlayer stop];
+    self.vibrateIsON = NO;
+
+    // push to the wake up view
+    [self performSegueWithIdentifier:@"ToWakeUpView" sender:self];
+}
+
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    WakeUpViewController *vc = [segue destinationViewController];
+//    // can we pass navigation controller?
+//}
+
+
+//UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPad" bundle:nil];
+//UIViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"MyViewControllerID"]; // Storyboard ID
+//[self presentViewController:vc animated:FALSE completion:nil];
 
 - (IBAction)userPressedSilenceButton:(id)sender
 {
