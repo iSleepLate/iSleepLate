@@ -26,6 +26,7 @@
 @property (strong, nonatomic) AVAudioPlayer *audioPlayer;
 @property (nonatomic) BOOL vibrateIsON;
 @property (nonatomic) NSUInteger numberOfVibrations;
+@property (nonatomic) CGFloat userBrightness;
 
 @end
 
@@ -67,6 +68,20 @@
                                                 userInfo:nil
                                                  repeats:YES];
     
+    // disable auto screen sleep
+    [UIApplication sharedApplication].idleTimerDisabled = NO;
+    
+    // monitor proximity sensor
+    UIDevice *device = [UIDevice currentDevice];
+    device.proximityMonitoringEnabled = YES;
+    self.userBrightness = [UIScreen mainScreen].brightness;
+    
+    if (device.proximityMonitoringEnabled == YES) {
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(proximityChanged:)
+                                                     name:@"UIDeviceProximityStateDidChangeNotification"
+                                                   object:device];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -77,7 +92,33 @@
     [self.loadingView setNeedsUpdateConstraints];
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    // re-enable auto screen sleep
+    [UIApplication sharedApplication].idleTimerDisabled = NO;
+    
+    // don't monitor proximity sensor
+    UIDevice *device = [UIDevice currentDevice];
+    device.proximityMonitoringEnabled = NO;
+    [UIScreen mainScreen].wantsSoftwareDimming = NO;
+    [UIScreen mainScreen].brightness = self.userBrightness;
+}
+
 #pragma mark - Private Methods
+
+- (void)proximityChanged:(NSNotification *)note
+{
+    UIDevice *device = [note object];
+    NSLog(@"In proximity: %i", device.proximityState);
+    
+    if (device.proximityState) {
+        [UIScreen mainScreen].wantsSoftwareDimming = YES;
+        [UIScreen mainScreen].brightness = 0;
+    } else {
+        [UIScreen mainScreen].wantsSoftwareDimming = NO;
+        [UIScreen mainScreen].brightness = self.userBrightness;
+    }
+}
 
 - (void)resetDisplay
 {
