@@ -90,8 +90,9 @@
     // make the actual request
     [NSURLConnection sendAsynchronousRequest:[[NSURLRequest alloc] initWithURL:url] queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         if(connectionError) {
-            // what should I do here?
+            // try again?
             NSLog(@"Connection Error");
+            [self updateWeather];
         }
         else {
             // call method to organize that data
@@ -115,8 +116,9 @@
     NSDictionary *parsedObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
     
     if(error) {
-        // what do to here?
+        // try again?
         NSLog(@"Error parsing json object");
+        [self updateWeather];
     }
     else {
         NSDictionary *results = parsedObject[MAINKEY]; //[parsedObject valueForKey:MAINKEY];

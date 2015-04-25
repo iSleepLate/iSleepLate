@@ -37,8 +37,8 @@
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
-//        [self.alarm scheduleLocalNotification];
-        [self.alarm presentLocalNotification];
+        [self.alarm scheduleLocalNotification];
+//        [self.alarm presentLocalNotification];
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(handleNotification:)
                                                      name:@"AppDidRecieveLocalNotifcation"
@@ -218,16 +218,6 @@
     // push to the wake up view
     [self performSegueWithIdentifier:@"ToWakeUpView" sender:self];
 }
-
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    WakeUpViewController *vc = [segue destinationViewController];
-//    // can we pass navigation controller?
-//}
-
-
-//UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPad" bundle:nil];
-//UIViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"MyViewControllerID"]; // Storyboard ID
-//[self presentViewController:vc animated:FALSE completion:nil];
 
 - (IBAction)userPressedSilenceButton:(id)sender
 {
