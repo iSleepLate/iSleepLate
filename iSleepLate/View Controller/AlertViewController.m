@@ -38,8 +38,8 @@
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        [self.alarm scheduleLocalNotification];
-//        [self.alarm presentLocalNotification];
+//        [self.alarm scheduleLocalNotification];
+        [self.alarm presentLocalNotification];
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(handleNotification:)
                                                      name:@"AppDidRecieveLocalNotifcation"
