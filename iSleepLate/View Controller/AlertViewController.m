@@ -71,6 +71,10 @@
                                                 userInfo:nil
                                                  repeats:YES];
     
+    // update the weather object here (owned by the AppDelegate)
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appDelegate.weather updateWeather];
+    
     // disable auto screen sleep
     [UIApplication sharedApplication].idleTimerDisabled = NO;
     
