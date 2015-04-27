@@ -27,6 +27,8 @@
 - (BOOL)scheduleLocalNotification;
 - (void)presentLocalNotification;
 - (void)cancelScheduledLocalNotification;
+- (NSDate *)leaveByTime;
+- (NSString *)expectedTravelTimeString;
 
 // snoozing
 - (void)snoozeForNSTimeInterval:(NSTimeInterval)snoozeTime;

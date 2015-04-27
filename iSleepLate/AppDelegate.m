@@ -91,6 +91,12 @@
 {
     self.currentLocation = [locations lastObject];
     NSLog(@"Current Location: %@", self.currentLocation.description);
+    
+    // update the weather for that location
+    if(!self.weather) {
+        self.weather = [[WeatherObject alloc]init];
+    }
+//    [self.weather updateWeather];
 }
 
 // Caled only when the app is frontmost and active

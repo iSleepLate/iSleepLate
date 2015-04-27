@@ -7,7 +7,7 @@
 //
 //  This weather details object is used to represent the data that will be shown to the user when they wake up
 
-#import "WakeUpViewDetails.h"
+#import "WeatherObject.h"
 #import "AppDelegate.h"
 #import "SmartAlarm.h"
 
@@ -19,7 +19,7 @@
 
 
 
-@implementation WakeUpViewDetails
+@implementation WeatherObject
 
 - (id) init {
     self = [super init];
@@ -29,7 +29,7 @@
 }
 
 
-- (void)getWeatherDataAndTravelTime {
+- (void) updateWeather{
     
     // get reference to app delegate for the currentLocation
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -55,11 +55,13 @@
             [self makeRequestWithZipCode:zipCode CountryCode:countryCode];
         }
     }];
-    
-    
-    // HIDE this for now, since we're running this method at the START of the program, aka we DON'T know travel time yet - also alarm might not even exist yet..
-    // while we're at it, we'll go ahead and set the travel time too, from app delegate
-    //self.expectedTravelTime = [appDelegate.alarm expectedTravelTime];
+}
+
+- (NSString *)getWeatherDescription {
+    if (self.currentWeatherDescription)
+        return self.currentWeatherDescription;
+    else
+        return @"";
 }
 
 - (void)makeRequestWithLat: (double) latitude Lon: (double) longitude {
@@ -88,8 +90,9 @@
     // make the actual request
     [NSURLConnection sendAsynchronousRequest:[[NSURLRequest alloc] initWithURL:url] queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         if(connectionError) {
-            // what should I do here?
+            // try again?
             NSLog(@"Connection Error");
+            [self updateWeather];
         }
         else {
             // call method to organize that data
@@ -113,8 +116,9 @@
     NSDictionary *parsedObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
     
     if(error) {
-        // what do to here?
+        // try again?
         NSLog(@"Error parsing json object");
+        [self updateWeather];
     }
     else {
         NSDictionary *results = parsedObject[MAINKEY]; //[parsedObject valueForKey:MAINKEY];

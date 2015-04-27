@@ -121,7 +121,7 @@ typedef NS_ENUM(NSUInteger, MCSwipeTableViewCellDirection) {
     _velocity = kMCVelocity;
     _animationDuration = kMCAnimationDuration;
     
-    _defaultColor = [UIColor whiteColor];
+    _defaultColor = [UIColor whiteColor]; //**CHANGED**
     
     _modeForState1 = MCSwipeTableViewCellModeNone;
     _modeForState2 = MCSwipeTableViewCellModeNone;
@@ -156,18 +156,19 @@ typedef NS_ENUM(NSUInteger, MCSwipeTableViewCellDirection) {
         return;
     }
     
-    // If the content view background is transparent we get the background color.
-    BOOL isContentViewBackgroundClear = !self.contentView.backgroundColor;
-    if (isContentViewBackgroundClear) {
-        BOOL isBackgroundClear = [self.backgroundColor isEqual:[UIColor clearColor]];
-        self.contentView.backgroundColor = isBackgroundClear ? [UIColor whiteColor] :self.backgroundColor;
-    }
+    // We need the background to be clear!
+//    // If the content view background is transparent we get the background color.
+//    BOOL isContentViewBackgroundClear = !self.contentView.backgroundColor;
+//    if (isContentViewBackgroundClear) {
+//        BOOL isBackgroundClear = [self.backgroundColor isEqual:[UIColor clearColor]];
+//        self.contentView.backgroundColor = isBackgroundClear ? [UIColor whiteColor] :self.backgroundColor;
+//    }
     
     UIImage *contentViewScreenshotImage = [self imageWithView:self];
     
-    if (isContentViewBackgroundClear) {
-        self.contentView.backgroundColor = nil;
-    }
+//    if (isContentViewBackgroundClear) {
+//        self.contentView.backgroundColor = nil;
+//    }
     
     _colorIndicatorView = [[UIView alloc] initWithFrame:self.bounds];
     _colorIndicatorView.autoresizingMask = (UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth);
@@ -175,6 +176,7 @@ typedef NS_ENUM(NSUInteger, MCSwipeTableViewCellDirection) {
     [self addSubview:_colorIndicatorView];
     
     _slidingView = [[UIView alloc] init];
+    _slidingView.backgroundColor = [UIColor clearColor];
     _slidingView.contentMode = UIViewContentModeCenter;
     [_colorIndicatorView addSubview:_slidingView];
     
@@ -201,13 +203,17 @@ typedef NS_ENUM(NSUInteger, MCSwipeTableViewCellDirection) {
     if (!_slidingView) {
         return;
     }
-    
     NSArray *subviews = [_slidingView subviews];
     [subviews enumerateObjectsUsingBlock:^(UIView *view, NSUInteger idx, BOOL *stop) {
         [view removeFromSuperview];
     }];
     
     [_slidingView addSubview:slidingView];
+}
+
+- (void)setHighlighted: (BOOL)highlighted animated: (BOOL)animated
+{
+    // don't highlight
 }
 
 #pragma mark - Swipe configuration
@@ -326,6 +332,7 @@ typedef NS_ENUM(NSUInteger, MCSwipeTableViewCellDirection) {
 
 #pragma mark - UIGestureRecognizerDelegate
 
+// ** note ** - this is called when the user holds down one of the cells
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
     
     if ([gestureRecognizer class] == [UIPanGestureRecognizer class]) {
@@ -496,7 +503,7 @@ typedef NS_ENUM(NSUInteger, MCSwipeTableViewCellDirection) {
     CGFloat percentage = [self percentageWithOffset:offset relativeToWidth:CGRectGetWidth(self.bounds)];
     
     UIView *view = [self viewWithPercentage:percentage];
-    
+
     // View Position.
     if (view) {
         [self setViewOfSlidingView:view];
@@ -508,6 +515,7 @@ typedef NS_ENUM(NSUInteger, MCSwipeTableViewCellDirection) {
     UIColor *color = [self colorWithPercentage:percentage];
     if (color != nil) {
         _colorIndicatorView.backgroundColor = color;
+//        _slidingView.backgroundColor = [UIColor redColor]; ***** _sliding view isn't the cell... *****
     }
 }
 
@@ -636,7 +644,7 @@ typedef NS_ENUM(NSUInteger, MCSwipeTableViewCellDirection) {
             [self slideViewWithPercentage:0 view:_activeView isDragging:NO];
             
             // Setting back the color to the default.
-            _colorIndicatorView.backgroundColor = self.defaultColor;
+            _colorIndicatorView.backgroundColor = [UIColor clearColor];// self.defaultColor; // ** tried here **
             
         } completion:^(BOOL finished1) {
             
