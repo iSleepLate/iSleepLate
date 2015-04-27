@@ -7,29 +7,29 @@
 //
 
 #import "WeatherIconView.h"
+#import "AppDelegate.h"
 
 @implementation WeatherIconView
 
 
-- (id) init {
-    self = [super init];
-    if(self) {
-        //self.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Clear Sky"]];
-        self.backgroundColor = [UIColor blueColor];
-    }
-    return self;
-}
+//- (id) initWithCoder:(NSCoder *)aDecoder {
+//    self = [super initWithCoder:aDecoder];
+//    if(self) {
+//        [self setIconWithIconName:@"11d"];
+//    }
+//    return self;
+//}
 
-- (id) initWithCoder:(NSCoder *)aDecoder {
-    self = [super initWithCoder:aDecoder];
-    if(self) {
-        self.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Clear Sky"]];
-//        self.backgroundColor = [UIColor blueColor];
-    }
-    return self;
-}
-- (void) setIconWithDescription: (NSString *) description {
-//    self.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage       imageNamed:@"background.png"]];
+- (void) setIconWithIconName: (NSString *) iconName {
+    // no reason to have an NSDictionary for all icons for EVERY WeatherIconView, so have one NSDictionary for all icons in WeatherObj (one per app)
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    WeatherObject* weather = appDelegate.weather;
+    
+    UIImage *icon = [weather imageWithIconName: iconName];
+    self.backgroundColor = [[UIColor alloc] initWithPatternImage:icon];
+    
+    appDelegate = nil;
+    weather = nil;
 }
 
 @end

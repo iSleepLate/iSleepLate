@@ -38,8 +38,8 @@
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
-//        [self.alarm scheduleLocalNotification];
-        [self.alarm presentLocalNotification];
+        [self.alarm scheduleLocalNotification];
+//        [self.alarm presentLocalNotification];
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(handleNotification:)
                                                      name:@"AppDidRecieveLocalNotifcation"
@@ -73,6 +73,9 @@
     
     // update the weather object here (owned by the AppDelegate)
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    if(!appDelegate.weather) {
+        appDelegate.weather = [[WeatherObject alloc] init];
+    }
     [appDelegate.weather updateWeather];
     
     // disable auto screen sleep

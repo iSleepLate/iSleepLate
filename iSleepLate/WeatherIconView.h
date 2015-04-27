@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface WeatherIconView : UIView
-
+- (void) setIconWithIconName: (NSString *) iconName;
 @end
