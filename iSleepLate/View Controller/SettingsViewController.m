@@ -35,6 +35,8 @@
     self.snoozeSwitch.layer.cornerRadius = 16;
 }
 
+#pragma mark - TableView
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 2;
@@ -48,9 +50,20 @@
         self.snoozeSwitch.onTintColor = [UIColor redColor];
         self.snoozeSwitch.backgroundColor = [UIColor grayColor];
         self.snoozeSwitch.layer.cornerRadius = 16.0;
+        [self.snoozeSwitch addTarget:self
+                              action:@selector(snoozeSwitchToggled:)
+                    forControlEvents:UIControlEventValueChanged];
         cell.accessoryView = self.snoozeSwitch;
     }
     return cell;
+}
+
+#pragma mark - UIControl
+
+- (void)snoozeSwitchToggled:(id)sender
+{
+    NSLog(@"Switch State: %d", self.snoozeSwitch.on);
+    [[NSUserDefaults standardUserDefaults] setBool:self.snoozeSwitch.on forKey:@"snoozeEnabled"];
 }
 
 @end
