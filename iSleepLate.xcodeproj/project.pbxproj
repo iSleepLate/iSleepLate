@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		472165AF1AD58A420018B330 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 472165AE1AD58A420018B330 /* SettingsViewController.m */; };
 		8C16EE2F1ABE30EC00150EBF /* DestinationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C16EE2E1ABE30EC00150EBF /* DestinationViewController.m */; };
 		8C16EE311ABE319E00150EBF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C16EE301ABE319E00150EBF /* MapKit.framework */; };
 		8C2000121AC73D9500A8A5FC /* AppBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2000111AC73D9500A8A5FC /* AppBackgroundView.m */; };
@@ -55,6 +56,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		472165AD1AD58A420018B330 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = "View Controller/SettingsViewController.h"; sourceTree = "<group>"; };
+		472165AE1AD58A420018B330 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = "View Controller/SettingsViewController.m"; sourceTree = "<group>"; };
 		8C16EE2D1ABE30EC00150EBF /* DestinationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DestinationViewController.h; path = "View Controller/DestinationViewController.h"; sourceTree = "<group>"; };
 		8C16EE2E1ABE30EC00150EBF /* DestinationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DestinationViewController.m; path = "View Controller/DestinationViewController.m"; sourceTree = "<group>"; };
 		8C16EE301ABE319E00150EBF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -175,6 +178,8 @@
 				8CF1E0251ACC96CF0054323A /* GeocodeResultsViewController.m */,
 				8CCFE68A1ACDCC790057693A /* SideMenuViewController.h */,
 				8CCFE68B1ACDCC790057693A /* SideMenuViewController.m */,
+				472165AD1AD58A420018B330 /* SettingsViewController.h */,
+				472165AE1AD58A420018B330 /* SettingsViewController.m */,
 				8C0DD8F11ACDA3DA00885931 /* SWRevealViewController */,
 				CE8BE7FF1ADC236E0000BD71 /* MCSwipeTableView */,
 			);
@@ -434,6 +439,7 @@
 				CEE98ABF1AEB34E000B71A8A /* WeatherDetailsViewController.m in Sources */,
 				8C75BC7F1A8922410001927C /* AppDelegate.m in Sources */,
 				8C2000121AC73D9500A8A5FC /* AppBackgroundView.m in Sources */,
+				472165AF1AD58A420018B330 /* SettingsViewController.m in Sources */,
 				8C75BC7C1A8922410001927C /* main.m in Sources */,
 				CE8BE8021ADC239D0000BD71 /* WeatherObject.m in Sources */,
 				CEEE45471AE7272F0077ECD7 /* FBShimmeringLayer.m in Sources */,
