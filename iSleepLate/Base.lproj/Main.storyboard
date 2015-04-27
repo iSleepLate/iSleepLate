@@ -521,12 +521,28 @@ Instagram: @iSleepLateApp</mutableString>
                         <outlet property="snoozeButton1" destination="ro9-h8-5Bh" id="ZeV-cJ-f7o"/>
                         <outlet property="snoozeButton2" destination="l9C-rJ-ebz" id="gbh-wb-qW3"/>
                         <outlet property="timeLabel" destination="L6Y-cp-fNg" id="dh2-2Q-2re"/>
-                        <segue destination="9SL-zS-P0M" kind="show" identifier="ToWakeUpView" id="Mys-IA-FDg"/>
+                        <segue destination="PDJ-Yd-J2I" kind="show" identifier="ToWakeUpView" id="oDL-wP-M8f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7qb-eB-VnH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4005" y="173"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5DF-rc-BQ4">
+            <objects>
+                <navigationController id="PDJ-Yd-J2I" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vaX-aq-tg7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="9SL-zS-P0M" kind="relationship" relationship="rootViewController" id="wsV-qa-N7l"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="roZ-sC-qPM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4110" y="-577"/>
         </scene>
         <!--Wake Up View Controller-->
         <scene sceneID="Gzj-aO-qAI">
@@ -540,7 +556,7 @@ Instagram: @iSleepLateApp</mutableString>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nOD-BW-LHP">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nOD-BW-LHP">
                                 <rect key="frame" x="16" y="138" width="568" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Dmf-qm-n8g"/>
@@ -557,7 +573,7 @@ Instagram: @iSleepLateApp</mutableString>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11:11" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yxx-z8-hdX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="11:11" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yxx-z8-hdX">
                                 <rect key="frame" x="16" y="50" width="568" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="3Od-kw-uCb"/>
@@ -566,7 +582,7 @@ Instagram: @iSleepLateApp</mutableString>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="2" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="y4k-Fd-aSb">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="2" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="y4k-Fd-aSb">
                                 <rect key="frame" x="16" y="208" width="568" height="139"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -635,7 +651,7 @@ Instagram: @iSleepLateApp</mutableString>
                                 <rect key="frame" x="16" y="327" width="568" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4HU-bq-Duc" userLabel="Swipeable View">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4HU-bq-Duc" userLabel="Swipeable View">
                                 <rect key="frame" x="0.0" y="457" width="600" height="135"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2BJ-9h-yc5" userLabel="Shimmering View" customClass="FBShimmeringView">
@@ -670,21 +686,23 @@ Instagram: @iSleepLateApp</mutableString>
                             <constraint firstAttribute="trailingMargin" secondItem="4HU-bq-Duc" secondAttribute="trailing" constant="-16" id="tV6-Ob-pri"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="xgM-mu-Yoz"/>
                     <connections>
+                        <outlet property="bottomBorder" destination="eeW-pb-OcJ" id="V3c-s1-aa6"/>
                         <outlet property="leaveByLabel" destination="nOD-BW-LHP" id="XzI-BF-e6h"/>
-                        <outlet property="shimmeringView" destination="2BJ-9h-yc5" id="v85-fP-eip"/>
                         <outlet property="slideToHideImage" destination="rrS-RD-ICd" id="FDs-eh-tVf"/>
                         <outlet property="slideToUnlockView" destination="4HU-bq-Duc" id="s7L-oY-QDh"/>
                         <outlet property="tableView" destination="y4k-Fd-aSb" id="GtB-WM-crY"/>
                         <outlet property="timeLabel" destination="yxx-z8-hdX" id="YAU-UO-0KQ"/>
                         <segue destination="veT-5T-NmZ" kind="show" identifier="ToWeatherDetailsViewController" id="Y6D-Vl-YsJ"/>
+                        <segue destination="hmp-Vr-ZFo" kind="show" identifier="BackToStart" id="ZsO-a6-YH0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RiX-CR-fsZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4661" y="173"/>
+            <point key="canvasLocation" x="4705" y="173"/>
         </scene>
-        <!--Weather Details View Controller-->
+        <!--Weather-->
         <scene sceneID="gMF-bP-Dpv">
             <objects>
                 <viewController id="veT-5T-NmZ" customClass="WeatherDetailsViewController" sceneMemberID="viewController">
@@ -762,7 +780,7 @@ Instagram: @iSleepLateApp</mutableString>
                                     <constraint firstAttribute="height" constant="20" id="GDC-G2-gFa"/>
                                     <constraint firstAttribute="width" constant="100" id="PA3-6G-tBI"/>
                                     <constraint firstAttribute="height" constant="20" id="Se6-Kc-sNX"/>
-                                    <constraint firstAttribute="width" constant="82" id="Y3e-xO-ADH"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="82" id="Y3e-xO-ADH"/>
                                     <constraint firstAttribute="width" constant="108" id="eaD-ff-Dtp"/>
                                     <constraint firstAttribute="height" constant="20" id="fVK-Z2-JZW"/>
                                 </constraints>
@@ -822,16 +840,7 @@ Instagram: @iSleepLateApp</mutableString>
                                     <constraint firstAttribute="width" constant="31" id="sXL-b0-PKu"/>
                                     <constraint firstAttribute="height" constant="20" id="zvP-kd-KVi"/>
                                 </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment content="80">
-                                        <attributes>
-                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="12" name="HelveticaNeue-Light"/>
-                                            <font key="NSOriginalFont" size="17" name="HelveticaNeue-Light"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                                <attributedString key="attributedText"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -852,16 +861,7 @@ Instagram: @iSleepLateApp</mutableString>
                                     <constraint firstAttribute="height" constant="21" id="pCg-oT-lvL"/>
                                     <constraint firstAttribute="height" constant="21" id="xcS-aQ-IfL"/>
                                 </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment content="72">
-                                        <attributes>
-                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="12" name="HelveticaNeue-Light"/>
-                                            <font key="NSOriginalFont" size="17" name="HelveticaNeue-Light"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                                <attributedString key="attributedText"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -1192,7 +1192,7 @@ Instagram: @iSleepLateApp</mutableString>
                             <constraint firstItem="zNv-me-eeo" firstAttribute="top" secondItem="dew-Xh-NBW" secondAttribute="bottom" constant="10" id="H03-Md-Erx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cLk-Gy-xcO" secondAttribute="trailing" constant="-16" id="Hbs-qv-9db"/>
                             <constraint firstItem="fZJ-Yp-cBN" firstAttribute="leading" secondItem="zNv-me-eeo" secondAttribute="trailing" constant="15" id="Ity-0z-SD1"/>
-                            <constraint firstItem="zcb-Qy-fhQ" firstAttribute="leading" secondItem="fwB-mv-7CU" secondAttribute="leadingMargin" constant="-16" id="Jjm-ZH-FcW"/>
+                            <constraint firstItem="zcb-Qy-fhQ" firstAttribute="leading" secondItem="fwB-mv-7CU" secondAttribute="leadingMargin" id="Jjm-ZH-FcW"/>
                             <constraint firstItem="vlX-QT-4k7" firstAttribute="leading" secondItem="TBh-Na-iMV" secondAttribute="trailing" constant="20" id="Jrw-lj-ac0"/>
                             <constraint firstItem="Zr7-ML-mxT" firstAttribute="leading" secondItem="fZJ-Yp-cBN" secondAttribute="trailing" constant="62" id="KEH-Gh-ubT"/>
                             <constraint firstAttribute="trailingMargin" secondItem="CBz-CT-SF8" secondAttribute="trailing" constant="63.5" id="KfW-af-BWF"/>
@@ -1362,6 +1362,7 @@ Instagram: @iSleepLateApp</mutableString>
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="Weather" id="kbd-GQ-Wky"/>
                     <connections>
                         <outlet property="cityLabel" destination="cLk-Gy-xcO" id="frO-rR-1dX"/>
                         <outlet property="currentDayLabel" destination="zcb-Qy-fhQ" id="u0w-fz-YVe"/>
@@ -1387,7 +1388,7 @@ Instagram: @iSleepLateApp</mutableString>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nMm-mS-964" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5329" y="173"/>
+            <point key="canvasLocation" x="5393" y="173"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="Fig-EP-fJ5">

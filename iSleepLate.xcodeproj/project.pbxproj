@@ -250,7 +250,6 @@
 		8C75BC781A8922400001927C /* iSleepLate */ = {
 			isa = PBXGroup;
 			children = (
-				CEEE45401AE7270A0077ECD7 /* FBShimmering */,
 				8C75BC7D1A8922410001927C /* AppDelegate.h */,
 				8C75BC7E1A8922410001927C /* AppDelegate.m */,
 				CE2AAAB41AD2E686005B9A80 /* Date Picker */,
