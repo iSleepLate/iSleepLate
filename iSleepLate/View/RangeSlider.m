@@ -41,6 +41,8 @@ static CGFloat const RangeSliderThumbSize = 26.0;
     if (self) {
         self.minimumValue = 0.0;
         self.maximumValue = 100.0;
+        self.lowerValue = self.minimumValue;
+        self.upperValue = self.maximumValue;
         
         self.backgroundColor = [UIColor clearColor];
         self.highlightColor = [UIColor colorWithRed:234/255.0 green:100/255.0 blue:90/255.0 alpha:1.0];
@@ -69,9 +71,7 @@ static CGFloat const RangeSliderThumbSize = 26.0;
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    
-    self.lowerValue = self.minimumValue;
-    self.upperValue = self.maximumValue;
+
     [self setLayerFrames];
 }
 

@@ -46,9 +46,15 @@
 // scrolls the picker to the current time
 -(void) scrollToCurrentTime
 {
+    [self scrollToDate:[NSDate date]];
+    
+}
+
+- (void)scrollToDate:(NSDate *)date
+{
     // create the calendar object
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    NSDateComponents *components = [calendar components:NSCalendarUnitHour | NSCalendarUnitMinute fromDate:[NSDate date]];
+    NSDateComponents *components = [calendar components:NSCalendarUnitHour | NSCalendarUnitMinute fromDate:date];
     
     // convert to 24 hour
     int hourRow = (int)components.hour > 12 ? (int)components.hour % 13 : (int)components.hour - 1;
