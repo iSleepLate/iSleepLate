@@ -155,7 +155,8 @@
         
         [cell setSwipeGestureWithView:checkView color:[UIColor clearColor] mode:MCSwipeTableViewCellModeExit state:MCSwipeTableViewCellState1 completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
             NSLog(@"Did swipe to go to Weather Screen");
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:WEATHERURL]];
+            //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:WEATHERURL]];
+            [self performSegueWithIdentifier:@"ToWeatherDetailsViewController" sender:self];
         }];
     }
     else if (indexPath.row % TABLEITEMS == 1) {
