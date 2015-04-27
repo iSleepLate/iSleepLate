@@ -7,8 +7,6 @@
 //
 
 #import "AlertViewController.h"
-#import "WakeUpViewController.h"
-#import "AppDelegate.h"
 
 @import AVFoundation;
 @import AudioToolbox;
@@ -39,7 +37,6 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         [self.alarm scheduleLocalNotification];
-//        [self.alarm presentLocalNotification];
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(handleNotification:)
                                                      name:@"AppDidRecieveLocalNotifcation"
@@ -70,10 +67,6 @@
                                                 selector:@selector(updateTime)
                                                 userInfo:nil
                                                  repeats:YES];
-    
-    // update the weather object here (owned by the AppDelegate)
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    [appDelegate.weather updateWeather];
     
     // disable auto screen sleep
     [UIApplication sharedApplication].idleTimerDisabled = NO;
@@ -244,21 +237,11 @@
                          [self.loadingView layoutIfNeeded];
                      } completion:^(BOOL finished) {
                          if (finished) {
-                             [self loadWakeUpView];
+                             [self.audioPlayer stop];
+                             self.vibrateIsON = NO;
                          }
-                         else {
-                             [self resetLoadingView];
-                         }
+                         [self resetLoadingView];
                      }];
-}
-
-- (void) loadWakeUpView {
-    // turn off the alarm
-    [self.audioPlayer stop];
-    self.vibrateIsON = NO;
-
-    // push to the wake up view
-    [self performSegueWithIdentifier:@"ToWakeUpView" sender:self];
 }
 
 - (IBAction)userPressedSilenceButton:(id)sender

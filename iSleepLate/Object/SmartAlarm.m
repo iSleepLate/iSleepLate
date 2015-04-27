@@ -60,17 +60,6 @@
     NSLog(@"Local Notification set for %@", [formatter stringFromDate:self.localNotification.fireDate]);
 }
 
-- (NSDate *)leaveByTime {
-    
-    // leave by date should be arrival time - expected travel time
-    return [self.dateOfArrival dateByAddingTimeInterval: -self.expectedTravelTime];
-}
-
-- (NSString *)expectedTravelTimeString {
-    NSInteger minutes = (self.expectedTravelTime / 60);
-    return [NSString stringWithFormat:@"%02ld", (long)minutes];
-}
-
 #pragma mark - Printing Out Alarm Info
 
 - (void)printAlarmInfo
