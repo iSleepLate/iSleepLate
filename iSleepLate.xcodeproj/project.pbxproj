@@ -10,6 +10,8 @@
 		472165AF1AD58A420018B330 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 472165AE1AD58A420018B330 /* SettingsViewController.m */; };
 		8C16EE2F1ABE30EC00150EBF /* DestinationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C16EE2E1ABE30EC00150EBF /* DestinationViewController.m */; };
 		8C16EE311ABE319E00150EBF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C16EE301ABE319E00150EBF /* MapKit.framework */; };
+		8C1975FB1AEE97BA0020F51E /* FBShimmeringView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1975F51AEE97BA0020F51E /* FBShimmeringView.m */; };
+		8C1975FC1AEE97BA0020F51E /* FBShimmeringLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1975F71AEE97BA0020F51E /* FBShimmeringLayer.m */; };
 		8C2000121AC73D9500A8A5FC /* AppBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2000111AC73D9500A8A5FC /* AppBackgroundView.m */; };
 		8C2000181AC797BD00A8A5FC /* SmartAlarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2000171AC797BD00A8A5FC /* SmartAlarm.m */; };
 		8C20001B1AC84F5000A8A5FC /* ArrivalTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C20001A1AC84F5000A8A5FC /* ArrivalTimeViewController.m */; };
@@ -40,8 +42,6 @@
 		CE8BE8021ADC239D0000BD71 /* WeatherObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8BE8011ADC239D0000BD71 /* WeatherObject.m */; };
 		CEE98ABF1AEB34E000B71A8A /* WeatherDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE98ABE1AEB34E000B71A8A /* WeatherDetailsViewController.m */; };
 		CEE98AC21AEBD34F00B71A8A /* WeatherIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE98AC11AEBD34F00B71A8A /* WeatherIconView.m */; };
-		CEEE45471AE7272F0077ECD7 /* FBShimmeringLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEE45441AE7272F0077ECD7 /* FBShimmeringLayer.m */; };
-		CEEE45481AE7272F0077ECD7 /* FBShimmeringView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEE45461AE7272F0077ECD7 /* FBShimmeringView.m */; };
 		CEFDB5B11AE586ED003E4020 /* WakeUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFDB5B01AE586ED003E4020 /* WakeUpViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +61,12 @@
 		8C16EE2D1ABE30EC00150EBF /* DestinationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DestinationViewController.h; path = "View Controller/DestinationViewController.h"; sourceTree = "<group>"; };
 		8C16EE2E1ABE30EC00150EBF /* DestinationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DestinationViewController.m; path = "View Controller/DestinationViewController.m"; sourceTree = "<group>"; };
 		8C16EE301ABE319E00150EBF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		8C1975F51AEE97BA0020F51E /* FBShimmeringView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBShimmeringView.m; path = FBShimmering/FBShimmeringView.m; sourceTree = "<group>"; };
+		8C1975F61AEE97BA0020F51E /* FBShimmeringView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBShimmeringView.h; path = FBShimmering/FBShimmeringView.h; sourceTree = "<group>"; };
+		8C1975F71AEE97BA0020F51E /* FBShimmeringLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBShimmeringLayer.m; path = FBShimmering/FBShimmeringLayer.m; sourceTree = "<group>"; };
+		8C1975F81AEE97BA0020F51E /* FBShimmeringLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBShimmeringLayer.h; path = FBShimmering/FBShimmeringLayer.h; sourceTree = "<group>"; };
+		8C1975F91AEE97BA0020F51E /* FBShimmering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBShimmering.h; path = FBShimmering/FBShimmering.h; sourceTree = "<group>"; };
+		8C1975FA1AEE97BA0020F51E /* FBShimmering-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FBShimmering-Prefix.pch"; path = "FBShimmering/FBShimmering-Prefix.pch"; sourceTree = "<group>"; };
 		8C2000101AC73D9500A8A5FC /* AppBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppBackgroundView.h; path = View/AppBackgroundView.h; sourceTree = "<group>"; };
 		8C2000111AC73D9500A8A5FC /* AppBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppBackgroundView.m; path = View/AppBackgroundView.m; sourceTree = "<group>"; };
 		8C2000161AC797BD00A8A5FC /* SmartAlarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SmartAlarm.h; path = Object/SmartAlarm.h; sourceTree = "<group>"; };
@@ -115,12 +121,6 @@
 		CEE98ABE1AEB34E000B71A8A /* WeatherDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherDetailsViewController.m; sourceTree = "<group>"; };
 		CEE98AC01AEBD34F00B71A8A /* WeatherIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherIconView.h; sourceTree = "<group>"; };
 		CEE98AC11AEBD34F00B71A8A /* WeatherIconView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherIconView.m; sourceTree = "<group>"; };
-		CEEE45411AE7272F0077ECD7 /* FBShimmering-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FBShimmering-Prefix.pch"; path = "../../../../Downloads/Shimmer-master/FBShimmering/FBShimmering-Prefix.pch"; sourceTree = "<group>"; };
-		CEEE45421AE7272F0077ECD7 /* FBShimmering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBShimmering.h; path = "../../../../Downloads/Shimmer-master/FBShimmering/FBShimmering.h"; sourceTree = "<group>"; };
-		CEEE45431AE7272F0077ECD7 /* FBShimmeringLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBShimmeringLayer.h; path = "../../../../Downloads/Shimmer-master/FBShimmering/FBShimmeringLayer.h"; sourceTree = "<group>"; };
-		CEEE45441AE7272F0077ECD7 /* FBShimmeringLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBShimmeringLayer.m; path = "../../../../Downloads/Shimmer-master/FBShimmering/FBShimmeringLayer.m"; sourceTree = "<group>"; };
-		CEEE45451AE7272F0077ECD7 /* FBShimmeringView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBShimmeringView.h; path = "../../../../Downloads/Shimmer-master/FBShimmering/FBShimmeringView.h"; sourceTree = "<group>"; };
-		CEEE45461AE7272F0077ECD7 /* FBShimmeringView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBShimmeringView.m; path = "../../../../Downloads/Shimmer-master/FBShimmering/FBShimmeringView.m"; sourceTree = "<group>"; };
 		CEFDB5AF1AE586ED003E4020 /* WakeUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WakeUpViewController.h; sourceTree = "<group>"; };
 		CEFDB5B01AE586ED003E4020 /* WakeUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WakeUpViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -313,12 +313,12 @@
 		CEEE45401AE7270A0077ECD7 /* FBShimmering */ = {
 			isa = PBXGroup;
 			children = (
-				CEEE45411AE7272F0077ECD7 /* FBShimmering-Prefix.pch */,
-				CEEE45421AE7272F0077ECD7 /* FBShimmering.h */,
-				CEEE45431AE7272F0077ECD7 /* FBShimmeringLayer.h */,
-				CEEE45441AE7272F0077ECD7 /* FBShimmeringLayer.m */,
-				CEEE45451AE7272F0077ECD7 /* FBShimmeringView.h */,
-				CEEE45461AE7272F0077ECD7 /* FBShimmeringView.m */,
+				8C1975F51AEE97BA0020F51E /* FBShimmeringView.m */,
+				8C1975F61AEE97BA0020F51E /* FBShimmeringView.h */,
+				8C1975F71AEE97BA0020F51E /* FBShimmeringLayer.m */,
+				8C1975F81AEE97BA0020F51E /* FBShimmeringLayer.h */,
+				8C1975F91AEE97BA0020F51E /* FBShimmering.h */,
+				8C1975FA1AEE97BA0020F51E /* FBShimmering-Prefix.pch */,
 			);
 			name = FBShimmering;
 			sourceTree = "<group>";
@@ -433,7 +433,9 @@
 				8CCFE6961ACDFEAC0057693A /* SWRevealViewController.m in Sources */,
 				8C6058671AC8B63C00E3FCA2 /* PreparationTimeViewController.m in Sources */,
 				8C8DA52F1ACB3A1300268321 /* PCTSmartAlarmViewController.m in Sources */,
+				8C1975FB1AEE97BA0020F51E /* FBShimmeringView.m in Sources */,
 				8C20001B1AC84F5000A8A5FC /* ArrivalTimeViewController.m in Sources */,
+				8C1975FC1AEE97BA0020F51E /* FBShimmeringLayer.m in Sources */,
 				8CCFE6931ACDF94D0057693A /* MenuOptionTableViewCell.m in Sources */,
 				CEFDB5B11AE586ED003E4020 /* WakeUpViewController.m in Sources */,
 				CEE98ABF1AEB34E000B71A8A /* WeatherDetailsViewController.m in Sources */,
@@ -442,12 +444,10 @@
 				472165AF1AD58A420018B330 /* SettingsViewController.m in Sources */,
 				8C75BC7C1A8922410001927C /* main.m in Sources */,
 				CE8BE8021ADC239D0000BD71 /* WeatherObject.m in Sources */,
-				CEEE45471AE7272F0077ECD7 /* FBShimmeringLayer.m in Sources */,
 				8C5083381ACF343100AE392C /* AlertViewController.m in Sources */,
 				8C60586D1AC8D79100E3FCA2 /* RangeSliderKnobLayer.m in Sources */,
 				8C2000181AC797BD00A8A5FC /* SmartAlarm.m in Sources */,
 				CE8BE7FE1ADC23500000BD71 /* MCSwipeTableViewCell.m in Sources */,
-				CEEE45481AE7272F0077ECD7 /* FBShimmeringView.m in Sources */,
 				8C75BC821A8922410001927C /* iSleepLate.xcdatamodeld in Sources */,
 				CEE98AC21AEBD34F00B71A8A /* WeatherIconView.m in Sources */,
 				8CCFE68C1ACDCC790057693A /* SideMenuViewController.m in Sources */,

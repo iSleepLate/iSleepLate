@@ -33,6 +33,13 @@
     [super viewDidLoad];
     
     self.snoozeSwitch.layer.cornerRadius = 16;
+    
+    SWRevealViewController *revealViewController = self.revealViewController;
+    if (revealViewController) {
+        [self.sideMenuButton setTarget: self.revealViewController];
+        [self.sideMenuButton setAction: @selector(revealToggle:)];
+        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    }
 }
 
 #pragma mark - TableView
@@ -46,13 +53,7 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.rowIds[indexPath.row]];
     if ([self.rowIds[indexPath.row] isEqualToString:@"snooze"]) {
-        self.snoozeSwitch = [[UISwitch alloc] init];
-        self.snoozeSwitch.onTintColor = [UIColor redColor];
-        self.snoozeSwitch.backgroundColor = [UIColor grayColor];
-        self.snoozeSwitch.layer.cornerRadius = 16.0;
-        [self.snoozeSwitch addTarget:self
-                              action:@selector(snoozeSwitchToggled:)
-                    forControlEvents:UIControlEventValueChanged];
+        self.snoozeSwitch = [self settingsSwitch];
         cell.accessoryView = self.snoozeSwitch;
     }
     return cell;
@@ -60,10 +61,26 @@
 
 #pragma mark - UIControl
 
+- (UISwitch *)settingsSwitch
+{
+    UISwitch *theSwitch = [[UISwitch alloc] init];
+    theSwitch.onTintColor = [UIColor redColor];
+    theSwitch.backgroundColor = [UIColor grayColor];
+    theSwitch.layer.cornerRadius = 16.0;
+    [theSwitch addTarget:self
+                  action:@selector(snoozeSwitchToggled:)
+        forControlEvents:UIControlEventValueChanged];
+
+    theSwitch.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"snoozeEnabled"];
+    
+    return theSwitch;
+}
+
 - (void)snoozeSwitchToggled:(id)sender
 {
     NSLog(@"Switch State: %d", self.snoozeSwitch.on);
     [[NSUserDefaults standardUserDefaults] setBool:self.snoozeSwitch.on forKey:@"snoozeEnabled"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 @end

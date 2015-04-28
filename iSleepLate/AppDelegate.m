@@ -21,6 +21,8 @@
 // Can I commit?
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [[NSUserDefaults standardUserDefaults] registerDefaults:@{ @"snoozeEnabled" : @YES }];
+    
     // White Status Bar
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
