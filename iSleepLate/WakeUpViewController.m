@@ -153,7 +153,10 @@
         [[cell detailTextLabel] setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:12]];
         cell.detailTextLabel.textColor = [UIColor whiteColor];
         
-        [cell setSwipeGestureWithView:checkView color:[UIColor clearColor] mode:MCSwipeTableViewCellModeSwitch state:MCSwipeTableViewCellState1 completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
+        [cell setSwipeGestureWithView:checkView color:[UIColor clearColor]
+                                 mode:MCSwipeTableViewCellModeExit
+                                state:MCSwipeTableViewCellState1
+                      completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
             NSLog(@"Did swipe to go to Weather Screen");
             //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:WEATHERURL]];
             [self performSegueWithIdentifier:@"ToWeatherDetailsViewController" sender:self];

@@ -151,6 +151,12 @@ typedef NS_ENUM(NSUInteger, MCSwipeTableViewCellDirection) {
 
 #pragma mark - View Manipulation
 
+- (void)toggleHideCellLabels
+{
+    self.textLabel.hidden = !self.textLabel.hidden;
+    self.detailTextLabel.hidden = !self.detailTextLabel.hidden;
+}
+
 - (void)setupSwipingView {
     if (_contentScreenshotView) {
         return;
@@ -182,9 +188,13 @@ typedef NS_ENUM(NSUInteger, MCSwipeTableViewCellDirection) {
     
     _contentScreenshotView = [[UIImageView alloc] initWithImage:contentViewScreenshotImage];
     [self addSubview:_contentScreenshotView];
+    
+    [self toggleHideCellLabels];
 }
 
 - (void)uninstallSwipingView {
+    [self toggleHideCellLabels];
+    
     if (!_contentScreenshotView) {
         return;
     }
@@ -716,7 +726,6 @@ typedef NS_ENUM(NSUInteger, MCSwipeTableViewCellDirection) {
     if (completionBlock) {
         completionBlock(self, state, mode);
     }
-    
 }
 
 @end
