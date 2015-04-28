@@ -1669,14 +1669,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="sound" id="F6h-Y9-KrB">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="sound" id="F6h-Y9-KrB">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F6h-Y9-KrB" id="ZZ0-op-AAF">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sound" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wmI-FB-TGA">
-                                                    <rect key="frame" x="58" y="11" width="58" height="21"/>
+                                                    <rect key="frame" x="48" y="11" width="58" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="58" id="18f-Yf-Pvt"/>
                                                         <constraint firstAttribute="height" constant="21" id="ikF-du-Lfj"/>
@@ -1685,12 +1685,12 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Jy-4i-hHs">
-                                                    <rect key="frame" x="15" y="4" width="35" height="35"/>
-                                                    <color key="backgroundColor" red="0.8894871473" green="0.29502215980000002" blue="0.2805740833" alpha="1" colorSpace="calibratedRGB"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="soundSetting" translatesAutoresizingMaskIntoConstraints="NO" id="4Jy-4i-hHs">
+                                                    <rect key="frame" x="15" y="9" width="25" height="25"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="35" id="3c9-VQ-sgY"/>
-                                                        <constraint firstAttribute="width" constant="35" id="941-pf-obd"/>
+                                                        <constraint firstAttribute="height" constant="25" id="3c9-VQ-sgY"/>
+                                                        <constraint firstAttribute="width" constant="25" id="941-pf-obd"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_DummySound_" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDD-wO-frJ">
@@ -1715,22 +1715,22 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="snooze" id="aGu-fI-vc0">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="snooze" id="aGu-fI-vc0">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aGu-fI-vc0" id="7ru-5h-Hji">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C8V-pn-Yfx">
-                                                    <rect key="frame" x="15" y="4" width="35" height="35"/>
-                                                    <color key="backgroundColor" red="0.8894871473" green="0.29502215980000002" blue="0.2805740833" alpha="1" colorSpace="calibratedRGB"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zzz" translatesAutoresizingMaskIntoConstraints="NO" id="C8V-pn-Yfx">
+                                                    <rect key="frame" x="15" y="9" width="25" height="25"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="35" id="qWz-lC-HAZ"/>
-                                                        <constraint firstAttribute="height" constant="35" id="tPK-79-eSQ"/>
+                                                        <constraint firstAttribute="width" constant="25" id="qWz-lC-HAZ"/>
+                                                        <constraint firstAttribute="height" constant="25" id="tPK-79-eSQ"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Snooze" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uf2-xV-Chk">
-                                                    <rect key="frame" x="58" y="11" width="58" height="21"/>
+                                                    <rect key="frame" x="48" y="11" width="58" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="3ZQ-Gg-dcd"/>
                                                         <constraint firstAttribute="width" constant="58" id="JU8-s3-QjV"/>
@@ -1749,22 +1749,21 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="prepTime" id="jjo-o7-UmP">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="prepTime" id="jjo-o7-UmP">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jjo-o7-UmP" id="Wbu-iD-L16">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gVy-P0-gR0">
-                                                    <rect key="frame" x="15" y="4" width="35" height="35"/>
-                                                    <color key="backgroundColor" red="0.8894871473" green="0.29502215980000002" blue="0.2805740833" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <rect key="frame" x="15" y="9" width="25" height="25"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="35" id="0Ot-OI-S0a"/>
-                                                        <constraint firstAttribute="width" constant="35" id="LYO-of-sMG"/>
+                                                        <constraint firstAttribute="height" constant="25" id="0Ot-OI-S0a"/>
+                                                        <constraint firstAttribute="width" constant="25" id="LYO-of-sMG"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preptime Range" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uEQ-Yz-BeP">
-                                                    <rect key="frame" x="58" y="11" width="124" height="21"/>
+                                                    <rect key="frame" x="48" y="11" width="124" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="124" id="JCx-e8-DsO"/>
                                                         <constraint firstAttribute="height" constant="21" id="V0W-M8-bF7"/>
@@ -2023,6 +2022,8 @@
         <image name="Placemark Icon" width="19" height="30"/>
         <image name="SettingsIcon" width="20" height="20"/>
         <image name="SlideToHideImage" width="125" height="20"/>
+        <image name="soundSetting" width="19" height="25"/>
+        <image name="zzz" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="QxV-Kc-Hx8"/>
