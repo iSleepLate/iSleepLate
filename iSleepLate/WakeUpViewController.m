@@ -177,6 +177,7 @@
             [cell setSwipeGestureWithView:checkView color:[UIColor clearColor] mode:MCSwipeTableViewCellModeExit state:MCSwipeTableViewCellState1 completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
                 //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:WEATHERURL]];
                 [self performSegueWithIdentifier:@"ToWeatherDetailsViewController" sender:self];
+                bottomBorder.hidden = YES;
             }];
         }
     }
