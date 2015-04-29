@@ -52,10 +52,17 @@
     
     // convert to 24 hour
     int hourRow = (int)components.hour > 12 ? (int)components.hour % 13 : (int)components.hour - 1;
+    int minuteRow = components.minute / 5;
+    
+    // pick row that is in middle of infinite scroll
+    int modifier = (6 * ((int)INT8_MAX / 12));
+    hourRow += modifier;
+    minuteRow += modifier;
+    
     [self selectRow: hourRow
         inComponent: 0
            animated: YES];
-    [self selectRow: components.minute / 5
+    [self selectRow: minuteRow
         inComponent: 1
            animated: YES];
     [self selectRow: components.hour >= 12 ? 1 : 0 // 0 is AM, 1 is PM
@@ -112,10 +119,11 @@
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
+    NSInteger rows = ((int)INT8_MAX / 12) * 12;
     switch (component) {
         case 0:     // hour
         case 1:     // minute
-            return 12;
+            return rows;
         default:    // am/pm
             return 2;
     }
@@ -143,11 +151,11 @@
     // set title of label
     switch (component) {
         case 0:
-            label.text = [NSString stringWithFormat:@"%d", (int)row + 1];
+            label.text = [NSString stringWithFormat:@"%d", ((int)row % 12) + 1 ];
             label.textAlignment = NSTextAlignmentRight;
             break;
         case 1:
-            label.text = [NSString stringWithFormat:@"%02d", (int)row * 5];
+            label.text = [NSString stringWithFormat:@"%02d", ((int)row % 12) * 5];
             label.textAlignment = NSTextAlignmentCenter;
             break;
         default:
