@@ -13,6 +13,7 @@
 
 @property (strong, nonatomic) NSArray *rowIds;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sideMenuButton;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) UISwitch *snoozeSwitch;
 
 @end
@@ -23,7 +24,7 @@
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        _rowIds = @[@"sound", @"snooze", @"prepTime"];
+        _rowIds = @[@"snooze", @"prepTime"];
     }
     return self;
 }
@@ -33,6 +34,7 @@
     [super viewDidLoad];
     
     self.snoozeSwitch.layer.cornerRadius = 16;
+    self.tableView.tableFooterView = [UIView new];
     
     SWRevealViewController *revealViewController = self.revealViewController;
     if (revealViewController) {

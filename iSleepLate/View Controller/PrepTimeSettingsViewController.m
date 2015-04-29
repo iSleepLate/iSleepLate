@@ -13,6 +13,7 @@
 @property (strong, nonatomic) NSArray *cellIds;
 @property (strong, nonatomic) UITextField *minTextField;
 @property (strong, nonatomic) UITextField *maxTextField;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -33,6 +34,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.tableView.tableFooterView = [UIView new];
     
     
     NSInteger min = [[NSUserDefaults standardUserDefaults] integerForKey:@"minPrepTime"];
