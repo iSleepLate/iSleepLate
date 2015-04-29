@@ -62,23 +62,14 @@
 		8C16EE2D1ABE30EC00150EBF /* DestinationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DestinationViewController.h; path = "View Controller/DestinationViewController.h"; sourceTree = "<group>"; };
 		8C16EE2E1ABE30EC00150EBF /* DestinationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DestinationViewController.m; path = "View Controller/DestinationViewController.m"; sourceTree = "<group>"; };
 		8C16EE301ABE319E00150EBF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-<<<<<<< HEAD
-		8C1975F51AEE97BA0020F51E /* FBShimmeringView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBShimmeringView.m; path = FBShimmering/FBShimmeringView.m; sourceTree = "<group>"; };
-		8C1975F61AEE97BA0020F51E /* FBShimmeringView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBShimmeringView.h; path = FBShimmering/FBShimmeringView.h; sourceTree = "<group>"; };
-		8C1975F71AEE97BA0020F51E /* FBShimmeringLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBShimmeringLayer.m; path = FBShimmering/FBShimmeringLayer.m; sourceTree = "<group>"; };
-		8C1975F81AEE97BA0020F51E /* FBShimmeringLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBShimmeringLayer.h; path = FBShimmering/FBShimmeringLayer.h; sourceTree = "<group>"; };
-		8C1975F91AEE97BA0020F51E /* FBShimmering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBShimmering.h; path = FBShimmering/FBShimmering.h; sourceTree = "<group>"; };
-		8C1975FA1AEE97BA0020F51E /* FBShimmering-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FBShimmering-Prefix.pch"; path = "FBShimmering/FBShimmering-Prefix.pch"; sourceTree = "<group>"; };
 		8C1975FD1AEFE1510020F51E /* PrepTimeSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrepTimeSettingsViewController.h; path = "View Controller/PrepTimeSettingsViewController.h"; sourceTree = "<group>"; };
 		8C1975FE1AEFE1510020F51E /* PrepTimeSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PrepTimeSettingsViewController.m; path = "View Controller/PrepTimeSettingsViewController.m"; sourceTree = "<group>"; };
-=======
 		8C1976101AF020180020F51E /* FBShimmeringView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBShimmeringView.m; path = FBShimmering/FBShimmeringView.m; sourceTree = "<group>"; };
 		8C1976111AF020180020F51E /* FBShimmeringView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBShimmeringView.h; path = FBShimmering/FBShimmeringView.h; sourceTree = "<group>"; };
 		8C1976121AF020180020F51E /* FBShimmeringLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBShimmeringLayer.m; path = FBShimmering/FBShimmeringLayer.m; sourceTree = "<group>"; };
 		8C1976131AF020180020F51E /* FBShimmeringLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBShimmeringLayer.h; path = FBShimmering/FBShimmeringLayer.h; sourceTree = "<group>"; };
 		8C1976141AF020180020F51E /* FBShimmering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBShimmering.h; path = FBShimmering/FBShimmering.h; sourceTree = "<group>"; };
 		8C1976151AF020180020F51E /* FBShimmering-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FBShimmering-Prefix.pch"; path = "FBShimmering/FBShimmering-Prefix.pch"; sourceTree = "<group>"; };
->>>>>>> 7cdf840... Add Shimmering files to project
 		8C2000101AC73D9500A8A5FC /* AppBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppBackgroundView.h; path = View/AppBackgroundView.h; sourceTree = "<group>"; };
 		8C2000111AC73D9500A8A5FC /* AppBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppBackgroundView.m; path = View/AppBackgroundView.m; sourceTree = "<group>"; };
 		8C2000161AC797BD00A8A5FC /* SmartAlarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SmartAlarm.h; path = Object/SmartAlarm.h; sourceTree = "<group>"; };
@@ -327,21 +318,12 @@
 		CEEE45401AE7270A0077ECD7 /* FBShimmering */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
-				8C1975F51AEE97BA0020F51E /* FBShimmeringView.m */,
-				8C1975F61AEE97BA0020F51E /* FBShimmeringView.h */,
-				8C1975F71AEE97BA0020F51E /* FBShimmeringLayer.m */,
-				8C1975F81AEE97BA0020F51E /* FBShimmeringLayer.h */,
-				8C1975F91AEE97BA0020F51E /* FBShimmering.h */,
-				8C1975FA1AEE97BA0020F51E /* FBShimmering-Prefix.pch */,
-=======
 				8C1976101AF020180020F51E /* FBShimmeringView.m */,
 				8C1976111AF020180020F51E /* FBShimmeringView.h */,
 				8C1976121AF020180020F51E /* FBShimmeringLayer.m */,
 				8C1976131AF020180020F51E /* FBShimmeringLayer.h */,
 				8C1976141AF020180020F51E /* FBShimmering.h */,
 				8C1976151AF020180020F51E /* FBShimmering-Prefix.pch */,
->>>>>>> 7cdf840... Add Shimmering files to project
 			);
 			name = FBShimmering;
 			sourceTree = "<group>";
@@ -458,11 +440,7 @@
 				8C8DA52F1ACB3A1300268321 /* PCTSmartAlarmViewController.m in Sources */,
 				8C1975FB1AEE97BA0020F51E /* FBShimmeringView.m in Sources */,
 				8C20001B1AC84F5000A8A5FC /* ArrivalTimeViewController.m in Sources */,
-<<<<<<< HEAD
-				8C1975FC1AEE97BA0020F51E /* FBShimmeringLayer.m in Sources */,
-=======
 				8C1976161AF020180020F51E /* FBShimmeringView.m in Sources */,
->>>>>>> 7cdf840... Add Shimmering files to project
 				8CCFE6931ACDF94D0057693A /* MenuOptionTableViewCell.m in Sources */,
 				CEFDB5B11AE586ED003E4020 /* WakeUpViewController.m in Sources */,
 				CEE98ABF1AEB34E000B71A8A /* WeatherDetailsViewController.m in Sources */,
