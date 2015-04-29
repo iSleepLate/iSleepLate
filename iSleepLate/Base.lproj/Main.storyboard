@@ -175,6 +175,72 @@
             </objects>
             <point key="canvasLocation" x="1788" y="907"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZLb-tm-QI8">
+            <objects>
+                <navigationController id="Ghu-xB-zaJ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YWR-9W-Y6u">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="E0l-Rt-T8i" kind="relationship" relationship="rootViewController" id="t4s-py-BW6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4h5-Rg-bnB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="352" y="-843"/>
+        </scene>
+        <!--ABOUT-->
+        <scene sceneID="aGK-n3-xZn">
+            <objects>
+                <viewController id="E0l-Rt-T8i" customClass="AboutViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pdw-mQ-2CI"/>
+                        <viewControllerLayoutGuide type="bottom" id="2ah-cs-dGT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EoB-GF-pGv" customClass="AppBackgroundView">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fET-Im-1Zb">
+                                <rect key="frame" x="16" y="64" width="568" height="536"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">iSleepLate v1.0
+
+Version 1.0 of this app wakes up the user based on traffic analysis and designated preparation time, and provides the user with five- and ten-minute snoozing options. The app pulls information from MapKit in order to provide the user with a destination address. 
+
+iSleepLate pulls traffic information and weather information directly from Apple, using that to inform the user about the conditions outside when he/she wakes up in the morning. Our main objective is to get the user to his or her destination on time, every time.
+
+iSleepLate was designed by four students -- two Journalism majors and two Computer Science majors -- at the University of Texas at Austin.                                                                                                             
+
+Twitter Handle: @iSleepLateApp                             
+Facebook Page: https://www.facebook.com/iSleepLateApp
+Instagram: @iSleepLateApp</mutableString>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.035294117649999998" green="0.26274509800000001" blue="0.39607843139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fET-Im-1Zb" firstAttribute="top" secondItem="EoB-GF-pGv" secondAttribute="topMargin" constant="64" id="7zm-dP-yVi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fET-Im-1Zb" secondAttribute="trailing" id="GyQ-9W-tvh"/>
+                            <constraint firstItem="2ah-cs-dGT" firstAttribute="top" secondItem="fET-Im-1Zb" secondAttribute="bottom" id="P5C-wE-W0K"/>
+                            <constraint firstItem="fET-Im-1Zb" firstAttribute="leading" secondItem="EoB-GF-pGv" secondAttribute="leadingMargin" id="giz-0C-MyX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="ABOUT" id="eSk-WE-qNV">
+                        <barButtonItem key="leftBarButtonItem" image="HamburgerIcon" id="3Hl-xT-jDa"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="sideMenuButton" destination="3Hl-xT-jDa" id="t31-9n-SF6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Im-e0-Icl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1143" y="-843"/>
+        </scene>
         <!--ARRIVAL TIME-->
         <scene sceneID="RfS-23-vnY">
             <objects>
@@ -1592,6 +1658,7 @@
                                             <outlet property="iconView" destination="drc-yd-uXg" id="s8S-0m-YQ6"/>
                                             <outlet property="menuTitleLabel" destination="TsU-py-tp9" id="tQ0-AA-7Js"/>
                                             <outlet property="selectionIndicator" destination="m5m-Nb-X1x" id="pmc-G0-fYl"/>
+                                            <segue destination="Ghu-xB-zaJ" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="kLq-MS-FP7"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

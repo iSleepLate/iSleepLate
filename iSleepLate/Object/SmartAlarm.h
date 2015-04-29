@@ -10,7 +10,7 @@
 
 @import MapKit;
 
-@interface SmartAlarm : NSObject <NSCoding>
+@interface SmartAlarm : NSObject
 
 // user defined variables
 @property (strong, nonatomic) NSDate *dateOfArrival;
@@ -21,7 +21,6 @@
 @property (strong, nonatomic) UILocalNotification *localNotification;
 @property (nonatomic) NSTimeInterval expectedTravelTime;
 @property (nonatomic) MKMapItem *currentLocation;
-@property (strong, nonatomic) NSString *destinationString;
 
 - (void)printAlarmInfo;
 - (BOOL)verifyFireDate;
