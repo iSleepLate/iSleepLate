@@ -12,6 +12,7 @@
 @interface AboutViewController ()
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sideMenuButton;
+@property (weak, nonatomic) IBOutlet UITextView *textView;
 
 @end
 
@@ -20,6 +21,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
     
     SWRevealViewController *revealViewController = self.revealViewController;
     if (revealViewController) {
