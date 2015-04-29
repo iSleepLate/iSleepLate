@@ -175,6 +175,74 @@
             </objects>
             <point key="canvasLocation" x="1788" y="907"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZLb-tm-QI8">
+            <objects>
+                <navigationController id="Ghu-xB-zaJ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YWR-9W-Y6u">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="E0l-Rt-T8i" kind="relationship" relationship="rootViewController" id="t4s-py-BW6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4h5-Rg-bnB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="352" y="-843"/>
+        </scene>
+        <!--ABOUT-->
+        <scene sceneID="aGK-n3-xZn">
+            <objects>
+                <viewController id="E0l-Rt-T8i" customClass="AboutViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pdw-mQ-2CI"/>
+                        <viewControllerLayoutGuide type="bottom" id="2ah-cs-dGT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EoB-GF-pGv" customClass="AppBackgroundView">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iSleepLate v1.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rzq-7v-EUb">
+                                <rect key="frame" x="16" y="84" width="568" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="mxQ-q7-IWI"/>
+                                    <constraint firstAttribute="height" constant="28" id="ybo-04-EGs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="mxQ-q7-IWI"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.035294117649999998" green="0.26274509800000001" blue="0.39607843139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Rzq-7v-EUb" firstAttribute="top" secondItem="pdw-mQ-2CI" secondAttribute="bottom" constant="20" id="47E-sq-ptV"/>
+                            <constraint firstItem="Rzq-7v-EUb" firstAttribute="trailing" secondItem="EoB-GF-pGv" secondAttribute="trailingMargin" id="FID-Yw-ijN"/>
+                            <constraint firstItem="Rzq-7v-EUb" firstAttribute="leading" secondItem="EoB-GF-pGv" secondAttribute="leadingMargin" id="bUw-WN-cfo"/>
+                            <constraint firstAttribute="centerX" secondItem="Rzq-7v-EUb" secondAttribute="centerX" id="egh-Wb-PFD"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="egh-Wb-PFD"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="ABOUT" id="eSk-WE-qNV">
+                        <barButtonItem key="leftBarButtonItem" image="HamburgerIcon" id="3Hl-xT-jDa"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="sideMenuButton" destination="3Hl-xT-jDa" id="t31-9n-SF6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Im-e0-Icl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1143" y="-843"/>
+        </scene>
         <!--ARRIVAL TIME-->
         <scene sceneID="RfS-23-vnY">
             <objects>
@@ -1592,6 +1660,7 @@
                                             <outlet property="iconView" destination="drc-yd-uXg" id="s8S-0m-YQ6"/>
                                             <outlet property="menuTitleLabel" destination="TsU-py-tp9" id="tQ0-AA-7Js"/>
                                             <outlet property="selectionIndicator" destination="m5m-Nb-X1x" id="pmc-G0-fYl"/>
+                                            <segue destination="Ghu-xB-zaJ" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="kLq-MS-FP7"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
