@@ -51,15 +51,6 @@
     }
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    if (self.alarm.destinationString) {
-        self.addressField.text = self.alarm.destinationString;
-    }
-}
-
 #pragma mark - IBActions
 
 - (IBAction)segueButtonPressed:(id)sender
