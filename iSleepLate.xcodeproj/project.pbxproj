@@ -33,6 +33,7 @@
 		8C8DA52C1ACB36F600268321 /* SetAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C8DA52B1ACB36F600268321 /* SetAlarmViewController.m */; };
 		8C8DA52F1ACB3A1300268321 /* PCTSmartAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C8DA52E1ACB3A1300268321 /* PCTSmartAlarmViewController.m */; };
 		8C94FC1E1AD334DB00CBF3C7 /* Loud-alarm-clock-sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8C94FC1D1AD334DB00CBF3C7 /* Loud-alarm-clock-sound.wav */; };
+		8CC246401AF1665E00D1C288 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CC2463F1AF1665E00D1C288 /* AboutViewController.m */; };
 		8CCFE68C1ACDCC790057693A /* SideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCFE68B1ACDCC790057693A /* SideMenuViewController.m */; };
 		8CCFE6931ACDF94D0057693A /* MenuOptionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCFE6911ACDF94D0057693A /* MenuOptionTableViewCell.m */; };
 		8CCFE6961ACDFEAC0057693A /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCFE6941ACDFEAC0057693A /* SWRevealViewController.m */; };
@@ -105,6 +106,8 @@
 		8C8DA52D1ACB3A1300268321 /* PCTSmartAlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCTSmartAlarmViewController.h; path = "View Controller/PCTSmartAlarmViewController.h"; sourceTree = "<group>"; };
 		8C8DA52E1ACB3A1300268321 /* PCTSmartAlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCTSmartAlarmViewController.m; path = "View Controller/PCTSmartAlarmViewController.m"; sourceTree = "<group>"; };
 		8C94FC1D1AD334DB00CBF3C7 /* Loud-alarm-clock-sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Loud-alarm-clock-sound.wav"; sourceTree = "<group>"; };
+		8CC2463E1AF1665E00D1C288 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutViewController.h; path = "View Controller/AboutViewController.h"; sourceTree = "<group>"; };
+		8CC2463F1AF1665E00D1C288 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutViewController.m; path = "View Controller/AboutViewController.m"; sourceTree = "<group>"; };
 		8CCFE68A1ACDCC790057693A /* SideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SideMenuViewController.h; path = "View Controller/SideMenuViewController.h"; sourceTree = "<group>"; };
 		8CCFE68B1ACDCC790057693A /* SideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SideMenuViewController.m; path = "View Controller/SideMenuViewController.m"; sourceTree = "<group>"; };
 		8CCFE6911ACDF94D0057693A /* MenuOptionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuOptionTableViewCell.m; path = View/TableViewCell/MenuOptionTableViewCell.m; sourceTree = "<group>"; };
@@ -187,6 +190,8 @@
 				CE8BE7FF1ADC236E0000BD71 /* MCSwipeTableView */,
 				8C1975FD1AEFE1510020F51E /* PrepTimeSettingsViewController.h */,
 				8C1975FE1AEFE1510020F51E /* PrepTimeSettingsViewController.m */,
+				8CC2463E1AF1665E00D1C288 /* AboutViewController.h */,
+				8CC2463F1AF1665E00D1C288 /* AboutViewController.m */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -438,10 +443,10 @@
 				8CCFE6961ACDFEAC0057693A /* SWRevealViewController.m in Sources */,
 				8C6058671AC8B63C00E3FCA2 /* PreparationTimeViewController.m in Sources */,
 				8C8DA52F1ACB3A1300268321 /* PCTSmartAlarmViewController.m in Sources */,
-				8C1975FB1AEE97BA0020F51E /* FBShimmeringView.m in Sources */,
 				8C20001B1AC84F5000A8A5FC /* ArrivalTimeViewController.m in Sources */,
 				8C1976161AF020180020F51E /* FBShimmeringView.m in Sources */,
 				8CCFE6931ACDF94D0057693A /* MenuOptionTableViewCell.m in Sources */,
+				8CC246401AF1665E00D1C288 /* AboutViewController.m in Sources */,
 				CEFDB5B11AE586ED003E4020 /* WakeUpViewController.m in Sources */,
 				CEE98ABF1AEB34E000B71A8A /* WeatherDetailsViewController.m in Sources */,
 				8C75BC7F1A8922410001927C /* AppDelegate.m in Sources */,
@@ -452,7 +457,6 @@
 				CE8BE8021ADC239D0000BD71 /* WeatherObject.m in Sources */,
 				8C5083381ACF343100AE392C /* AlertViewController.m in Sources */,
 				8C60586D1AC8D79100E3FCA2 /* RangeSliderKnobLayer.m in Sources */,
-				8C1976071AF0149A0020F51E /* FBShimmeringLayer.m in Sources */,
 				8C2000181AC797BD00A8A5FC /* SmartAlarm.m in Sources */,
 				CE8BE7FE1ADC23500000BD71 /* MCSwipeTableViewCell.m in Sources */,
 				8C75BC821A8922410001927C /* iSleepLate.xcdatamodeld in Sources */,
@@ -460,7 +464,6 @@
 				8C1976171AF020180020F51E /* FBShimmeringLayer.m in Sources */,
 				8CCFE68C1ACDCC790057693A /* SideMenuViewController.m in Sources */,
 				8C16EE2F1ABE30EC00150EBF /* DestinationViewController.m in Sources */,
-				8C1976061AF0149A0020F51E /* FBShimmeringView.m in Sources */,
 				8CF1E0261ACC96CF0054323A /* GeocodeResultsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
