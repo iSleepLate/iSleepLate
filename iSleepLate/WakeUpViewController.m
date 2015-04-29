@@ -177,24 +177,18 @@
 
 - (void) openMaps {
     // if we can open google maps..
-    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"comgooglemaps://"]]) {
-        
-        CLLocationCoordinate2D start = self.currentLocation.coordinate;
-        CLLocationCoordinate2D destination = self.alarm.destination.placemark.location.coordinate;
-        
-        NSString *googleMapsURLString = [NSString stringWithFormat:@"http://maps.google.com/?saddr=%1.6f,%1.6f&daddr=%1.6f,%1.6f",
-                                         start.latitude, start.longitude, destination.latitude, destination.longitude];
-        
+    CLLocationCoordinate2D start = self.currentLocation.coordinate;
+    CLLocationCoordinate2D destination = self.alarm.destination.placemark.location.coordinate;
+    
+    NSString *googleMapsURLString = [NSString stringWithFormat:@"comgooglemaps://?saddr=%1.6f,%1.6f&daddr=%1.6f,%1.6f", start.latitude, start.longitude, destination.latitude, destination.longitude];
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:googleMapsURLString]]) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:googleMapsURLString]];
-        
         // ***** some kind of return to app thing ***** that would be awesome!
-        
     }
     // can't use google maps, use default apple maps
     else {
         NSDictionary *launchOptions = @{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving};
         [self.alarm.destination openInMapsWithLaunchOptions:launchOptions];
-        
         // ** impossible to return to app according to something I saw?? **
     }
 }
