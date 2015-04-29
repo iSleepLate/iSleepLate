@@ -7,7 +7,6 @@
 //
 
 #import "SetAlarmViewController.h"
-#import "AppDelegate.h"
 
 @interface SetAlarmViewController ()
 
@@ -31,13 +30,6 @@
     } else {
         self.setAlarmButton.enabled = YES;
     }
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // save alarm
-    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
-    [appDelegate saveSmartAlarm];
 }
 
 - (void)showAlertForPastFireDate

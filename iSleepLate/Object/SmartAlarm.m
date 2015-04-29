@@ -13,53 +13,23 @@
 
 @implementation SmartAlarm
 
-#pragma mark NSCoding
-
-- (void)encodeWithCoder:(NSCoder *)aCoder
-{
-    [aCoder encodeObject:_dateOfArrival forKey:@"dateOfArrival"];
-    [aCoder encodeObject:_destinationString forKey:@"destinationString"];
-    [aCoder encodeObject:[NSValue valueWithRange:_preparationTime] forKey:@"preparationTime"];
-}
-
-- (instancetype)initWithCoder:(NSCoder *)aDecoder
-{
-    NSLog(@"InitWithCoder");
-    self = [super init];
-    if (self) {
-        _dateOfArrival = [aDecoder decodeObjectForKey:@"dateOfArrival"];
-        _destinationString = [aDecoder decodeObjectForKey:@"destinationString"];
-        _preparationTime = ((NSValue *)[aDecoder decodeObjectForKey:@"preparationTime"]).rangeValue;
-        
-        [self initializer];
-    }
-    
-    return self;
-}
-
 - (instancetype)init
 {
-    NSLog(@"Init");
     self = [super init];
     if (self) {
-        [self initializer];
+        [self addObserver:self
+               forKeyPath:@"destination"
+                  options:NSKeyValueObservingOptionNew
+                  context:NULL];
+        
+        AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+        [appDelegate addObserver:self
+                      forKeyPath:@"currentLocation"
+                         options:NSKeyValueObservingOptionNew
+                         context:NULL];
     }
     
     return self;
-}
-
-- (void)initializer
-{
-    [self addObserver:self
-           forKeyPath:@"destination"
-              options:NSKeyValueObservingOptionNew
-              context:NULL];
-    
-    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
-    [appDelegate addObserver:self
-                  forKeyPath:@"currentLocation"
-                     options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld
-                     context:NULL];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
@@ -68,7 +38,6 @@
                        context:(void *)context
 {
     if ([keyPath isEqualToString:@"destination"] && self.destination) {
-        self.destinationString = self.destination.name;
         [self calculateETAToDestination:self.destination];
     } else if ([keyPath isEqualToString:@"currentLocation"]) {
         AppDelegate *appDelegate = object;
