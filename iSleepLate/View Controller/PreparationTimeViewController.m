@@ -25,12 +25,12 @@
     [self.rangeSlider addTarget:self
                          action:@selector(slideValueChanged:)
                forControlEvents:UIControlEventValueChanged];
-    self.rangeSlider.minimumValue = 0.0;
-    self.rangeSlider.maximumValue = 60.0;
+    self.rangeSlider.minimumValue = [[NSUserDefaults standardUserDefaults] integerForKey:@"minPrepTime"];
+    self.rangeSlider.maximumValue = [[NSUserDefaults standardUserDefaults] integerForKey:@"maxPrepTime"];
     self.rangeSlider.minRange = 10.0;
     
-    self.minLabel.text = @"Min: 0 min";
-    self.maxLabel.text = @"Max: 60 min";
+    self.minLabel.text = [NSString stringWithFormat:@"Min: %d min", (int)self.rangeSlider.minimumValue];
+    self.maxLabel.text = [NSString stringWithFormat:@"Max: %d min", (int)self.rangeSlider.maximumValue];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

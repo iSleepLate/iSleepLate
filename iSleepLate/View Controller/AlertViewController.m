@@ -29,6 +29,7 @@
 @property (nonatomic) BOOL vibrateIsON;
 @property (nonatomic) NSUInteger numberOfVibrations;
 @property (nonatomic) CGFloat userBrightness;
+@property (nonatomic) BOOL snoozeEnabled;
 
 @end
 
@@ -52,7 +53,7 @@
         _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:acutualFilePath error:&error];
         _audioPlayer.numberOfLoops = 3; // 11 * 3 = 33 seconds
         
-        self.numberOfVibrations = 0;
+        _numberOfVibrations = 0;
     }
     
     return self;
@@ -97,6 +98,9 @@
     
     self.loadingViewMarginTop.constant = CGRectGetHeight(self.view.frame) - 64;
     [self.loadingView setNeedsUpdateConstraints];
+    
+    // Snooze
+    _snoozeEnabled = [[NSUserDefaults standardUserDefaults] boolForKey:@"snoozeEnabled"];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -168,8 +172,8 @@
     NSUInteger minutes = prepTime / 60;
     NSLog(@"You have %u minutes to get ready.", minutes);
     
-    self.snoozeButton1.hidden = minutes < 5;
-    self.snoozeButton2.hidden = minutes < 10;
+    self.snoozeButton1.hidden = self.snoozeEnabled ? minutes < 5 : YES;
+    self.snoozeButton2.hidden = self.snoozeEnabled ? minutes < 10 : YES;
 }
 
 - (void)resetLoadingView
