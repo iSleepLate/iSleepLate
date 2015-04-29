@@ -37,7 +37,13 @@
 
 - (void)viewDidLoad
 {
-    [_timePicker scrollToCurrentTime];
+    if (self.alarm.dateOfArrival) {
+        NSLog(@"DateOfArrival");
+        [self.timePicker scrollToDate:self.alarm.dateOfArrival];
+    } else {
+        NSLog(@"No DateOfArrival");
+        [self.timePicker scrollToCurrentTime];
+    }
     
     SWRevealViewController *revealViewController = self.revealViewController;
     if (revealViewController) {
@@ -49,6 +55,12 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    if (self.alarm.dateOfArrival) {
+        [self.timePicker scrollToDate:self.alarm.dateOfArrival];
+    } else {
+        [self.timePicker scrollToCurrentTime];
+    }
+    
     // hide UIPickerView selection lines
     if (self.timePicker.subviews.count >= 2 &&
         [self.timePicker.subviews[1] isKindOfClass:[UIView class]] &&

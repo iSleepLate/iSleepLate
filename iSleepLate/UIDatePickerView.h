@@ -16,7 +16,8 @@
 
 @property (nonatomic, weak) id<UIDatePickerDelegate> delegate;
 
--(void) scrollToCurrentTime;
--(NSDate *) date;
+- (void)scrollToCurrentTime;
+- (void)scrollToDate:(NSDate *)date;
+- (NSDate *)date;
 
 @end

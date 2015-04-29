@@ -30,6 +30,7 @@
 - (NSURL *)applicationDocumentsDirectory;
 
 - (SmartAlarm *)alarm;
+- (void)saveSmartAlarm;
 
 
 @end
