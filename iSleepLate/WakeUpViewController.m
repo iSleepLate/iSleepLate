@@ -12,23 +12,19 @@
 // remove this later and have a weather view 
 #define WEATHERURL @"https://www.weather.yahoo.com"
 #define TABLEITEMS 2
+#define CHECKCONNECTION @"Please check your connection."
 
 @implementation WakeUpViewController
 
 @synthesize timeLabel;
 @synthesize alarm;
 @synthesize currentLocation;
-@synthesize notificationItems;
 @synthesize slideToUnlockView;
-@synthesize shimmeringView;
+//@synthesize shimmeringView;
+@synthesize bottomBorder;
 
-
-- (id) init {
-    self = [super init];
-    if (self) {
-        self.notificationItems = @[@"Weather", @"Traffic"];
-    }
-    return self;
+- (void) viewWillAppear:(BOOL)animated {
+        self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)viewDidLoad {
@@ -55,12 +51,12 @@
     [self.slideToUnlockView addGestureRecognizer:swiperight];
     
     // start shimmering
-    self.shimmeringView.contentView = self.slideToHideImage;
-    
-    self.shimmeringView.shimmering = YES;
-    [self.shimmeringView  setShimmeringOpacity:0.3];
-    [self.shimmeringView  setShimmeringAnimationOpacity:1];
-    [self.shimmeringView  setShimmeringSpeed:100];
+//    self.shimmeringView.contentView = self.slideToHideImage;
+//    
+//    self.shimmeringView.shimmering = YES;
+//    [self.shimmeringView  setShimmeringOpacity:0.3];
+//    [self.shimmeringView  setShimmeringAnimationOpacity:1];
+//    [self.shimmeringView  setShimmeringSpeed:50];
 }
 
 - (void)updateTime {
@@ -92,12 +88,12 @@
 //    NSLog(@"Swipe to UNLOCK!!!");
     
     // push to the ArrivalTimeController
-//    [self performSegueWithIdentifier:@"BackToArrival" sender:self];
+    [self performSegueWithIdentifier:@"BackToStart" sender:self];
     
 //    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-    [self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:^{
-//        [self.presentingViewController.presentingViewController.navigationController popToRootViewControllerAnimated:YES];
-    }];
+//    [self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:^{
+////        [self.presentingViewController.presentingViewController.navigationController popToRootViewControllerAnimated:YES];
+//    }];
     // can't do because we've lost the navigation controller
 //    [self.navigationController popToRootViewControllerAnimated:YES];
 }
@@ -134,6 +130,13 @@
     return cell;
 }
 
+#pragma mark - segues
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    [appDelegate.weather updateWeatherForecast];
+}
+
 #pragma mark - UITableViewDataSource
 
 - (void)configureCell:(MCSwipeTableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -146,23 +149,6 @@
     [cell setDefaultColor:[UIColor clearColor]];
     
     if (indexPath.row % TABLEITEMS == 0) {
-        [cell.textLabel setText:@"Weather"];
-        cell.textLabel.textColor = [UIColor whiteColor];
-        
-        [cell.detailTextLabel setText:[self.weather getWeatherDescription]];
-        [[cell detailTextLabel] setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:12]];
-        cell.detailTextLabel.textColor = [UIColor whiteColor];
-        
-        [cell setSwipeGestureWithView:checkView color:[UIColor clearColor]
-                                 mode:MCSwipeTableViewCellModeExit
-                                state:MCSwipeTableViewCellState1
-                      completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
-            NSLog(@"Did swipe to go to Weather Screen");
-            //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:WEATHERURL]];
-            [self performSegueWithIdentifier:@"ToWeatherDetailsViewController" sender:self];
-        }];
-    }
-    else if (indexPath.row % TABLEITEMS == 1) {
         [cell.textLabel setText:@"Traffic"];
         cell.textLabel.textColor = [UIColor whiteColor];
         
@@ -171,19 +157,40 @@
         cell.detailTextLabel.textColor = [UIColor whiteColor];
         
         [cell setSwipeGestureWithView:checkView color:[UIColor clearColor] mode:MCSwipeTableViewCellModeExit state:MCSwipeTableViewCellState1 completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
-
+            
             [self openMaps];
         }];
+    }
+    else if (indexPath.row % TABLEITEMS == 1) {
+        if ([[self.weather getWeatherDescription] isEqualToString:CHECKCONNECTION]) {
+            cell.hidden = YES;
+            bottomBorder.hidden = YES;
+        }
+        else {
+            [cell.textLabel setText:@"Weather"];
+            cell.textLabel.textColor = [UIColor whiteColor];
+            
+            [cell.detailTextLabel setText:[self.weather getWeatherDescription]];
+            [[cell detailTextLabel] setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:12]];
+            cell.detailTextLabel.textColor = [UIColor whiteColor];
+            
+            [cell setSwipeGestureWithView:checkView color:[UIColor clearColor] mode:MCSwipeTableViewCellModeExit state:MCSwipeTableViewCellState1 completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
+                //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:WEATHERURL]];
+                [self performSegueWithIdentifier:@"ToWeatherDetailsViewController" sender:self];
+            }];
+        }
     }
     
 }
 
 - (void) openMaps {
-    // if we can open google maps..
     CLLocationCoordinate2D start = self.currentLocation.coordinate;
     CLLocationCoordinate2D destination = self.alarm.destination.placemark.location.coordinate;
     
-    NSString *googleMapsURLString = [NSString stringWithFormat:@"comgooglemaps://?saddr=%1.6f,%1.6f&daddr=%1.6f,%1.6f", start.latitude, start.longitude, destination.latitude, destination.longitude];
+    NSString *googleMapsURLString = [NSString stringWithFormat:@"comgooglemaps://?saddr=%1.6f,%1.6f&daddr=%1.6f,%1.6f",
+                                     start.latitude, start.longitude, destination.latitude, destination.longitude];
+    
+    // if we can open google maps..
     if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:googleMapsURLString]]) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:googleMapsURLString]];
         // ***** some kind of return to app thing ***** that would be awesome!
