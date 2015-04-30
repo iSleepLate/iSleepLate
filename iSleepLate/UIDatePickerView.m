@@ -82,7 +82,7 @@
     NSDateComponents *components = [calendar components:units fromDate:currentDate];
     
     // now we need to get the hour (most complicated from the picker) - conversion
-    int selectedHour = (int)[self selectedRowInComponent:0] + 1; // this will give us
+    int selectedHour = ((int)[self selectedRowInComponent:0] % 12) + 1; // this will give us
     BOOL isAm = ([self selectedRowInComponent:2] == 0);
     if(!isAm && selectedHour < 12) {
         selectedHour += 12; // convert to 24 hour time
@@ -94,7 +94,7 @@
     
     // set the rest of the components
     components.hour = selectedHour;
-    components.minute = [self selectedRowInComponent:1] * 5;
+    components.minute = ([self selectedRowInComponent:1] % 60) * 5;
     components.second = 0;
     components.nanosecond = 0;
     
