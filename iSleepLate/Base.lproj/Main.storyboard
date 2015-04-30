@@ -1461,7 +1461,7 @@ Instagram: @iSleepLateApp</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ufI-cK-fOa">
-                                                    <rect key="frame" x="0.0" y="0.0" width="4" height="49"/>
+                                                    <rect key="frame" x="-8" y="0.0" width="4" height="49"/>
                                                     <color key="backgroundColor" red="0.91764705882352937" green="0.39215686274509803" blue="0.35294117647058826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="4" id="w75-bd-SRl"/>
@@ -1469,7 +1469,7 @@ Instagram: @iSleepLateApp</string>
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="ufI-cK-fOa" firstAttribute="leading" secondItem="Rkx-7J-Mzv" secondAttribute="leadingMargin" constant="-8" id="C2i-Du-0X8"/>
+                                                <constraint firstItem="ufI-cK-fOa" firstAttribute="leading" secondItem="Rkx-7J-Mzv" secondAttribute="leadingMargin" constant="-16" id="C2i-Du-0X8"/>
                                                 <constraint firstItem="28E-B1-4Ry" firstAttribute="leading" secondItem="Rkx-7J-Mzv" secondAttribute="leadingMargin" constant="8" id="I64-aR-798"/>
                                                 <constraint firstAttribute="centerY" secondItem="hRZ-02-cjf" secondAttribute="centerY" id="TnZ-PQ-GPh"/>
                                                 <constraint firstAttribute="centerY" secondItem="28E-B1-4Ry" secondAttribute="centerY" id="bJI-9Q-rOA"/>
@@ -1517,7 +1517,7 @@ Instagram: @iSleepLateApp</string>
                                                     </variation>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8rx-IC-zTM">
-                                                    <rect key="frame" x="0.0" y="0.0" width="4" height="49"/>
+                                                    <rect key="frame" x="-8" y="0.0" width="4" height="49"/>
                                                     <color key="backgroundColor" red="0.91764705882352937" green="0.39215686274509803" blue="0.35294117647058826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="4" id="kGC-1K-nbz"/>
@@ -1525,7 +1525,7 @@ Instagram: @iSleepLateApp</string>
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="8rx-IC-zTM" firstAttribute="leading" secondItem="FF0-g3-7sK" secondAttribute="leadingMargin" constant="-8" id="AdA-rl-tBs"/>
+                                                <constraint firstItem="8rx-IC-zTM" firstAttribute="leading" secondItem="FF0-g3-7sK" secondAttribute="leadingMargin" constant="-16" id="AdA-rl-tBs"/>
                                                 <constraint firstItem="2s5-fq-wx3" firstAttribute="leading" secondItem="lg6-gB-JYe" secondAttribute="trailing" constant="8" id="Ekn-fU-a1J"/>
                                                 <constraint firstAttribute="centerY" secondItem="2s5-fq-wx3" secondAttribute="centerY" id="J9k-5t-g93"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="8rx-IC-zTM" secondAttribute="bottom" constant="-8" id="KLk-US-mF9"/>
@@ -1574,7 +1574,7 @@ Instagram: @iSleepLateApp</string>
                                                     </variation>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IGk-HC-5a5">
-                                                    <rect key="frame" x="0.0" y="0.0" width="4" height="49"/>
+                                                    <rect key="frame" x="-8" y="0.0" width="4" height="49"/>
                                                     <color key="backgroundColor" red="0.91764705882352937" green="0.39215686274509803" blue="0.35294117647058826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="4" id="0SQ-KW-n9d"/>
@@ -1587,7 +1587,7 @@ Instagram: @iSleepLateApp</string>
                                                 <constraint firstAttribute="bottomMargin" secondItem="IGk-HC-5a5" secondAttribute="bottom" constant="-8" id="REX-cD-h0B"/>
                                                 <constraint firstAttribute="centerY" secondItem="pVE-eO-rZB" secondAttribute="centerY" id="U3Y-MN-BbJ"/>
                                                 <constraint firstItem="pVE-eO-rZB" firstAttribute="top" secondItem="Dwf-17-DPC" secondAttribute="topMargin" constant="6" id="jDt-ic-mqn"/>
-                                                <constraint firstItem="IGk-HC-5a5" firstAttribute="leading" secondItem="Dwf-17-DPC" secondAttribute="leadingMargin" constant="-8" id="qBK-eh-QHS"/>
+                                                <constraint firstItem="IGk-HC-5a5" firstAttribute="leading" secondItem="Dwf-17-DPC" secondAttribute="leadingMargin" constant="-16" id="qBK-eh-QHS"/>
                                                 <constraint firstItem="pVE-eO-rZB" firstAttribute="leading" secondItem="DMJ-NN-K6a" secondAttribute="trailing" constant="8" id="qPm-Mv-0Fz"/>
                                                 <constraint firstAttribute="centerY" secondItem="DMJ-NN-K6a" secondAttribute="centerY" id="xC8-ST-AUE"/>
                                             </constraints>
@@ -1638,7 +1638,7 @@ Instagram: @iSleepLateApp</string>
                                                     </variation>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m5m-Nb-X1x">
-                                                    <rect key="frame" x="0.0" y="0.0" width="4" height="49"/>
+                                                    <rect key="frame" x="-8" y="0.0" width="4" height="49"/>
                                                     <color key="backgroundColor" red="0.91764705882352937" green="0.39215686274509803" blue="0.35294117647058826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="4" id="jB1-D8-AwU"/>
@@ -1652,7 +1652,7 @@ Instagram: @iSleepLateApp</string>
                                                 <constraint firstItem="drc-yd-uXg" firstAttribute="leading" secondItem="i6a-xH-iZh" secondAttribute="leadingMargin" constant="8" id="MGE-wf-Y7Z"/>
                                                 <constraint firstAttribute="centerY" secondItem="TsU-py-tp9" secondAttribute="centerY" id="MgE-mm-cbo"/>
                                                 <constraint firstItem="TsU-py-tp9" firstAttribute="leading" secondItem="drc-yd-uXg" secondAttribute="trailing" constant="8" id="XOb-iY-dYz"/>
-                                                <constraint firstItem="m5m-Nb-X1x" firstAttribute="leading" secondItem="i6a-xH-iZh" secondAttribute="leadingMargin" constant="-8" id="keF-kA-hhN"/>
+                                                <constraint firstItem="m5m-Nb-X1x" firstAttribute="leading" secondItem="i6a-xH-iZh" secondAttribute="leadingMargin" constant="-16" id="keF-kA-hhN"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1790,16 +1790,8 @@ Instagram: @iSleepLateApp</string>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aGu-fI-vc0" id="7ru-5h-Hji">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zzz" translatesAutoresizingMaskIntoConstraints="NO" id="C8V-pn-Yfx">
-                                                    <rect key="frame" x="15" y="9" width="25" height="25"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="25" id="qWz-lC-HAZ"/>
-                                                        <constraint firstAttribute="height" constant="25" id="tPK-79-eSQ"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Snooze" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uf2-xV-Chk">
-                                                    <rect key="frame" x="48" y="11" width="58" height="21"/>
+                                                    <rect key="frame" x="15" y="11" width="58" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="3ZQ-Gg-dcd"/>
                                                         <constraint firstAttribute="width" constant="58" id="JU8-s3-QjV"/>
@@ -1810,10 +1802,8 @@ Instagram: @iSleepLateApp</string>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="centerY" secondItem="C8V-pn-Yfx" secondAttribute="centerY" id="ZbK-eS-pms"/>
+                                                <constraint firstItem="uf2-xV-Chk" firstAttribute="leading" secondItem="7ru-5h-Hji" secondAttribute="leadingMargin" constant="7" id="2Rm-dU-WTu"/>
                                                 <constraint firstAttribute="centerY" secondItem="uf2-xV-Chk" secondAttribute="centerY" id="lKr-mE-vwb"/>
-                                                <constraint firstItem="C8V-pn-Yfx" firstAttribute="leading" secondItem="7ru-5h-Hji" secondAttribute="leadingMargin" constant="7" id="mfb-9D-vb6"/>
-                                                <constraint firstItem="uf2-xV-Chk" firstAttribute="leading" secondItem="C8V-pn-Yfx" secondAttribute="trailing" constant="8" id="qJk-hD-gpZ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1824,15 +1814,8 @@ Instagram: @iSleepLateApp</string>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jjo-o7-UmP" id="Wbu-iD-L16">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gVy-P0-gR0">
-                                                    <rect key="frame" x="15" y="9" width="25" height="25"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="25" id="0Ot-OI-S0a"/>
-                                                        <constraint firstAttribute="width" constant="25" id="LYO-of-sMG"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preptime Range" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uEQ-Yz-BeP">
-                                                    <rect key="frame" x="48" y="11" width="124" height="21"/>
+                                                    <rect key="frame" x="15" y="11" width="124" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="124" id="JCx-e8-DsO"/>
                                                         <constraint firstAttribute="height" constant="21" id="V0W-M8-bF7"/>
@@ -1843,10 +1826,8 @@ Instagram: @iSleepLateApp</string>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="centerY" secondItem="gVy-P0-gR0" secondAttribute="centerY" id="3rK-x2-reb"/>
-                                                <constraint firstItem="gVy-P0-gR0" firstAttribute="leading" secondItem="Wbu-iD-L16" secondAttribute="leadingMargin" constant="7" id="7Yv-zc-d1g"/>
-                                                <constraint firstItem="uEQ-Yz-BeP" firstAttribute="leading" secondItem="gVy-P0-gR0" secondAttribute="trailing" constant="8" id="KMK-lm-zTI"/>
                                                 <constraint firstAttribute="centerY" secondItem="uEQ-Yz-BeP" secondAttribute="centerY" id="hKr-I5-Dta"/>
+                                                <constraint firstItem="uEQ-Yz-BeP" firstAttribute="leading" secondItem="Wbu-iD-L16" secondAttribute="leadingMargin" constant="7" id="wU3-gK-xOr"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1874,6 +1855,7 @@ Instagram: @iSleepLateApp</string>
                     </navigationItem>
                     <connections>
                         <outlet property="sideMenuButton" destination="CJ8-LY-EUg" id="V6i-Zi-OSG"/>
+                        <outlet property="tableView" destination="xIE-Rk-7xE" id="iuE-l0-dfE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BH2-LB-Uso" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1957,6 +1939,9 @@ Instagram: @iSleepLateApp</string>
                             <constraint firstItem="Ueq-3y-bn8" firstAttribute="top" secondItem="kFz-hH-rez" secondAttribute="bottom" constant="-64" id="yNq-jl-kud"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="Ueq-3y-bn8" id="TMG-ss-aPQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="piW-xH-XBZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2092,7 +2077,6 @@ Instagram: @iSleepLateApp</string>
         <image name="SettingsIcon" width="20" height="20"/>
         <image name="SlideToHideImage" width="125" height="20"/>
         <image name="soundSetting" width="19" height="25"/>
-        <image name="zzz" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="DEx-Oy-zu2"/>

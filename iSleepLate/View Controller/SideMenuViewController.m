@@ -25,7 +25,7 @@
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        self.menuItems = @[@"alarm", @"statistics", @"settings", @"about"];
+        self.menuItems = @[@"alarm", @"settings", @"about"];
         self.selectedRow = 0;
     }
     
