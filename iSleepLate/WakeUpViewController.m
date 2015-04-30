@@ -51,12 +51,12 @@
     [self.slideToUnlockView addGestureRecognizer:swiperight];
     
     // start shimmering
-//    self.shimmeringView.contentView = self.slideToHideImage;
-//    
-//    self.shimmeringView.shimmering = YES;
-//    [self.shimmeringView  setShimmeringOpacity:0.3];
-//    [self.shimmeringView  setShimmeringAnimationOpacity:1];
-//    [self.shimmeringView  setShimmeringSpeed:50];
+    self.shimmeringView.contentView = self.slideToHideImage;
+    
+    self.shimmeringView.shimmering = YES;
+    [self.shimmeringView  setShimmeringOpacity:0.3];
+    [self.shimmeringView  setShimmeringAnimationOpacity:1];
+    [self.shimmeringView  setShimmeringSpeed:50];
 }
 
 - (void)updateTime {
