@@ -15,18 +15,18 @@
 
 @interface WakeUpViewController : PCTSmartAlarmViewController <UITableViewDataSource, UITableViewDelegate, MCSwipeTableViewCellDelegate, UIAlertViewDelegate>
 
-
+// UI stuff
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *leaveByLabel;
 @property (weak, nonatomic) IBOutlet UIView *slideToUnlockView;
-@property (weak, nonatomic) IBOutlet UILabel *slideToUnlockLabel;
 @property (weak, nonatomic) IBOutlet FBShimmeringView *shimmeringView;
 @property (weak, nonatomic) IBOutlet UIImageView *slideToHideImage;
+@property (weak, nonatomic) IBOutlet UIView *bottomBorder;
+
+// variables
 @property (weak, nonatomic) SmartAlarm *alarm;
 @property (weak, nonatomic) CLLocation *currentLocation;
 @property (strong, nonatomic) WeatherObject *weather;
-@property (weak, nonatomic) IBOutlet UIView *bottomBorder;
 
 @end
