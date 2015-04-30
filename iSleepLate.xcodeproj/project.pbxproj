@@ -38,6 +38,8 @@
 		8CF1E0261ACC96CF0054323A /* GeocodeResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF1E0251ACC96CF0054323A /* GeocodeResultsViewController.m */; };
 		8CFC0D621ABF09660049C36F /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CFC0D611ABF09660049C36F /* AddressBookUI.framework */; };
 		CE2AAAB71AD2E6A0005B9A80 /* UIDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2AAAB61AD2E6A0005B9A80 /* UIDatePickerView.m */; };
+		CE2AF1DD1AF1B1DA0015FCCF /* FBShimmeringLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2AF1DA1AF1B1DA0015FCCF /* FBShimmeringLayer.m */; };
+		CE2AF1DE1AF1B1DA0015FCCF /* FBShimmeringView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2AF1DC1AF1B1DA0015FCCF /* FBShimmeringView.m */; };
 		CE8BE7FE1ADC23500000BD71 /* MCSwipeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8BE7FD1ADC23500000BD71 /* MCSwipeTableViewCell.m */; };
 		CE8BE8021ADC239D0000BD71 /* WeatherObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8BE8011ADC239D0000BD71 /* WeatherObject.m */; };
 		CEE98ABF1AEB34E000B71A8A /* WeatherDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE98ABE1AEB34E000B71A8A /* WeatherDetailsViewController.m */; };
@@ -111,6 +113,12 @@
 		8CFC0D611ABF09660049C36F /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		CE2AAAB51AD2E6A0005B9A80 /* UIDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDatePickerView.h; sourceTree = "<group>"; };
 		CE2AAAB61AD2E6A0005B9A80 /* UIDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIDatePickerView.m; sourceTree = "<group>"; };
+		CE2AF1D71AF1B1DA0015FCCF /* FBShimmering-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FBShimmering-Prefix.pch"; path = "FBShimmering/FBShimmering-Prefix.pch"; sourceTree = "<group>"; };
+		CE2AF1D81AF1B1DA0015FCCF /* FBShimmering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBShimmering.h; path = FBShimmering/FBShimmering.h; sourceTree = "<group>"; };
+		CE2AF1D91AF1B1DA0015FCCF /* FBShimmeringLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBShimmeringLayer.h; path = FBShimmering/FBShimmeringLayer.h; sourceTree = "<group>"; };
+		CE2AF1DA1AF1B1DA0015FCCF /* FBShimmeringLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBShimmeringLayer.m; path = FBShimmering/FBShimmeringLayer.m; sourceTree = "<group>"; };
+		CE2AF1DB1AF1B1DA0015FCCF /* FBShimmeringView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBShimmeringView.h; path = FBShimmering/FBShimmeringView.h; sourceTree = "<group>"; };
+		CE2AF1DC1AF1B1DA0015FCCF /* FBShimmeringView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBShimmeringView.m; path = FBShimmering/FBShimmeringView.m; sourceTree = "<group>"; };
 		CE8BE7FC1ADC23500000BD71 /* MCSwipeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCSwipeTableViewCell.h; sourceTree = "<group>"; };
 		CE8BE7FD1ADC23500000BD71 /* MCSwipeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCSwipeTableViewCell.m; sourceTree = "<group>"; };
 		CE8BE8001ADC239D0000BD71 /* WeatherObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherObject.h; sourceTree = "<group>"; };
@@ -242,6 +250,7 @@
 		8C75BC781A8922400001927C /* iSleepLate */ = {
 			isa = PBXGroup;
 			children = (
+				CE2AF1D61AF1B1C10015FCCF /* FBShimmering */,
 				8C75BC7D1A8922410001927C /* AppDelegate.h */,
 				8C75BC7E1A8922410001927C /* AppDelegate.m */,
 				CE2AAAB41AD2E686005B9A80 /* Date Picker */,
@@ -300,6 +309,19 @@
 				CE2AAAB61AD2E6A0005B9A80 /* UIDatePickerView.m */,
 			);
 			name = "Date Picker";
+			sourceTree = "<group>";
+		};
+		CE2AF1D61AF1B1C10015FCCF /* FBShimmering */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AF1D71AF1B1DA0015FCCF /* FBShimmering-Prefix.pch */,
+				CE2AF1D81AF1B1DA0015FCCF /* FBShimmering.h */,
+				CE2AF1D91AF1B1DA0015FCCF /* FBShimmeringLayer.h */,
+				CE2AF1DA1AF1B1DA0015FCCF /* FBShimmeringLayer.m */,
+				CE2AF1DB1AF1B1DA0015FCCF /* FBShimmeringView.h */,
+				CE2AF1DC1AF1B1DA0015FCCF /* FBShimmeringView.m */,
+			);
+			name = FBShimmering;
 			sourceTree = "<group>";
 		};
 		CE8BE7FF1ADC236E0000BD71 /* MCSwipeTableView */ = {
@@ -429,9 +451,11 @@
 				8C75BC7F1A8922410001927C /* AppDelegate.m in Sources */,
 				8C1975FF1AEFE1510020F51E /* PrepTimeSettingsViewController.m in Sources */,
 				8C2000121AC73D9500A8A5FC /* AppBackgroundView.m in Sources */,
+				CE2AF1DE1AF1B1DA0015FCCF /* FBShimmeringView.m in Sources */,
 				472165AF1AD58A420018B330 /* SettingsViewController.m in Sources */,
 				8C75BC7C1A8922410001927C /* main.m in Sources */,
 				CE8BE8021ADC239D0000BD71 /* WeatherObject.m in Sources */,
+				CE2AF1DD1AF1B1DA0015FCCF /* FBShimmeringLayer.m in Sources */,
 				8C5083381ACF343100AE392C /* AlertViewController.m in Sources */,
 				8C60586D1AC8D79100E3FCA2 /* RangeSliderKnobLayer.m in Sources */,
 				8C2000181AC797BD00A8A5FC /* SmartAlarm.m in Sources */,
