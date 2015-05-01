@@ -80,19 +80,9 @@
     [appDelegate.weather updateWeather];
     
     // disable auto screen sleep
-    [UIApplication sharedApplication].idleTimerDisabled = NO;
+    [UIApplication sharedApplication].idleTimerDisabled = YES;
     
-    // monitor proximity sensor
-    UIDevice *device = [UIDevice currentDevice];
-    device.proximityMonitoringEnabled = YES;
-    self.userBrightness = [UIScreen mainScreen].brightness;
-    
-    if (device.proximityMonitoringEnabled == YES) {
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(proximityChanged:)
-                                                     name:@"UIDeviceProximityStateDidChangeNotification"
-                                                   object:device];
-    }
+    [self shouldMonitorProximitySensor:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -111,14 +101,35 @@
     // re-enable auto screen sleep
     [UIApplication sharedApplication].idleTimerDisabled = NO;
     
-    // don't monitor proximity sensor
-    UIDevice *device = [UIDevice currentDevice];
-    device.proximityMonitoringEnabled = NO;
-    [UIScreen mainScreen].wantsSoftwareDimming = NO;
-    [UIScreen mainScreen].brightness = self.userBrightness;
+    [self shouldMonitorProximitySensor:NO];
 }
 
 #pragma mark - Private Methods
+
+- (void)shouldMonitorProximitySensor:(BOOL)monitor
+{
+    if (monitor) {
+        // monitor proximity sensor
+        UIDevice *device = [UIDevice currentDevice];
+        device.proximityMonitoringEnabled = YES;
+        self.userBrightness = [UIScreen mainScreen].brightness;
+        
+        if (device.proximityMonitoringEnabled == YES) {
+            [[NSNotificationCenter defaultCenter] addObserver:self
+                                                     selector:@selector(proximityChanged:)
+                                                         name:@"UIDeviceProximityStateDidChangeNotification"
+                                                       object:device];
+        }
+    } else {
+        // don't monitor proximity sensor
+        UIDevice *device = [UIDevice currentDevice];
+        device.proximityMonitoringEnabled = NO;
+        [UIScreen mainScreen].wantsSoftwareDimming = NO;
+        [UIScreen mainScreen].brightness = self.userBrightness;
+    }
+}
+
+
 
 - (void)proximityChanged:(NSNotification *)note
 {
@@ -220,6 +231,8 @@
 
 - (void)handleNotification:(NSNotification *)note
 {
+    [self shouldMonitorProximitySensor:NO];
+    
     [self.audioPlayer play];
     self.vibrateIsON = YES;
     [self startVibrate];
@@ -288,6 +301,8 @@
 {
     [self.audioPlayer stop];
     self.vibrateIsON = NO;
+    
+    [self shouldMonitorProximitySensor:YES];
     
     if (sender == self.snoozeButton1) {
         [self.alarm snoozeForNSTimeInterval:300];

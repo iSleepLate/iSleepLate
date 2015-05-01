@@ -52,6 +52,7 @@
     NSDate *oldFireDate = self.localNotification.fireDate;
     self.localNotification.fireDate = [oldFireDate dateByAddingTimeInterval:snoozeTime];
     
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
     [[UIApplication sharedApplication] scheduleLocalNotification:self.localNotification];
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -187,6 +188,8 @@
 
 - (UILocalNotification *)prepareLocalNotification
 {
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    
     NSTimeInterval maxPrepTime = 60 * (self.preparationTime.location + self.preparationTime.length); // minutes
     NSDate *fireDate = [self.dateOfArrival dateByAddingTimeInterval: -(self.expectedTravelTime + maxPrepTime)];
     
