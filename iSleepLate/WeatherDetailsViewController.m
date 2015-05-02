@@ -28,6 +28,9 @@
     else if (components.hour < 12) {
         str = [NSString stringWithFormat:@"%dAM", components.hour];
     }
+    else if (components.hour == 12) {
+        str = [NSString stringWithFormat:@"12PM"];
+    }
     else { // components.hour >= 12
         str = [NSString stringWithFormat:@"%dPM", components.hour - 12];
     }
@@ -101,6 +104,8 @@
     
     // high and low???
     
+    appDelegate = nil;
+    weather = nil;
     date = nil;
     components = nil;
     dateFormat = nil;

@@ -11,15 +11,6 @@
 
 @implementation WeatherIconView
 
-
-//- (id) initWithCoder:(NSCoder *)aDecoder {
-//    self = [super initWithCoder:aDecoder];
-//    if(self) {
-//        [self setIconWithIconName:@"11d"];
-//    }
-//    return self;
-//}
-
 - (void) setIconWithIconName: (NSString *) iconName {
     // no reason to have an NSDictionary for all icons for EVERY WeatherIconView, so have one NSDictionary for all icons in WeatherObj (one per app)
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];

@@ -39,12 +39,12 @@
         // create the NSDictionary of icon names
 //        self.iconNames = [[NSDictionary alloc] initWithContentsOfFile:@"IconNames"];
         self.iconNames = [[NSDictionary alloc] initWithObjectsAndKeys:
-                          [UIImage imageNamed:@"Clear Sky"], @"01d",
-                          [UIImage imageNamed:@"Clear Sky"], @"01n",
+                          [UIImage imageNamed:@"Clear Sky Night"], @"01d",
+                          [UIImage imageNamed:@"Clear Sky Night"], @"01n",
                           [UIImage imageNamed:@"Partly Cloudy"], @"02d",
                           [UIImage imageNamed:@"Partly Cloudy"], @"04d",
-                          [UIImage imageNamed:@"Partly Cloudy"], @"02n",
-                          [UIImage imageNamed:@"Partly Cloudy"], @"04n",
+                          [UIImage imageNamed:@"Partly Cloudy Night"], @"02n",
+                          [UIImage imageNamed:@"Partly Cloudy Night"], @"04n",
                           [UIImage imageNamed:@"Cloudy"], @"03d",
                           [UIImage imageNamed:@"Cloudy"], @"03n",
                           [UIImage imageNamed:@"Rainy"], @"09d",

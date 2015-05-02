@@ -10,21 +10,15 @@
 #import "AppDelegate.h"
 
 // remove this later and have a weather view 
-#define WEATHERURL @"https://www.weather.yahoo.com"
 #define TABLEITEMS 2
 #define CHECKCONNECTION @"Please check your connection."
 
 @implementation WakeUpViewController
 
-@synthesize timeLabel;
 @synthesize alarm;
-@synthesize currentLocation;
-@synthesize slideToUnlockView;
-//@synthesize shimmeringView;
-@synthesize bottomBorder;
 
 - (void) viewWillAppear:(BOOL)animated {
-        self.navigationController.navigationBarHidden = YES;
+    self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)viewDidLoad {
@@ -46,7 +40,7 @@
     self.weather = appDelegate.weather;
     
     // set up gesture recognizer for slide to unlock view
-    UISwipeGestureRecognizer * swiperight=[[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swiperight:)];
+    UISwipeGestureRecognizer *swiperight=[[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swiperight:)];
     swiperight.direction=UISwipeGestureRecognizerDirectionRight;
     [self.slideToUnlockView addGestureRecognizer:swiperight];
     
@@ -57,6 +51,9 @@
     [self.shimmeringView  setShimmeringOpacity:0.3];
     [self.shimmeringView  setShimmeringAnimationOpacity:1];
     [self.shimmeringView  setShimmeringSpeed:50];
+    
+    appDelegate = nil;
+    swiperight = nil;
 }
 
 - (void)updateTime {
@@ -69,6 +66,9 @@
     time = [time stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     
     self.timeLabel.text = time;
+    
+    formatter = nil;
+    time = nil;
 }
 
 - (void)updateLeaveByTime {
@@ -79,23 +79,18 @@
     
     NSString *leaveByTime = [formatter stringFromDate:[self.alarm leaveByTime]];
     self.leaveByLabel.text = [NSString stringWithFormat:@"Leave by %@", leaveByTime];
+    
+    formatter = nil;
+    leaveByTime = nil;
 }
 
 #pragma mark - Slide to unlock
 
 // want to work with the animation more!! to abrupt
 - (void)swiperight:(UISwipeGestureRecognizer*)gestureRecognizer{
-//    NSLog(@"Swipe to UNLOCK!!!");
-    
     // push to the ArrivalTimeController
     [self performSegueWithIdentifier:@"BackToStart" sender:self];
-    
-//    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-//    [self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:^{
-////        [self.presentingViewController.presentingViewController.navigationController popToRootViewControllerAnimated:YES];
-//    }];
-    // can't do because we've lost the navigation controller
-//    [self.navigationController popToRootViewControllerAnimated:YES];
+
 }
 
 #pragma mark - Table view data source
@@ -135,14 +130,14 @@
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     [appDelegate.weather updateWeatherForecast];
+    appDelegate = nil;
 }
 
 #pragma mark - UITableViewDataSource
 
 - (void)configureCell:(MCSwipeTableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    // use orange color? or clear color?
-    UIView *checkView = [[UIView alloc] init];
+    UIView *clearView = [[UIView alloc] init];
     
     
     // Setting the default inactive state color to the tableView background color
@@ -156,7 +151,7 @@
         [[cell detailTextLabel] setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size: 12]];
         cell.detailTextLabel.textColor = [UIColor whiteColor];
         
-        [cell setSwipeGestureWithView:checkView color:[UIColor clearColor] mode:MCSwipeTableViewCellModeExit state:MCSwipeTableViewCellState1 completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
+        [cell setSwipeGestureWithView:clearView color:[UIColor clearColor] mode:MCSwipeTableViewCellModeExit state:MCSwipeTableViewCellState1 completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
             
             [self openMaps];
         }];
@@ -164,7 +159,7 @@
     else if (indexPath.row % TABLEITEMS == 1) {
         if ([[self.weather getWeatherDescription] isEqualToString:CHECKCONNECTION]) {
             cell.hidden = YES;
-            bottomBorder.hidden = YES;
+            self.bottomBorder.hidden = YES;
         }
         else {
             [cell.textLabel setText:@"Weather"];
@@ -174,13 +169,14 @@
             [[cell detailTextLabel] setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:12]];
             cell.detailTextLabel.textColor = [UIColor whiteColor];
             
-            [cell setSwipeGestureWithView:checkView color:[UIColor clearColor] mode:MCSwipeTableViewCellModeExit state:MCSwipeTableViewCellState1 completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
-                //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:WEATHERURL]];
+            [cell setSwipeGestureWithView:clearView color:[UIColor clearColor] mode:MCSwipeTableViewCellModeExit state:MCSwipeTableViewCellState1 completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
+                self.bottomBorder.hidden = YES;
                 [self performSegueWithIdentifier:@"ToWeatherDetailsViewController" sender:self];
             }];
         }
     }
     
+    clearView = nil;
 }
 
 - (void) openMaps {
@@ -193,14 +189,13 @@
     // if we can open google maps..
     if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:googleMapsURLString]]) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:googleMapsURLString]];
-        // ***** some kind of return to app thing ***** that would be awesome!
     }
     // can't use google maps, use default apple maps
     else {
         NSDictionary *launchOptions = @{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving};
         [self.alarm.destination openInMapsWithLaunchOptions:launchOptions];
-        // ** impossible to return to app according to something I saw?? **
     }
+    googleMapsURLString = nil;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -220,12 +215,12 @@
 
 // When the user starts swiping the cell this method is called
 - (void)swipeTableViewCellDidStartSwiping:(MCSwipeTableViewCell *)cell {
-         NSLog(@"Did start swiping the cell!");
+
 }
 
 // When the user ends swiping the cell this method is called
 - (void)swipeTableViewCellDidEndSwiping:(MCSwipeTableViewCell *)cell {
-         NSLog(@"Did end swiping the cell!");
+
 }
 
 
